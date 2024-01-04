@@ -5,12 +5,22 @@ extends CharacterBody2D
 @onready var collider = $CollisionShape2D
 var lastAnimDirection: String = "Right"
 
-func handleInput():
-	var moveDirection = Input.get_vector("ui_left", "ui_right", "ui_up", "ui_down")
-	velocity = moveDirection*speed
+func get_input():
+	velocity = Vector2.ZERO
+	if Input.is_action_pressed("ui_right"):
+		velocity.x += 1
+	if Input.is_action_pressed("ui_left"):
+		velocity.x -= 1
+	if Input.is_action_pressed("ui_down"):
+		velocity.y += 1
+	if Input.is_action_pressed("ui_up"):
+		velocity.y -= 1
 	
 	if Input.is_action_just_pressed("jab_attack"):
 		pass
+		
+	velocity = velocity.normalized() * speed
+	print(velocity)
 
 func updateAnimation():
 	var direction = "Right"
@@ -26,7 +36,7 @@ func updateAnimation():
 	lastAnimDirection = direction
 
 func _physics_process(delta):
-	handleInput()
+	get_input()
 	move_and_slide()
 	updateAnimation()
 
