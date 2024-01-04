@@ -1,1 +1,3 @@
 Game for Gamega Jam
+
+MIRO: https://miro.com/welcomeonboard/M2pkR0p3TjVPeHgyUVV6UXUyQUlnSTJjY3NGRWVtV2ZNNXlLZXlKRHhFdmxhMkZxVWNNQlByNVZ1V0t3M3lrTXwzNDU4NzY0NTIzODA1NTg1MDEwfDI=?share_link_id=387941518551
