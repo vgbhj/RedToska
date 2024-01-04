@@ -6,6 +6,7 @@ extends CharacterBody2D
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
 var lastAnimDirection: String = "Left"
 var isAttacking: bool = false
+@onready var camera = $Camera2D
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -19,7 +20,6 @@ func get_input():
 		velocity.y -= 1
 	
 	if Input.is_action_just_pressed("jab_attack"):
-		print(lastAnimDirection)
 		if lastAnimDirection == "Right":
 			jabAttackCollider.position.x = $AnimatedSprite2D.position.x - 40
 		else:

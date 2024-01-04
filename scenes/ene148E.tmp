@@ -1,38 +1,32 @@
-[gd_scene load_steps=26 format=3 uid="uid://dxc812fb4om46"]
+[gd_scene load_steps=20 format=3 uid="uid://dx7h1bdy5mw72"]
 
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_lh023"]
-[ext_resource type="Texture2D" uid="uid://bvk5f8uefmav3" path="res://Streets of Fight files/Sprites/Brawler-Girl/Idle/idle1.png" id="1_ptrrb"]
-[ext_resource type="Texture2D" uid="uid://cp04p0alwlbuk" path="res://Streets of Fight files/Sprites/Brawler-Girl/Idle/idle2.png" id="2_7gtj0"]
-[ext_resource type="Texture2D" uid="uid://c6tm8730xwi03" path="res://Streets of Fight files/Sprites/Brawler-Girl/Idle/idle3.png" id="3_f0fdt"]
-[ext_resource type="Texture2D" uid="uid://d0t7eeo61gn37" path="res://Streets of Fight files/Sprites/Brawler-Girl/Idle/idle4.png" id="4_r251m"]
-[ext_resource type="Texture2D" uid="uid://cbqme28nu15at" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk1.png" id="5_8qr3h"]
-[ext_resource type="Texture2D" uid="uid://bs85ea33l87ev" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk2.png" id="6_2qd8f"]
-[ext_resource type="Texture2D" uid="uid://cdltrihy8eqi7" path="res://Streets of Fight files/Sprites/Brawler-Girl/Jab/jab1.png" id="6_52r8l"]
-[ext_resource type="Texture2D" uid="uid://dquxe1jqcsvqf" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk3.png" id="7_its4m"]
-[ext_resource type="Texture2D" uid="uid://bt770cl37nos4" path="res://Streets of Fight files/Sprites/Brawler-Girl/Jab/jab2.png" id="7_tgu4i"]
-[ext_resource type="Texture2D" uid="uid://n1a6xh5v8s5n" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk4.png" id="8_7lc84"]
-[ext_resource type="Texture2D" uid="uid://bjmxxf2fv5osh" path="res://Streets of Fight files/Sprites/Brawler-Girl/Jab/jab3.png" id="8_yvw1e"]
-[ext_resource type="Texture2D" uid="uid://b3mwo1qjk7u4p" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk5.png" id="9_hvk3r"]
-[ext_resource type="Texture2D" uid="uid://dhadkyriiy2rt" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk6.png" id="10_40m5q"]
-[ext_resource type="Texture2D" uid="uid://pf3vyqy4af0n" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk7.png" id="11_hkfd2"]
-[ext_resource type="Texture2D" uid="uid://b7i0ibl6mt2tl" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk8.png" id="12_d5nej"]
-[ext_resource type="Texture2D" uid="uid://ya5b7odoea8a" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk9.png" id="13_f47dc"]
-[ext_resource type="Texture2D" uid="uid://c7ttoollfqi3c" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk10.png" id="14_t5l6d"]
+[ext_resource type="Script" path="res://scenes/enemy_punk.gd" id="1_1vtu2"]
+[ext_resource type="Texture2D" uid="uid://g2kjw8pdtsuk" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Idle/idle1.png" id="1_fg8wc"]
+[ext_resource type="Texture2D" uid="uid://c3e5cwlte68cu" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Idle/idle2.png" id="2_j2ixh"]
+[ext_resource type="Texture2D" uid="uid://j5jwxcs7a01l" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Idle/idle3.png" id="3_je5jx"]
+[ext_resource type="Texture2D" uid="uid://dc8vd202vx73w" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Idle/idle4.png" id="4_v2o6c"]
+[ext_resource type="Texture2D" uid="uid://bl8cen360mf2s" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Punch/punch1.png" id="5_bw16s"]
+[ext_resource type="Texture2D" uid="uid://ipf6pa2ugmj" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Punch/punch2.png" id="6_ode85"]
+[ext_resource type="Texture2D" uid="uid://7k6lo5i855q" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Punch/punch3.png" id="7_lbm03"]
+[ext_resource type="Texture2D" uid="uid://cyasiw2x7jlaa" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Walk/walk1.png" id="8_uht4x"]
+[ext_resource type="Texture2D" uid="uid://dyo0rchre4g58" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Walk/walk2.png" id="9_g4kbj"]
+[ext_resource type="Texture2D" uid="uid://2ib5k5r76fo8" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Walk/walk3.png" id="10_ramqf"]
+[ext_resource type="Texture2D" uid="uid://dwvocmygh4ub" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Walk/walk4.png" id="11_glhtt"]
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_3agyg"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_s30w8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ptrrb")
+"texture": ExtResource("1_fg8wc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_7gtj0")
+"texture": ExtResource("2_j2ixh")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_f0fdt")
+"texture": ExtResource("3_je5jx")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_r251m")
+"texture": ExtResource("4_v2o6c")
 }],
 "loop": true,
 "name": &"idle",
@@ -40,60 +34,42 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_52r8l")
+"texture": ExtResource("5_bw16s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_tgu4i")
+"texture": ExtResource("6_ode85")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_yvw1e")
+"texture": ExtResource("7_lbm03")
 }],
 "loop": true,
 "name": &"jab",
-"speed": 8.0
+"speed": 7.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_8qr3h")
+"texture": ExtResource("8_uht4x")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_2qd8f")
+"texture": ExtResource("9_g4kbj")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_its4m")
+"texture": ExtResource("10_ramqf")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_7lc84")
-}, {
-"duration": 1.0,
-"texture": ExtResource("9_hvk3r")
-}, {
-"duration": 1.0,
-"texture": ExtResource("10_40m5q")
-}, {
-"duration": 1.0,
-"texture": ExtResource("11_hkfd2")
-}, {
-"duration": 1.0,
-"texture": ExtResource("12_d5nej")
-}, {
-"duration": 1.0,
-"texture": ExtResource("13_f47dc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_t5l6d")
+"texture": ExtResource("11_glhtt")
 }],
 "loop": true,
 "name": &"walk",
 "speed": 10.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtr88"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4tgfb"]
 size = Vector2(20, 16.6667)
 
 [sub_resource type="Animation" id="Animation_eahwk"]
 resource_name = "walk"
-length = 0.6
+length = 0.9
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -191,24 +167,24 @@ _data = {
 "walk": SubResource("Animation_eahwk")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4bp0"]
-size = Vector2(46.5, 128)
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0jak"]
+size = Vector2(69, 128)
 
-[node name="Player" type="CharacterBody2D"]
-script = ExtResource("1_lh023")
+[node name="EnemyPunk" type="CharacterBody2D"]
+script = ExtResource("1_1vtu2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(13, -27.5)
 scale = Vector2(3, 3)
-sprite_frames = SubResource("SpriteFrames_3agyg")
+sprite_frames = SubResource("SpriteFrames_s30w8")
 animation = &"walk"
-frame = 5
+frame_progress = 0.253746
 
 [node name="JabAttack" type="Area2D" parent="AnimatedSprite2D"]
 
 [node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack"]
 position = Vector2(20, -1.33333)
-shape = SubResource("RectangleShape2D_rtr88")
+shape = SubResource("RectangleShape2D_4tgfb")
 disabled = true
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)
 
@@ -225,21 +201,10 @@ visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
 position = Vector2(20, -1.33333)
-shape = SubResource("RectangleShape2D_rtr88")
+shape = SubResource("RectangleShape2D_4tgfb")
 disabled = true
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_n4bp0")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(0, 2)
-drag_horizontal_enabled = true
-drag_vertical_enabled = true
-drag_left_margin = 0.9
-drag_top_margin = 1.0
-drag_right_margin = 0.9
-drag_bottom_margin = 1.0
-
-[connection signal="area_entered" from="AnimatedSprite2D/JabAttack" to="." method="_on_jab_attack_area_entered"]
+position = Vector2(4.5, 0.5)
+shape = SubResource("RectangleShape2D_m0jak")
