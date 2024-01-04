@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://dxc812fb4om46"]
+[gd_scene load_steps=27 format=3 uid="uid://dxc812fb4om46"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_lh023"]
 [ext_resource type="Texture2D" uid="uid://bvk5f8uefmav3" path="res://Streets of Fight files/Sprites/Brawler-Girl/Idle/idle1.png" id="1_ptrrb"]
@@ -7,8 +7,11 @@
 [ext_resource type="Texture2D" uid="uid://d0t7eeo61gn37" path="res://Streets of Fight files/Sprites/Brawler-Girl/Idle/idle4.png" id="4_r251m"]
 [ext_resource type="Texture2D" uid="uid://cbqme28nu15at" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk1.png" id="5_8qr3h"]
 [ext_resource type="Texture2D" uid="uid://bs85ea33l87ev" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk2.png" id="6_2qd8f"]
+[ext_resource type="Texture2D" uid="uid://cdltrihy8eqi7" path="res://Streets of Fight files/Sprites/Brawler-Girl/Jab/jab1.png" id="6_52r8l"]
 [ext_resource type="Texture2D" uid="uid://dquxe1jqcsvqf" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk3.png" id="7_its4m"]
+[ext_resource type="Texture2D" uid="uid://bt770cl37nos4" path="res://Streets of Fight files/Sprites/Brawler-Girl/Jab/jab2.png" id="7_tgu4i"]
 [ext_resource type="Texture2D" uid="uid://n1a6xh5v8s5n" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk4.png" id="8_7lc84"]
+[ext_resource type="Texture2D" uid="uid://bjmxxf2fv5osh" path="res://Streets of Fight files/Sprites/Brawler-Girl/Jab/jab3.png" id="8_yvw1e"]
 [ext_resource type="Texture2D" uid="uid://b3mwo1qjk7u4p" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk5.png" id="9_hvk3r"]
 [ext_resource type="Texture2D" uid="uid://dhadkyriiy2rt" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk6.png" id="10_40m5q"]
 [ext_resource type="Texture2D" uid="uid://pf3vyqy4af0n" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk7.png" id="11_hkfd2"]
@@ -35,10 +38,19 @@ animations = [{
 "name": &"idle",
 "speed": 7.0
 }, {
-"frames": [],
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_52r8l")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_tgu4i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yvw1e")
+}],
 "loop": true,
 "name": &"jab",
-"speed": 5.0
+"speed": 8.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -76,6 +88,149 @@ animations = [{
 "speed": 10.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rtr88"]
+size = Vector2(20, 16.6667)
+
+[sub_resource type="Animation" id="Animation_eahwk"]
+resource_name = "walk"
+length = 0.9
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 9, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9)
+}
+
+[sub_resource type="Animation" id="Animation_usi20"]
+resource_name = "jab"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jab"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D/JabAttack/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="Animation" id="Animation_ql7dk"]
+resource_name = "idle"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_1obbi"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D/JabAttack/CollisionShape2D:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_s7x7w"]
+_data = {
+"RESET": SubResource("Animation_1obbi"),
+"idle": SubResource("Animation_ql7dk"),
+"jab": SubResource("Animation_usi20"),
+"walk": SubResource("Animation_eahwk")
+}
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_n4bp0"]
 size = Vector2(46.5, 128)
 
@@ -83,13 +238,38 @@ size = Vector2(46.5, 128)
 script = ExtResource("1_lh023")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(96, 63)
+position = Vector2(13, -27.5)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3agyg")
-animation = &"jab"
+animation = &"idle"
+
+[node name="JabAttack" type="Area2D" parent="AnimatedSprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack"]
+position = Vector2(20, -1.33333)
+shape = SubResource("RectangleShape2D_rtr88")
+disabled = true
+debug_color = Color(0, 0.917647, 0.964706, 0.419608)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
+root_node = NodePath("../..")
+libraries = {
+"": SubResource("AnimationLibrary_s7x7w")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+
+[node name="Area2D" type="Area2D" parent="Sprite2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/Area2D"]
+position = Vector2(20, -1.33333)
+shape = SubResource("RectangleShape2D_rtr88")
+disabled = true
+debug_color = Color(0, 0.917647, 0.964706, 0.419608)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(86, 91)
+position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_n4bp0")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -100,3 +280,5 @@ drag_left_margin = 0.9
 drag_top_margin = 1.0
 drag_right_margin = 0.9
 drag_bottom_margin = 1.0
+
+[connection signal="area_entered" from="AnimatedSprite2D/JabAttack" to="." method="_on_jab_attack_area_entered"]
