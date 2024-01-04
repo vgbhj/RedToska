@@ -542,6 +542,7 @@ layer_0/tile_data = PackedInt32Array(1310720, 196608, 14, 1376256, 196608, 15, 1
 
 [node name="Player" parent="." instance=ExtResource("2_4o0au")]
 position = Vector2(773, 384)
+speed = null
 
 [node name="TopDownBlock" type="StaticBody2D" parent="."]
 
