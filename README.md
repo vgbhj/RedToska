@@ -1,3 +1,4 @@
 Game for Gamega Jam
 
 MIRO: https://miro.com/welcomeonboard/M2pkR0p3TjVPeHgyUVV6UXUyQUlnSTJjY3NGRWVtV2ZNNXlLZXlKRHhFdmxhMkZxVWNNQlByNVZ1V0t3M3lrTXwzNDU4NzY0NTIzODA1NTg1MDEwfDI=?share_link_id=387941518551
+TRELLO: https://trello.com/invite/b/bju3DLiJ/ATTI8a390fb3207475cb7d69e6641b9537da3E1D18F3/redtoska
