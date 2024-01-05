@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://csoi8uxwqg3kf"]
+
+[ext_resource type="Script" path="res://scenes/LevelCollision.gd" id="1_wl0c1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq1ap"]
+size = Vector2(1155, 652)
+
+[node name="Level_1" type="Node2D"]
+
+[node name="LevelArea" type="Area2D" parent="."]
+
+[node name="LevelCollision" type="CollisionShape2D" parent="LevelArea"]
+position = Vector2(576.5, 328)
+shape = SubResource("RectangleShape2D_vq1ap")
+debug_color = Color(0, 0.607843, 0.662745, 0.419608)
+script = ExtResource("1_wl0c1")
+
+[node name="Timer" type="Timer" parent="."]

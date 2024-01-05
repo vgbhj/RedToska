@@ -270,12 +270,14 @@ _data = {
 radius = 15.0
 height = 70.0
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["player"]]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_lh023")
 
 [node name="HurtBox" type="Area2D" parent="." groups=["hurtBoxPlayer"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" groups=["hurtBox"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(15, -2)
 shape = SubResource("RectangleShape2D_vsgyx")
 debug_color = Color(0, 0.639216, 0.360784, 0.419608)
@@ -286,7 +288,7 @@ scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3agyg")
 animation = &"idle"
 
-[node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["hitBox"]]
+[node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["hitBoxPlayer"]]
 
 [node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack" groups=["hitBox"]]
 position = Vector2(22.3333, -3.5)
@@ -301,6 +303,7 @@ libraries = {
 }
 
 [node name="Collider" type="CollisionShape2D" parent="." groups=["hitBox", "player"]]
+light_mask = 3
 position = Vector2(16, 53)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5hfxp")

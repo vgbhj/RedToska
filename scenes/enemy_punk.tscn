@@ -263,11 +263,13 @@ radius = 15.0
 height = 70.0
 
 [node name="EnemyPunk" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_1vtu2")
 
 [node name="HurtBox" type="Area2D" parent="." groups=["hurtBox"]]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" groups=["hurtBox"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
 position = Vector2(5, -3)
 shape = SubResource("RectangleShape2D_tm5sv")
 debug_color = Color(0, 0.639216, 0.360784, 0.419608)
@@ -280,7 +282,7 @@ animation = &"hurt"
 
 [node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["hitBox"]]
 
-[node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack" groups=["hixBox"]]
+[node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack"]
 position = Vector2(20, -1.33333)
 shape = SubResource("RectangleShape2D_4tgfb")
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)

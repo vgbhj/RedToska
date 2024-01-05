@@ -1,0 +1,49 @@
+[gd_scene load_steps=6 format=3 uid="uid://csoi8uxwqg3kf"]
+
+[ext_resource type="Script" path="res://scenes/level_1.gd" id="1_5pqgt"]
+[ext_resource type="Script" path="res://scenes/LevelCollision.gd" id="1_wl0c1"]
+[ext_resource type="PackedScene" uid="uid://b71o41guyycoc" path="res://scenes/spawner.tscn" id="3_dilbx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vq1ap"]
+size = Vector2(1155, 652)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_iqqdc"]
+size = Vector2(672, 42)
+
+[node name="Level_1" type="Node2D"]
+script = ExtResource("1_5pqgt")
+
+[node name="LevelArea" type="Area2D" parent="."]
+
+[node name="LevelCollision" type="CollisionShape2D" parent="LevelArea"]
+position = Vector2(1602, 324)
+shape = SubResource("RectangleShape2D_vq1ap")
+debug_color = Color(0, 0.607843, 0.662745, 0.419608)
+script = ExtResource("1_wl0c1")
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="BackForwardBlock" type="StaticBody2D" parent="."]
+
+[node name="BackCollider" type="CollisionShape2D" parent="BackForwardBlock"]
+position = Vector2(7, 318)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_iqqdc")
+one_way_collision = true
+debug_color = Color(0, 0.643137, 0.270588, 0.419608)
+
+[node name="ForwardCollider" type="CollisionShape2D" parent="BackForwardBlock"]
+position = Vector2(1156, 323)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_iqqdc")
+debug_color = Color(0, 0.643137, 0.270588, 0.419608)
+
+[node name="Spawners" type="Node" parent="."]
+
+[node name="Spawner" parent="Spawners" instance=ExtResource("3_dilbx")]
+position = Vector2(1249, 132)
+
+[node name="Spawner4" parent="Spawners" instance=ExtResource("3_dilbx")]
+position = Vector2(-99, 132)
+
+[connection signal="body_entered" from="LevelArea" to="." method="_on_level_area_body_entered"]
