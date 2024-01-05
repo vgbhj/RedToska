@@ -200,6 +200,7 @@ height = 70.0
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
+collision_mask = 3
 script = ExtResource("1_lh023")
 
 [node name="HurtBox" type="Area2D" parent="." groups=["hurtBoxPlayer"]]

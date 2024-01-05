@@ -263,6 +263,8 @@ radius = 15.0
 height = 70.0
 
 [node name="EnemyPunk" type="CharacterBody2D" groups=["player"]]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_1vtu2")
 
 [node name="HurtBox" type="Area2D" parent="." groups=["hurtBox"]]

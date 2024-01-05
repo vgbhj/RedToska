@@ -25,7 +25,6 @@ func updateAnimation():
 		else:
 			jabAttackCollider.position.x = $AnimatedSprite2D.position.x + 10 
 		
-		
 		animations.play("jab_attack")
 		isAttacking = true
 		await animations.animation_finished
