@@ -1,20 +1,44 @@
-[gd_scene load_steps=20 format=3 uid="uid://dx7h1bdy5mw72"]
+[gd_scene load_steps=27 format=3 uid="uid://dx7h1bdy5mw72"]
 
 [ext_resource type="Script" path="res://scenes/enemy_punk.gd" id="1_1vtu2"]
-[ext_resource type="Texture2D" uid="uid://g2kjw8pdtsuk" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Idle/idle1.png" id="1_fg8wc"]
-[ext_resource type="Texture2D" uid="uid://c3e5cwlte68cu" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Idle/idle2.png" id="2_j2ixh"]
-[ext_resource type="Texture2D" uid="uid://j5jwxcs7a01l" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Idle/idle3.png" id="3_je5jx"]
-[ext_resource type="Texture2D" uid="uid://dc8vd202vx73w" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Idle/idle4.png" id="4_v2o6c"]
-[ext_resource type="Texture2D" uid="uid://bl8cen360mf2s" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Punch/punch1.png" id="5_bw16s"]
-[ext_resource type="Texture2D" uid="uid://ipf6pa2ugmj" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Punch/punch2.png" id="6_ode85"]
-[ext_resource type="Texture2D" uid="uid://7k6lo5i855q" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Punch/punch3.png" id="7_lbm03"]
-[ext_resource type="Texture2D" uid="uid://cyasiw2x7jlaa" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Walk/walk1.png" id="8_uht4x"]
-[ext_resource type="Texture2D" uid="uid://dyo0rchre4g58" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Walk/walk2.png" id="9_g4kbj"]
-[ext_resource type="Texture2D" uid="uid://2ib5k5r76fo8" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Walk/walk3.png" id="10_ramqf"]
-[ext_resource type="Texture2D" uid="uid://dwvocmygh4ub" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Walk/walk4.png" id="11_glhtt"]
+[ext_resource type="Texture2D" uid="uid://g2kjw8pdtsuk" path="res://Streets of Fight files/Sprites/Enemy-Punk/Idle/idle1.png" id="1_fg8wc"]
+[ext_resource type="Texture2D" uid="uid://b1lup6cxuorei" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Hurt/hurt1.png" id="2_c1kut"]
+[ext_resource type="Texture2D" uid="uid://c3e5cwlte68cu" path="res://Streets of Fight files/Sprites/Enemy-Punk/Idle/idle2.png" id="2_j2ixh"]
+[ext_resource type="Texture2D" uid="uid://j5jwxcs7a01l" path="res://Streets of Fight files/Sprites/Enemy-Punk/Idle/idle3.png" id="3_je5jx"]
+[ext_resource type="Texture2D" uid="uid://cv3fuclch2ljy" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Hurt/hurt2.png" id="3_w6r84"]
+[ext_resource type="Texture2D" uid="uid://j4qhgfeci0rs" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Hurt/hurt3.png" id="4_fbj3i"]
+[ext_resource type="Texture2D" uid="uid://dc8vd202vx73w" path="res://Streets of Fight files/Sprites/Enemy-Punk/Idle/idle4.png" id="4_v2o6c"]
+[ext_resource type="Texture2D" uid="uid://bl8cen360mf2s" path="res://Streets of Fight files/Sprites/Enemy-Punk/Punch/punch1.png" id="5_bw16s"]
+[ext_resource type="Texture2D" uid="uid://chtecj6tvv0nr" path="res://scenes/Streets of Fight files/Sprites/Enemy-Punk/Hurt/hurt4.png" id="5_q7301"]
+[ext_resource type="Texture2D" uid="uid://ipf6pa2ugmj" path="res://Streets of Fight files/Sprites/Enemy-Punk/Punch/punch2.png" id="6_ode85"]
+[ext_resource type="Texture2D" uid="uid://7k6lo5i855q" path="res://Streets of Fight files/Sprites/Enemy-Punk/Punch/punch3.png" id="7_lbm03"]
+[ext_resource type="Texture2D" uid="uid://cyasiw2x7jlaa" path="res://Streets of Fight files/Sprites/Enemy-Punk/Walk/walk1.png" id="8_uht4x"]
+[ext_resource type="Texture2D" uid="uid://dyo0rchre4g58" path="res://Streets of Fight files/Sprites/Enemy-Punk/Walk/walk2.png" id="9_g4kbj"]
+[ext_resource type="Texture2D" uid="uid://2ib5k5r76fo8" path="res://Streets of Fight files/Sprites/Enemy-Punk/Walk/walk3.png" id="10_ramqf"]
+[ext_resource type="Texture2D" uid="uid://dwvocmygh4ub" path="res://Streets of Fight files/Sprites/Enemy-Punk/Walk/walk4.png" id="11_glhtt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tm5sv"]
+size = Vector2(47, 132)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s30w8"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_c1kut")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_w6r84")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_fbj3i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_q7301")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("1_fg8wc")
@@ -67,33 +91,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tgfb"]
 size = Vector2(15.6475, 16.6667)
 
-[sub_resource type="Animation" id="Animation_eahwk"]
-resource_name = "walk"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"walk"]
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 9, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.8, 0.9)
-}
-
 [sub_resource type="Animation" id="Animation_ql7dk"]
 resource_name = "idle"
 length = 0.45
@@ -121,9 +118,101 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.15, 0.3, 0.45)
 }
 
-[sub_resource type="Animation" id="Animation_usi20"]
-resource_name = "jab"
-length = 0.3
+[sub_resource type="Animation" id="Animation_eahwk"]
+resource_name = "walk"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 9, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.8, 0.9)
+}
+
+[sub_resource type="Animation" id="Animation_33sxo"]
+resource_name = "hurt"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hurt"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3)
+}
+
+[sub_resource type="Animation" id="Animation_w8pcs"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hurt"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D/JabAttack/JabAttackCollider:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_kdkx3"]
+resource_name = "jab_attack"
+length = 0.4
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -144,8 +233,8 @@ tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3)
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.4)
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -154,37 +243,46 @@ tracks/2/path = NodePath("AnimatedSprite2D/JabAttack/JabAttackCollider:disabled"
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
+"times": PackedFloat32Array(0, 0.2, 0.4),
+"transitions": PackedFloat32Array(1, 1, 1),
 "update": 1,
-"values": [true, false, false, true]
+"values": [true, false, true]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7x7w"]
 _data = {
+"RESET": SubResource("Animation_w8pcs"),
+"hurt": SubResource("Animation_33sxo"),
 "idle": SubResource("Animation_ql7dk"),
-"jab_attack": SubResource("Animation_usi20"),
+"jab_attack": SubResource("Animation_kdkx3"),
 "walk": SubResource("Animation_eahwk")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_m0jak"]
-size = Vector2(69, 128)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qkor2"]
+radius = 15.0
+height = 70.0
 
 [node name="EnemyPunk" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_1vtu2")
+
+[node name="HurtBox" type="Area2D" parent="." groups=["hurtBox"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" groups=["hurtBox"]]
+position = Vector2(5, -3)
+shape = SubResource("RectangleShape2D_tm5sv")
+debug_color = Color(0, 0.639216, 0.360784, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(13, -27.5)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_s30w8")
-animation = &"jab"
+animation = &"hurt"
 
-[node name="JabAttack" type="Area2D" parent="AnimatedSprite2D"]
+[node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["hitBox"]]
 
-[node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack"]
+[node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack" groups=["hixBox"]]
 position = Vector2(20, -1.33333)
 shape = SubResource("RectangleShape2D_4tgfb")
-disabled = true
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)
 
 [node name="AnimationEnemy" type="AnimationPlayer" parent="AnimatedSprite2D"]
@@ -194,7 +292,7 @@ libraries = {
 }
 
 [node name="PlayerDetecter" type="Area2D" parent="AnimatedSprite2D"]
-position = Vector2(0, -1.16667)
+position = Vector2(-2.66667, 23.1667)
 
 [node name="PlayerDetecterCollider" type="CollisionShape2D" parent="AnimatedSprite2D/PlayerDetecter"]
 position = Vector2(-0.333335, 0)
@@ -202,9 +300,11 @@ scale = Vector2(3.70667, 1)
 shape = SubResource("RectangleShape2D_4tgfb")
 debug_color = Color(0.878431, 0.270588, 0.407843, 0.419608)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(4.5, 0.5)
-shape = SubResource("RectangleShape2D_m0jak")
+[node name="Collider" type="CollisionShape2D" parent="." groups=["hitBox", "player"]]
+position = Vector2(8, 53)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_qkor2")
 
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/PlayerDetecter" to="." method="_on_player_detecter_area_entered"]
-[connection signal="body_entered" from="AnimatedSprite2D/PlayerDetecter" to="." method="_on_player_detecter_body_entered"]
+[connection signal="area_exited" from="AnimatedSprite2D/PlayerDetecter" to="." method="_on_player_detecter_area_exited"]

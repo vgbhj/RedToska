@@ -1,12 +1,23 @@
 extends CharacterBody2D
 
+class_name Player
+
+signal healthChanged
+
 @export var speed: int = 350
 @onready var animations = $AnimatedSprite2D/AnimationPlayer
-@onready var collider = $CollisionShape2D
+@onready var collider = $Collider
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
-var lastAnimDirection: String = "Left"
-var isAttacking: bool = false
 @onready var camera = $Camera2D
+
+@export var maxHealth = 10
+@onready var currentHealth: int = maxHealth
+
+var lastAnimDirection: String = "Left"
+var isDead: bool = false
+var isTakeDamage: bool = false
+var inAttackZone: bool = false
+var isAttacking: bool = false
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -52,12 +63,15 @@ func updateAnimation():
 
 
 func _physics_process(delta):
+	if isTakeDamage: return
+	if isDead: return
+	if isAttacking: return
+	
 	get_input()
 	move_and_slide()
 	updateAnimation()
 
-
-func _on_jab_attack_area_entered(area):
-	print("HAHA JAB")
-	if area.is_in_group("hitBox"):
-		area.take_damage()
+func _on_hurt_box_area_entered(area):
+	if !area.is_in_group("hitBox"): return
+	currentHealth -= 1
+	healthChanged.emit(currentHealth)

@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=3 uid="uid://dxc812fb4om46"]
+[gd_scene load_steps=27 format=3 uid="uid://dxc812fb4om46"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_lh023"]
 [ext_resource type="Texture2D" uid="uid://bvk5f8uefmav3" path="res://Streets of Fight files/Sprites/Brawler-Girl/Idle/idle1.png" id="1_ptrrb"]
@@ -18,6 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://b7i0ibl6mt2tl" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk8.png" id="12_d5nej"]
 [ext_resource type="Texture2D" uid="uid://ya5b7odoea8a" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk9.png" id="13_f47dc"]
 [ext_resource type="Texture2D" uid="uid://c7ttoollfqi3c" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk10.png" id="14_t5l6d"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vsgyx"]
+size = Vector2(47, 132)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3agyg"]
 animations = [{
@@ -91,33 +94,6 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtr88"]
 size = Vector2(20, 16.6667)
 
-[sub_resource type="Animation" id="Animation_eahwk"]
-resource_name = "walk"
-length = 0.5
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"walk"]
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 9, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.8, 0.9)
-}
-
 [sub_resource type="Animation" id="Animation_ql7dk"]
 resource_name = "idle"
 length = 0.45
@@ -184,6 +160,33 @@ tracks/2/keys = {
 "values": [true, false, false, true]
 }
 
+[sub_resource type="Animation" id="Animation_eahwk"]
+resource_name = "walk"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 9, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.8, 0.9)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7x7w"]
 _data = {
 "idle": SubResource("Animation_ql7dk"),
@@ -191,22 +194,29 @@ _data = {
 "walk": SubResource("Animation_eahwk")
 }
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_n4bp0"]
-size = Vector2(46.5, 128)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5hfxp"]
+radius = 15.0
+height = 70.0
 
 [node name="Player" type="CharacterBody2D"]
 script = ExtResource("1_lh023")
+
+[node name="HurtBox" type="Area2D" parent="." groups=["hurtBoxPlayer"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox" groups=["hurtBox"]]
+position = Vector2(15, -2)
+shape = SubResource("RectangleShape2D_vsgyx")
+debug_color = Color(0, 0.639216, 0.360784, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(13, -27.5)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3agyg")
-animation = &"walk"
-frame = 5
+animation = &"jab"
 
-[node name="JabAttack" type="Area2D" parent="AnimatedSprite2D"]
+[node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["hitBox"]]
 
-[node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack"]
+[node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack" groups=["hitBox"]]
 position = Vector2(20, -1.33333)
 shape = SubResource("RectangleShape2D_rtr88")
 disabled = true
@@ -218,9 +228,10 @@ libraries = {
 "": SubResource("AnimationLibrary_s7x7w")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hitBox", "player"]]
-position = Vector2(1, 0.5)
-shape = SubResource("RectangleShape2D_n4bp0")
+[node name="Collider" type="CollisionShape2D" parent="." groups=["hitBox", "player"]]
+position = Vector2(16, 53)
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_5hfxp")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(0, 2)
@@ -231,4 +242,5 @@ drag_top_margin = 1.0
 drag_right_margin = 0.9
 drag_bottom_margin = 1.0
 
+[connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/JabAttack" to="." method="_on_jab_attack_area_entered"]

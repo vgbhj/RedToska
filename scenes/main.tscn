@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=9 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Texture2D" uid="uid://gitonxbfckdk" path="res://Streets of Fight files/Stage Layers/tileset.png" id="1_l71ix"]
+[ext_resource type="Script" path="res://scenes/main.gd" id="1_pfuwv"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
 [ext_resource type="PackedScene" uid="uid://dx7h1bdy5mw72" path="res://scenes/enemy_punk.tscn" id="3_ll4qu"]
+[ext_resource type="PackedScene" uid="uid://dit8ltpvkaxi6" path="res://scenes/hearts_container.tscn" id="4_r2c2u"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4vdlv"]
 texture = ExtResource("1_l71ix")
@@ -531,6 +533,7 @@ sources/0 = SubResource("TileSetAtlasSource_4vdlv")
 size = Vector2(3190, 56)
 
 [node name="Main" type="Node"]
+script = ExtResource("1_pfuwv")
 
 [node name="Street" type="Node" parent="."]
 
@@ -558,3 +561,10 @@ debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
 [node name="EnemyPunk" parent="." instance=ExtResource("3_ll4qu")]
 position = Vector2(1035, 322)
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
+
+[node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("4_r2c2u")]
+offset_right = 50.0

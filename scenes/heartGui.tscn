@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://uox4o38p4egd"]
+
+[ext_resource type="Texture2D" uid="uid://gbwnkvqyxwo5" path="res://Streets of Fight files/Heart.png" id="1_sa0af"]
+[ext_resource type="Script" path="res://scenes/heartGui.gd" id="1_u73wr"]
+
+[node name="heartGui" type="Panel"]
+self_modulate = Color(1, 1, 1, 0)
+custom_minimum_size = Vector2(16, 13)
+offset_right = 16.0
+offset_bottom = 13.0
+script = ExtResource("1_u73wr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(0, -2)
+texture = ExtResource("1_sa0af")
+centered = false
+hframes = 5

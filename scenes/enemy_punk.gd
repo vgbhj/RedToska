@@ -1,21 +1,34 @@
 extends CharacterBody2D
 
 @export var speed = 300
-var player_position
-var target_position
+@export var distanceBetweenPlayer = 100
 @onready var player = get_parent().get_node("Player")
 @onready var animations = $AnimatedSprite2D/AnimationEnemy
-@onready var collider = $CollisionShape2D
+@onready var collider = $Collider
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
+
+@export var maxHealth = 5
+@onready var currentHealth: int = maxHealth
+
 var lastAnimDirection: String = "Left"
+var isDead: bool = false
+var isTakeDamage: bool = false
+var inAttackZone: bool = false
 var isAttacking: bool = false
 
-func attackPlayer():
-	pass
-
 func updateAnimation():
-	if isAttacking:
-		return
+	if inAttackZone:
+		if lastAnimDirection == "Right":
+			jabAttackCollider.position.x = $AnimatedSprite2D.position.x - 40
+		else:
+			jabAttackCollider.position.x = $AnimatedSprite2D.position.x + 10 
+		
+		
+		animations.play("jab_attack")
+		isAttacking = true
+		await animations.animation_finished
+		isAttacking = false
+		
 	if velocity == Vector2.ZERO:
 		animations.play("idle")
 		collider.position.x = $AnimatedSprite2D.position.x - 10
@@ -32,24 +45,37 @@ func updateAnimation():
 	collider.position.x = $AnimatedSprite2D.position.x
 
 func move_to_player():
-	velocity = position.direction_to(player.position) * speed
-
+	velocity = Vector2.ZERO
+	if global_position.distance_to(player.global_position) > distanceBetweenPlayer:
+		velocity = position.direction_to(player.position) * speed
+		
 func _physics_process(delta):
+	if isTakeDamage: return
+	if isDead: return
+	if isAttacking: return
+	
 	move_to_player()
 	updateAnimation()
 	move_and_slide()
 
-func _on_jab_attack_area_entered(area):
-	if area.is_in_group("hurtbox"):
-		area.take_damage()
-
-
 func _on_player_detecter_area_entered(area):
-	print("HAHA AREA")
-	if area.is_in_group("hitBox"):
-		print("HAHAHA")
+	if area.is_in_group("hurtBoxPlayer"):
+		inAttackZone = true
 
+func _on_player_detecter_area_exited(area):
+	if area.is_in_group("hurtBoxPlayer"):
+		inAttackZone = false
 
-func _on_player_detecter_body_entered(body):
-	if body.is_in_group("player"):
-		attackPlayer()
+func _on_hurt_box_area_entered(area):
+	if !area.is_in_group("hitBox"): return
+	currentHealth -= 1
+	isTakeDamage = true
+	animations.play("hurt")
+	await animations.animation_finished
+	print("AnimEnd")
+	isTakeDamage = false
+	if currentHealth < 1:
+		isDead = true
+		#animations.play("death")
+		#await animations.animation_finished
+		queue_free()
