@@ -170,7 +170,7 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m0jak"]
 size = Vector2(69, 128)
 
-[node name="EnemyPunk" type="CharacterBody2D" groups=["player"]]
+[node name="EnemyPunk" type="CharacterBody2D"]
 script = ExtResource("1_1vtu2")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]

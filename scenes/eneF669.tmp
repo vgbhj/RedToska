@@ -172,6 +172,7 @@ size = Vector2(69, 128)
 
 [node name="EnemyPunk" type="CharacterBody2D" groups=["player"]]
 script = ExtResource("1_1vtu2")
+speed = null
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(13, -27.5)
