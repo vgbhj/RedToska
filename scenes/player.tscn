@@ -1,55 +1,103 @@
-[gd_scene load_steps=27 format=3 uid="uid://dxc812fb4om46"]
+[gd_scene load_steps=28 format=3 uid="uid://dxc812fb4om46"]
 
 [ext_resource type="Script" path="res://scenes/player.gd" id="1_lh023"]
-[ext_resource type="Texture2D" uid="uid://bvk5f8uefmav3" path="res://Streets of Fight files/Sprites/Brawler-Girl/Idle/idle1.png" id="1_ptrrb"]
-[ext_resource type="Texture2D" uid="uid://cp04p0alwlbuk" path="res://Streets of Fight files/Sprites/Brawler-Girl/Idle/idle2.png" id="2_7gtj0"]
-[ext_resource type="Texture2D" uid="uid://c6tm8730xwi03" path="res://Streets of Fight files/Sprites/Brawler-Girl/Idle/idle3.png" id="3_f0fdt"]
-[ext_resource type="Texture2D" uid="uid://d0t7eeo61gn37" path="res://Streets of Fight files/Sprites/Brawler-Girl/Idle/idle4.png" id="4_r251m"]
-[ext_resource type="Texture2D" uid="uid://cbqme28nu15at" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk1.png" id="5_8qr3h"]
-[ext_resource type="Texture2D" uid="uid://bs85ea33l87ev" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk2.png" id="6_2qd8f"]
-[ext_resource type="Texture2D" uid="uid://cdltrihy8eqi7" path="res://Streets of Fight files/Sprites/Brawler-Girl/Jab/jab1.png" id="6_52r8l"]
-[ext_resource type="Texture2D" uid="uid://dquxe1jqcsvqf" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk3.png" id="7_its4m"]
-[ext_resource type="Texture2D" uid="uid://bt770cl37nos4" path="res://Streets of Fight files/Sprites/Brawler-Girl/Jab/jab2.png" id="7_tgu4i"]
-[ext_resource type="Texture2D" uid="uid://n1a6xh5v8s5n" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk4.png" id="8_7lc84"]
-[ext_resource type="Texture2D" uid="uid://bjmxxf2fv5osh" path="res://Streets of Fight files/Sprites/Brawler-Girl/Jab/jab3.png" id="8_yvw1e"]
-[ext_resource type="Texture2D" uid="uid://b3mwo1qjk7u4p" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk5.png" id="9_hvk3r"]
-[ext_resource type="Texture2D" uid="uid://dhadkyriiy2rt" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk6.png" id="10_40m5q"]
-[ext_resource type="Texture2D" uid="uid://pf3vyqy4af0n" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk7.png" id="11_hkfd2"]
-[ext_resource type="Texture2D" uid="uid://b7i0ibl6mt2tl" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk8.png" id="12_d5nej"]
-[ext_resource type="Texture2D" uid="uid://ya5b7odoea8a" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk9.png" id="13_f47dc"]
-[ext_resource type="Texture2D" uid="uid://c7ttoollfqi3c" path="res://Streets of Fight files/Sprites/Brawler-Girl/Walk/walk10.png" id="14_t5l6d"]
+[ext_resource type="Texture2D" uid="uid://bngjmrsmdj0ch" path="res://sprites/shwarz-Sheet.png" id="2_a4vvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsgyx"]
 size = Vector2(47, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b8pt4"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(0, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nvhsa"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(75, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_juo0y"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(150, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nicge"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(225, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bb1pe"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(975, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_boo1r"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(1050, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bbfnj"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(1125, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_161a0"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(300, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci8qw"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(375, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_asiy6"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(450, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tk6i5"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(525, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yf4bd"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(600, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ouw8s"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(675, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_52c6i"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(750, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mxdvw"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(825, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cm0lr"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(900, 0, 75, 60)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3agyg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_ptrrb")
+"texture": SubResource("AtlasTexture_b8pt4")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_7gtj0")
+"texture": SubResource("AtlasTexture_nvhsa")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_f0fdt")
+"texture": SubResource("AtlasTexture_juo0y")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_r251m")
+"texture": SubResource("AtlasTexture_nicge")
 }],
 "loop": true,
 "name": &"idle",
-"speed": 7.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("6_52r8l")
+"texture": SubResource("AtlasTexture_bb1pe")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_tgu4i")
+"texture": SubResource("AtlasTexture_boo1r")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_yvw1e")
+"texture": SubResource("AtlasTexture_bbfnj")
 }],
 "loop": true,
 "name": &"jab",
@@ -57,34 +105,31 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_8qr3h")
+"texture": SubResource("AtlasTexture_161a0")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_2qd8f")
+"texture": SubResource("AtlasTexture_ci8qw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_its4m")
+"texture": SubResource("AtlasTexture_asiy6")
 }, {
 "duration": 1.0,
-"texture": ExtResource("8_7lc84")
+"texture": SubResource("AtlasTexture_tk6i5")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_hvk3r")
+"texture": SubResource("AtlasTexture_yf4bd")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_40m5q")
+"texture": SubResource("AtlasTexture_ouw8s")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_hkfd2")
+"texture": SubResource("AtlasTexture_52c6i")
 }, {
 "duration": 1.0,
-"texture": ExtResource("12_d5nej")
+"texture": SubResource("AtlasTexture_mxdvw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("13_f47dc")
-}, {
-"duration": 1.0,
-"texture": ExtResource("14_t5l6d")
+"texture": SubResource("AtlasTexture_cm0lr")
 }],
 "loop": true,
 "name": &"walk",
@@ -94,36 +139,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtr88"]
 size = Vector2(20, 16.6667)
 
-[sub_resource type="Animation" id="Animation_ql7dk"]
-resource_name = "idle"
-length = 0.45
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle"]
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.15, 0.3, 0.45)
-}
-
 [sub_resource type="Animation" id="Animation_usi20"]
 resource_name = "jab"
-length = 0.3
+length = 0.5
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -143,9 +161,9 @@ tracks/1/path = NodePath("AnimatedSprite2D:frame")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3)
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.3)
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -162,7 +180,7 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_eahwk"]
 resource_name = "walk"
-length = 0.5
+length = 1.08
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -184,12 +202,66 @@ tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 9, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.7, 0.8, 0.9)
+"times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.6, 0.72, 0.84, 0.96)
+}
+
+[sub_resource type="Animation" id="Animation_886ci"]
+resource_name = "idle"
+length = 1.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.35, 0.55, 0.9)
+}
+
+[sub_resource type="Animation" id="Animation_l6imt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7x7w"]
 _data = {
-"idle": SubResource("Animation_ql7dk"),
+"RESET": SubResource("Animation_l6imt"),
+"idle": SubResource("Animation_886ci"),
 "jab_attack": SubResource("Animation_usi20"),
 "walk": SubResource("Animation_eahwk")
 }
@@ -214,12 +286,12 @@ debug_color = Color(0, 0.639216, 0.360784, 0.419608)
 position = Vector2(13, -27.5)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3agyg")
-animation = &"jab"
+animation = &"idle"
 
 [node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["hitBoxPlayer"]]
 
-[node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack"]
-position = Vector2(20, -1.33333)
+[node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack" groups=["hitBox"]]
+position = Vector2(22.3333, -3.5)
 shape = SubResource("RectangleShape2D_rtr88")
 disabled = true
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)
