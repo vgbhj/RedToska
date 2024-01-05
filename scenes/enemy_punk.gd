@@ -1,8 +1,10 @@
 extends CharacterBody2D
 
+signal enemy_death
+
 @export var speed = 300
 @export var distanceBetweenPlayer = 100
-@onready var player = get_parent().get_node("Player")
+@onready var player = get_tree().root.get_child(0).get_node("Player")
 @onready var animations = $AnimatedSprite2D/AnimationEnemy
 @onready var collider = $Collider
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
@@ -47,8 +49,9 @@ func updateAnimation():
 func move_to_player():
 	velocity = Vector2.ZERO
 	if global_position.distance_to(player.global_position) > distanceBetweenPlayer:
-		velocity = position.direction_to(player.position) * speed
-		
+		velocity = global_position.direction_to(player.global_position) * speed
+
+
 func _physics_process(delta):
 	if isTakeDamage: return
 	if isDead: return
@@ -67,15 +70,15 @@ func _on_player_detecter_area_exited(area):
 		inAttackZone = false
 
 func _on_hurt_box_area_entered(area):
-	if !area.is_in_group("hitBox"): return
+	if !area.is_in_group("hitBoxPlayer"): return
 	currentHealth -= 1
 	isTakeDamage = true
 	animations.play("hurt")
 	await animations.animation_finished
-	print("AnimEnd")
 	isTakeDamage = false
 	if currentHealth < 1:
 		isDead = true
+		enemy_death.emit()
 		#animations.play("death")
 		#await animations.animation_finished
 		queue_free()

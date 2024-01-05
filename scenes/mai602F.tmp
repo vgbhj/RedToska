@@ -560,6 +560,9 @@ position = Vector2(1078, 676)
 shape = SubResource("RectangleShape2D_keisa")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
+[node name="EnemyPunk" parent="." instance=ExtResource("3_ll4qu")]
+position = Vector2(1035, 322)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
@@ -569,5 +572,4 @@ offset_right = 50.0
 
 [node name="Level_1" parent="." instance=ExtResource("6_nukxj")]
 
-[node name="EnemyPunk" parent="." instance=ExtResource("3_ll4qu")]
-position = Vector2(795, 340)
+[node name="SubViewport" type="SubViewport" parent="."]
