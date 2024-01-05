@@ -46,7 +46,7 @@ func _on_jab_attack_area_entered(area):
 
 func _on_player_detecter_area_entered(area):
 	print("HAHA AREA")
-	if area.is_in_group("player"):
+	if area.is_in_group("hitBox"):
 		print("HAHAHA")
 
 

@@ -59,5 +59,5 @@ func _physics_process(delta):
 
 func _on_jab_attack_area_entered(area):
 	print("HAHA JAB")
-	if area.is_in_group("hurtbox"):
+	if area.is_in_group("hitBox"):
 		area.take_damage()

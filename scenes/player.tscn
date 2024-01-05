@@ -218,7 +218,7 @@ libraries = {
 "": SubResource("AnimationLibrary_s7x7w")
 }
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["player"]]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["hitBox", "player"]]
 position = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_n4bp0")
 
