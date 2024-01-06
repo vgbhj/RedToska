@@ -1,39 +1,85 @@
-[gd_scene load_steps=27 format=3 uid="uid://dx7h1bdy5mw72"]
+[gd_scene load_steps=28 format=3 uid="uid://dx7h1bdy5mw72"]
 
 [ext_resource type="Script" path="res://scenes/enemy_punk.gd" id="1_1vtu2"]
-[ext_resource type="Texture2D" uid="uid://g2kjw8pdtsuk" path="res://Streets of Fight files/Sprites/Enemy-Punk/Idle/idle1.png" id="1_fg8wc"]
-[ext_resource type="Texture2D" uid="uid://b1lup6cxuorei" path="res://Streets of Fight files/Sprites/Enemy-Punk/Hurt/hurt1.png" id="2_c1kut"]
-[ext_resource type="Texture2D" uid="uid://c3e5cwlte68cu" path="res://Streets of Fight files/Sprites/Enemy-Punk/Idle/idle2.png" id="2_j2ixh"]
-[ext_resource type="Texture2D" uid="uid://j5jwxcs7a01l" path="res://Streets of Fight files/Sprites/Enemy-Punk/Idle/idle3.png" id="3_je5jx"]
-[ext_resource type="Texture2D" uid="uid://cv3fuclch2ljy" path="res://Streets of Fight files/Sprites/Enemy-Punk/Hurt/hurt2.png" id="3_w6r84"]
-[ext_resource type="Texture2D" uid="uid://j4qhgfeci0rs" path="res://Streets of Fight files/Sprites/Enemy-Punk/Hurt/hurt3.png" id="4_fbj3i"]
-[ext_resource type="Texture2D" uid="uid://dc8vd202vx73w" path="res://Streets of Fight files/Sprites/Enemy-Punk/Idle/idle4.png" id="4_v2o6c"]
-[ext_resource type="Texture2D" uid="uid://bl8cen360mf2s" path="res://Streets of Fight files/Sprites/Enemy-Punk/Punch/punch1.png" id="5_bw16s"]
-[ext_resource type="Texture2D" uid="uid://chtecj6tvv0nr" path="res://Streets of Fight files/Sprites/Enemy-Punk/Hurt/hurt4.png" id="5_q7301"]
-[ext_resource type="Texture2D" uid="uid://ipf6pa2ugmj" path="res://Streets of Fight files/Sprites/Enemy-Punk/Punch/punch2.png" id="6_ode85"]
-[ext_resource type="Texture2D" uid="uid://7k6lo5i855q" path="res://Streets of Fight files/Sprites/Enemy-Punk/Punch/punch3.png" id="7_lbm03"]
-[ext_resource type="Texture2D" uid="uid://cyasiw2x7jlaa" path="res://Streets of Fight files/Sprites/Enemy-Punk/Walk/walk1.png" id="8_uht4x"]
-[ext_resource type="Texture2D" uid="uid://dyo0rchre4g58" path="res://Streets of Fight files/Sprites/Enemy-Punk/Walk/walk2.png" id="9_g4kbj"]
-[ext_resource type="Texture2D" uid="uid://2ib5k5r76fo8" path="res://Streets of Fight files/Sprites/Enemy-Punk/Walk/walk3.png" id="10_ramqf"]
-[ext_resource type="Texture2D" uid="uid://dwvocmygh4ub" path="res://Streets of Fight files/Sprites/Enemy-Punk/Walk/walk4.png" id="11_glhtt"]
+[ext_resource type="Texture2D" uid="uid://qk3hn53xeuis" path="res://sprites/gopnik.png" id="2_2tscs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tm5sv"]
 size = Vector2(47, 132)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_26kpa"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(1056, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qyiao"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(1152, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8bdkp"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(1248, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_uffk0"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(1344, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1c431"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(0, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aowbq"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(96, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b1amw"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(192, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ms1tf"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(288, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oovto"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(768, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dwy60"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(864, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1y7mi"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(960, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bvglc"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(384, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ctyux"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(480, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7dg8w"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(576, 0, 96, 63)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dsohi"]
+atlas = ExtResource("2_2tscs")
+region = Rect2(672, 0, 96, 63)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s30w8"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("2_c1kut")
+"texture": SubResource("AtlasTexture_26kpa")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_w6r84")
+"texture": SubResource("AtlasTexture_qyiao")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_fbj3i")
+"texture": SubResource("AtlasTexture_8bdkp")
 }, {
 "duration": 1.0,
-"texture": ExtResource("5_q7301")
+"texture": SubResource("AtlasTexture_uffk0")
 }],
 "loop": true,
 "name": &"hurt",
@@ -41,16 +87,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("1_fg8wc")
+"texture": SubResource("AtlasTexture_1c431")
 }, {
 "duration": 1.0,
-"texture": ExtResource("2_j2ixh")
+"texture": SubResource("AtlasTexture_aowbq")
 }, {
 "duration": 1.0,
-"texture": ExtResource("3_je5jx")
+"texture": SubResource("AtlasTexture_b1amw")
 }, {
 "duration": 1.0,
-"texture": ExtResource("4_v2o6c")
+"texture": SubResource("AtlasTexture_ms1tf")
 }],
 "loop": true,
 "name": &"idle",
@@ -58,13 +104,13 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("5_bw16s")
+"texture": SubResource("AtlasTexture_oovto")
 }, {
 "duration": 1.0,
-"texture": ExtResource("6_ode85")
+"texture": SubResource("AtlasTexture_dwy60")
 }, {
 "duration": 1.0,
-"texture": ExtResource("7_lbm03")
+"texture": SubResource("AtlasTexture_1y7mi")
 }],
 "loop": true,
 "name": &"jab",
@@ -72,16 +118,16 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": ExtResource("8_uht4x")
+"texture": SubResource("AtlasTexture_bvglc")
 }, {
 "duration": 1.0,
-"texture": ExtResource("9_g4kbj")
+"texture": SubResource("AtlasTexture_ctyux")
 }, {
 "duration": 1.0,
-"texture": ExtResource("10_ramqf")
+"texture": SubResource("AtlasTexture_7dg8w")
 }, {
 "duration": 1.0,
-"texture": ExtResource("11_glhtt")
+"texture": SubResource("AtlasTexture_dsohi")
 }],
 "loop": true,
 "name": &"walk",
