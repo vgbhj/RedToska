@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://d22ixbgj54q2b" path="res://sprites/backg.png" id="2_0phb4"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
 [ext_resource type="PackedScene" uid="uid://dit8ltpvkaxi6" path="res://scenes/hearts_container.tscn" id="4_r2c2u"]
-[ext_resource type="PackedScene" uid="uid://csoi8uxwqg3kf" path="res://scenes/level_1.tscn" id="6_nukxj"]
+[ext_resource type="PackedScene" uid="uid://dx7h1bdy5mw72" path="res://scenes/enemy_punk.tscn" id="5_bl8bt"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nwske"]
 texture = ExtResource("2_0phb4")
@@ -2703,4 +2703,5 @@ transform = Transform2D(3, 0, 0, 3, 0, 0)
 [node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("4_r2c2u")]
 offset_right = 50.0
 
-[node name="Level_1" parent="." instance=ExtResource("6_nukxj")]
+[node name="EnemyPunk" parent="." instance=ExtResource("5_bl8bt")]
+position = Vector2(176, 332)
