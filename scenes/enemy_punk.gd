@@ -4,6 +4,7 @@ signal enemy_death
 
 @export var speed = 300
 @export var distanceBetweenPlayer = 100
+@export var attack_interval = 2
 @onready var player = get_tree().root.get_child(0).get_node("Player")
 @onready var animations = $AnimatedSprite2D/AnimationEnemy
 @onready var collider = $Collider
@@ -28,6 +29,9 @@ func updateAnimation():
 		animations.play("jab_attack")
 		isAttacking = true
 		await animations.animation_finished
+		for i in range(attack_interval):
+			animations.play("idle")
+			await animations.animation_finished
 		isAttacking = false
 		
 	if velocity == Vector2.ZERO:
