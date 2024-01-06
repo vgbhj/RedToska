@@ -6,6 +6,7 @@ signal healthChanged
 
 @export var speed: int = 350
 @export var attack_interval = 1
+@export var jump_impulse = 20
 @onready var animations = $AnimatedSprite2D/AnimationPlayer
 @onready var collider = $Collider
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
@@ -19,6 +20,7 @@ var isDead: bool = false
 var isTakeDamage: bool = false
 var inAttackZone: bool = false
 var isAttacking: bool = false
+var isJumping: bool = false
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -30,6 +32,9 @@ func get_input():
 		velocity.y += 1
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
+	
+	if Input.is_action_just_pressed("jump"):
+		jump()
 	
 	if Input.is_action_just_pressed("jab_attack"):
 		if lastAnimDirection == "Right":
@@ -90,3 +95,11 @@ func _on_hurt_box_area_entered(area):
 		animations.play("hurt")
 		await animations.animation_finished
 		isTakeDamage = false
+
+
+func _on_jab_attack_area_entered(area):
+	if !area.is_in_group("hurtBox"): return
+	print("Ударилл")
+
+func jump():
+	pass

@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var spanwers = $Spawners
+@export var spanwers : Spawners
 var enemy_scene = preload("res://scenes/enemy_punk.tscn") 
 var isWaveStart: bool = false
 

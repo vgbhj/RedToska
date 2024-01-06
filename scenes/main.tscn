@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=18 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="Texture2D" uid="uid://d22ixbgj54q2b" path="res://sprites/backg.png" id="2_0phb4"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
+[ext_resource type="PackedScene" uid="uid://b71o41guyycoc" path="res://scenes/spawner.tscn" id="4_21rdn"]
+[ext_resource type="Script" path="res://scripts/Spawners.gd" id="4_l5ond"]
 [ext_resource type="PackedScene" uid="uid://dit8ltpvkaxi6" path="res://scenes/hearts_container.tscn" id="4_r2c2u"]
-[ext_resource type="PackedScene" uid="uid://dx7h1bdy5mw72" path="res://scenes/enemy_punk.tscn" id="4_t02f2"]
 [ext_resource type="PackedScene" uid="uid://csoi8uxwqg3kf" path="res://scenes/level_1.tscn" id="5_wj6t2"]
 [ext_resource type="Script" path="res://scripts/BackBlockCollider.gd" id="7_qt68d"]
 [ext_resource type="AudioStream" uid="uid://bsntp0msepu15" path="res://audio/energy_beat.mp3" id="8_gb33o"]
@@ -2670,12 +2671,22 @@ y_sort_enabled = true
 [node name="Player" parent="Ysort" instance=ExtResource("2_4o0au")]
 position = Vector2(-729, 406)
 
-[node name="Level_1" parent="Ysort" instance=ExtResource("5_wj6t2")]
+[node name="Level" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("5_wj6t2")]
 position = Vector2(-1039, 0)
+spanwers = NodePath("Spawners")
 
-[node name="EnemyPunk" parent="Ysort" instance=ExtResource("4_t02f2")]
-position = Vector2(-258, 407)
-speed = 350
+[node name="Spawners" type="Node2D" parent="Ysort/Level"]
+y_sort_enabled = true
+script = ExtResource("4_l5ond")
+
+[node name="Spawner" parent="Ysort/Level/Spawners" instance=ExtResource("4_21rdn")]
+y_sort_enabled = true
+position = Vector2(0, 252)
+time_berofe_spawn = 5
+
+[node name="Spawner2" parent="Ysort/Level/Spawners" instance=ExtResource("4_21rdn")]
+y_sort_enabled = true
+position = Vector2(1282, 415)
 
 [node name="Street" type="Node" parent="."]
 

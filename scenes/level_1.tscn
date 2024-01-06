@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://csoi8uxwqg3kf"]
+[gd_scene load_steps=5 format=3 uid="uid://csoi8uxwqg3kf"]
 
 [ext_resource type="Script" path="res://scripts/level_1.gd" id="1_vw2ef"]
 [ext_resource type="Script" path="res://scripts/LevelCollision.gd" id="2_56k3w"]
-[ext_resource type="PackedScene" uid="uid://b71o41guyycoc" path="res://scenes/spawner.tscn" id="3_dilbx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vq1ap"]
 size = Vector2(1155, 652)
@@ -10,7 +9,7 @@ size = Vector2(1155, 652)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_iqqdc"]
 size = Vector2(672, 42)
 
-[node name="Level_1" type="Node2D"]
+[node name="Level" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_vw2ef")
 
@@ -22,8 +21,6 @@ shape = SubResource("RectangleShape2D_vq1ap")
 debug_color = Color(0, 0.607843, 0.662745, 0.419608)
 script = ExtResource("2_56k3w")
 
-[node name="Timer" type="Timer" parent="."]
-
 [node name="BackForwardBlock" type="StaticBody2D" parent="."]
 y_sort_enabled = true
 
@@ -32,16 +29,5 @@ position = Vector2(1156, 323)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_iqqdc")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
-
-[node name="Spawners" type="Node2D" parent="."]
-y_sort_enabled = true
-
-[node name="Spawner" parent="Spawners" instance=ExtResource("3_dilbx")]
-y_sort_enabled = true
-position = Vector2(0, 252)
-
-[node name="Spawner2" parent="Spawners" instance=ExtResource("3_dilbx")]
-y_sort_enabled = true
-position = Vector2(1282, 415)
 
 [connection signal="body_entered" from="LevelArea" to="." method="_on_level_area_body_entered"]
