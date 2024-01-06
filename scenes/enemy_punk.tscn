@@ -223,6 +223,7 @@ tracks/2/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [true, true, false, true, false, true, false, true, false]
+}
 
 [sub_resource type="Animation" id="Animation_33sxo"]
 resource_name = "hurt"
