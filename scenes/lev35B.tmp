@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://csoi8uxwqg3kf"]
+[gd_scene load_steps=5 format=3 uid="uid://csoi8uxwqg3kf"]
 
 [ext_resource type="Script" path="res://scenes/level_1.gd" id="1_5pqgt"]
 [ext_resource type="Script" path="res://scenes/LevelCollision.gd" id="1_wl0c1"]
-[ext_resource type="PackedScene" uid="uid://b71o41guyycoc" path="res://scenes/spawner.tscn" id="3_dilbx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vq1ap"]
 size = Vector2(1155, 652)
@@ -32,16 +31,5 @@ position = Vector2(1156, 323)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_iqqdc")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
-
-[node name="Spawners" type="Node2D" parent="."]
-y_sort_enabled = true
-
-[node name="Spawner" parent="Spawners" instance=ExtResource("3_dilbx")]
-y_sort_enabled = true
-position = Vector2(1287, 111)
-
-[node name="Spawner2" parent="Spawners" instance=ExtResource("3_dilbx")]
-y_sort_enabled = true
-position = Vector2(1287, 534)
 
 [connection signal="body_entered" from="LevelArea" to="." method="_on_level_area_body_entered"]

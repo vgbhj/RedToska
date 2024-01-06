@@ -18,7 +18,6 @@ func setMaxHearts(max: int):
 
 func updateHearts(currentHealth: int):
 	var hearts = get_children()
-	print(currentHealth)
 	
 	for i in range(currentHealth):
 		hearts[i].update(true)

@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://qk3hn53xeuis" path="res://sprites/gopnik.png" id="2_iyq4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tm5sv"]
-size = Vector2(47, 132)
+size = Vector2(47, 74)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_172ga"]
 atlas = ExtResource("2_iyq4e")
@@ -360,6 +360,7 @@ radius = 15.0
 height = 70.0
 
 [node name="EnemyPunk" type="CharacterBody2D" groups=["player"]]
+y_sort_enabled = true
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_1vtu2")
@@ -367,7 +368,7 @@ script = ExtResource("1_1vtu2")
 [node name="HurtBox" type="Area2D" parent="." groups=["hurtBox"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(5, -3)
+position = Vector2(5, -32)
 shape = SubResource("RectangleShape2D_tm5sv")
 debug_color = Color(0, 0.639216, 0.360784, 0.419608)
 

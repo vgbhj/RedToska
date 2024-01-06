@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://bngjmrsmdj0ch" path="res://sprites/shwarz-Sheet.png" id="2_a4vvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsgyx"]
-size = Vector2(47, 132)
+size = Vector2(47, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8pt4"]
 atlas = ExtResource("2_a4vvp")
@@ -278,7 +278,7 @@ script = ExtResource("1_lh023")
 [node name="HurtBox" type="Area2D" parent="." groups=["hurtBoxPlayer"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(15, -2)
+position = Vector2(15, -36)
 shape = SubResource("RectangleShape2D_vsgyx")
 debug_color = Color(0, 0.639216, 0.360784, 0.419608)
 
