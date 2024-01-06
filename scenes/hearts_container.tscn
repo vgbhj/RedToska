@@ -1,13 +1,13 @@
 [gd_scene load_steps=3 format=3 uid="uid://dit8ltpvkaxi6"]
 
-[ext_resource type="Script" path="res://scenes/hearts_container.gd" id="1_h4gia"]
+[ext_resource type="Script" path="res://scripts/hearts_container.gd" id="1_slks0"]
 [ext_resource type="Texture2D" uid="uid://dfl4tohmas3n3" path="res://sprites/ui_healthbars.png" id="2_y45xv"]
 
 [node name="heartsContainer" type="HBoxContainer"]
 offset_right = 65.0
 offset_bottom = 13.0
 theme_override_constants/separation = -10
-script = ExtResource("1_h4gia")
+script = ExtResource("1_slks0")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 position = Vector2(-6, -8)

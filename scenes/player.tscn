@@ -1,10 +1,10 @@
 [gd_scene load_steps=28 format=3 uid="uid://dxc812fb4om46"]
 
-[ext_resource type="Script" path="res://scenes/player.gd" id="1_lh023"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_l5r7d"]
 [ext_resource type="Texture2D" uid="uid://bngjmrsmdj0ch" path="res://sprites/shwarz-Sheet.png" id="2_a4vvp"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsgyx"]
-size = Vector2(99, 41)
+size = Vector2(64, 32)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8pt4"]
 atlas = ExtResource("2_a4vvp")
@@ -137,7 +137,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtr88"]
-size = Vector2(20, 14.6667)
+size = Vector2(20, 10)
 
 [sub_resource type="Animation" id="Animation_l6imt"]
 length = 0.001
@@ -273,12 +273,12 @@ height = 70.0
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("1_lh023")
+script = ExtResource("1_l5r7d")
 
 [node name="HurtBox" type="Area2D" parent="." groups=["hurtBoxPlayer"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(17.5, 48.5)
+position = Vector2(14, 53)
 shape = SubResource("RectangleShape2D_vsgyx")
 debug_color = Color(0, 0.639216, 0.360784, 0.419608)
 
@@ -291,7 +291,7 @@ animation = &"idle"
 [node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["hitBoxPlayer"]]
 
 [node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack" groups=["hitBox"]]
-position = Vector2(16.6667, 24.5)
+position = Vector2(17, 23.1667)
 shape = SubResource("RectangleShape2D_rtr88")
 disabled = true
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)

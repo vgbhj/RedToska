@@ -1,12 +1,13 @@
-[gd_scene load_steps=16 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=17 format=3 uid="uid://cemgh0flv4h3k"]
 
-[ext_resource type="Script" path="res://scenes/main.gd" id="1_pfuwv"]
+[ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="Texture2D" uid="uid://d22ixbgj54q2b" path="res://sprites/backg.png" id="2_0phb4"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
 [ext_resource type="PackedScene" uid="uid://dit8ltpvkaxi6" path="res://scenes/hearts_container.tscn" id="4_r2c2u"]
 [ext_resource type="PackedScene" uid="uid://dx7h1bdy5mw72" path="res://scenes/enemy_punk.tscn" id="4_t02f2"]
 [ext_resource type="PackedScene" uid="uid://csoi8uxwqg3kf" path="res://scenes/level_1.tscn" id="5_wj6t2"]
-[ext_resource type="Script" path="res://scenes/BackBlockCollider.gd" id="6_ystk8"]
+[ext_resource type="Script" path="res://scripts/BackBlockCollider.gd" id="7_qt68d"]
+[ext_resource type="AudioStream" uid="uid://bsntp0msepu15" path="res://audio/energy_beat.mp3" id="8_gb33o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_nwske"]
 texture = ExtResource("2_0phb4")
@@ -2656,7 +2657,7 @@ sources/0 = SubResource("TileSetAtlasSource_7nfcd")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_keisa"]
 size = Vector2(10031, 56)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogstp"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t1oul"]
 size = Vector2(672, 42)
 
 [node name="Main" type="Node"]
@@ -2667,13 +2668,14 @@ z_index = 1
 y_sort_enabled = true
 
 [node name="Player" parent="Ysort" instance=ExtResource("2_4o0au")]
-position = Vector2(-622, 406)
+position = Vector2(-729, 406)
 
 [node name="Level_1" parent="Ysort" instance=ExtResource("5_wj6t2")]
 position = Vector2(-1039, 0)
 
 [node name="EnemyPunk" parent="Ysort" instance=ExtResource("4_t02f2")]
-position = Vector2(-259, 406)
+position = Vector2(-258, 407)
+speed = 350
 
 [node name="Street" type="Node" parent="."]
 
@@ -2726,8 +2728,12 @@ metadata/_edit_use_anchors_ = true
 [node name="BackBlock" type="StaticBody2D" parent="."]
 
 [node name="BackBlockCollider" type="CollisionShape2D" parent="BackBlock"]
-position = Vector2(-834, 324)
+position = Vector2(-1336, 379)
 rotation = 1.5708
-shape = SubResource("RectangleShape2D_ogstp")
+shape = SubResource("RectangleShape2D_t1oul")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
-script = ExtResource("6_ystk8")
+script = ExtResource("7_qt68d")
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("8_gb33o")
+volume_db = -5.0
