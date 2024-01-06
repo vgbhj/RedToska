@@ -1,10 +1,20 @@
-[gd_scene load_steps=28 format=3 uid="uid://dxc812fb4om46"]
+[gd_scene load_steps=33 format=3 uid="uid://dxc812fb4om46"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l5r7d"]
 [ext_resource type="Texture2D" uid="uid://bngjmrsmdj0ch" path="res://sprites/shwarz-Sheet.png" id="2_a4vvp"]
+[ext_resource type="Texture2D" uid="uid://dod2wc7nas6pq" path="res://sprites/hurt-animation.png" id="2_qrccj"]
+[ext_resource type="Texture2D" uid="uid://bum5at2uvc0pl" path="res://sprites/shadow.png" id="3_xirlk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsgyx"]
 size = Vector2(64, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e81j1"]
+atlas = ExtResource("2_qrccj")
+region = Rect2(0, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n8r01"]
+atlas = ExtResource("2_qrccj")
+region = Rect2(75, 0, 75, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_b8pt4"]
 atlas = ExtResource("2_a4vvp")
@@ -72,6 +82,17 @@ region = Rect2(900, 0, 75, 60)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3agyg"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e81j1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n8r01")
+}],
+"loop": true,
+"name": &"hurt",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_b8pt4")
@@ -258,9 +279,37 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.6, 0.72, 0.84, 0.96)
 }
 
+[sub_resource type="Animation" id="Animation_san73"]
+resource_name = "hurt"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hurt"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.15)
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7x7w"]
 _data = {
 "RESET": SubResource("Animation_l6imt"),
+"hurt": SubResource("Animation_san73"),
 "idle": SubResource("Animation_886ci"),
 "jab_attack": SubResource("Animation_usi20"),
 "walk": SubResource("Animation_eahwk")
@@ -316,6 +365,12 @@ drag_left_margin = 0.9
 drag_top_margin = 1.0
 drag_right_margin = 0.9
 drag_bottom_margin = 1.0
+
+[node name="Shadow" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(7, 57)
+scale = Vector2(4, 4)
+texture = ExtResource("3_xirlk")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/JabAttack" to="." method="_on_jab_attack_area_entered"]

@@ -5,6 +5,7 @@ class_name Player
 signal healthChanged
 
 @export var speed: int = 350
+@export var attack_interval = 1
 @onready var animations = $AnimatedSprite2D/AnimationPlayer
 @onready var collider = $Collider
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
@@ -39,6 +40,9 @@ func get_input():
 		animations.play("jab_attack")
 		isAttacking = true
 		await animations.animation_finished
+		#for i in range(attack_interval):
+			#animations.play("idle")
+			#await animations.animation_finished
 		isAttacking = false
 		
 	velocity = velocity.normalized() * speed
@@ -79,3 +83,10 @@ func _on_hurt_box_area_entered(area):
 	if !area.is_in_group("hitBox"): return
 	currentHealth -= 1
 	healthChanged.emit(currentHealth)
+	if currentHealth < 1:
+		get_tree().reload_current_scene()
+	else:
+		isTakeDamage = true
+		animations.play("hurt")
+		await animations.animation_finished
+		isTakeDamage = false
