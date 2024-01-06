@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://uox4o38p4egd"]
 
-[ext_resource type="Texture2D" path="res://Streets of Fight files/Heart.png" id="1_sa0af"]
 [ext_resource type="Script" path="res://scenes/heartGui.gd" id="1_u73wr"]
+[ext_resource type="Texture2D" uid="uid://dfl4tohmas3n3" path="res://sprites/ui_healthbars.png" id="2_0v80y"]
 
 [node name="heartGui" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
@@ -12,7 +12,7 @@ script = ExtResource("1_u73wr")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-position = Vector2(0, -2)
-texture = ExtResource("1_sa0af")
+texture = ExtResource("2_0v80y")
 centered = false
-hframes = 5
+region_enabled = true
+region_rect = Rect2(304, 23, 7, 11)

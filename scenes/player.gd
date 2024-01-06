@@ -10,7 +10,7 @@ signal healthChanged
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
 @onready var camera = $Camera2D
 
-@export var maxHealth = 10
+@export var maxHealth = 19
 @onready var currentHealth: int = maxHealth
 
 var lastAnimDirection: String = "Left"

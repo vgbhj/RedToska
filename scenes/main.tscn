@@ -2706,7 +2706,11 @@ scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 
 [node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("4_r2c2u")]
-offset_right = 50.0
+offset_left = 7.33333
+offset_top = 9.0
+offset_right = 57.3333
+offset_bottom = 22.0
+scale = Vector2(0.8, 0.8)
 
 [node name="Level_1" parent="." instance=ExtResource("5_wj6t2")]
 
