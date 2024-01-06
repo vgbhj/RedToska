@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://b71o41guyycoc"]
 
-[ext_resource type="Script" path="res://Spawner.gd" id="1_51n5n"]
+[ext_resource type="Script" path="res://scenes/Spawner.gd" id="1_41ose"]
 
 [node name="Spawner" type="Marker2D"]
-script = ExtResource("1_51n5n")
+script = ExtResource("1_41ose")
 
 [node name="SpawnTime" type="Timer" parent="."]

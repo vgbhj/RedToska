@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://qk3hn53xeuis" path="res://sprites/gopnik.png" id="2_iyq4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tm5sv"]
-size = Vector2(47, 74)
+size = Vector2(149, 51)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_172ga"]
 atlas = ExtResource("2_iyq4e")
@@ -368,7 +368,7 @@ script = ExtResource("1_1vtu2")
 [node name="HurtBox" type="Area2D" parent="." groups=["hurtBox"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(5, -32)
+position = Vector2(14.5, 42.5)
 shape = SubResource("RectangleShape2D_tm5sv")
 debug_color = Color(0, 0.639216, 0.360784, 0.419608)
 
@@ -381,7 +381,7 @@ animation = &"hurt"
 [node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["hitBox"]]
 
 [node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack"]
-position = Vector2(20, -1.33333)
+position = Vector2(18.6667, 23.1667)
 shape = SubResource("RectangleShape2D_4tgfb")
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)
 
@@ -395,7 +395,7 @@ libraries = {
 position = Vector2(-2.66667, 23.1667)
 
 [node name="PlayerDetecterCollider" type="CollisionShape2D" parent="AnimatedSprite2D/PlayerDetecter"]
-position = Vector2(3.45707e-06, -24.3334)
+position = Vector2(3.45707e-06, -3.43323e-05)
 scale = Vector2(3.70667, 1)
 shape = SubResource("RectangleShape2D_4tgfb")
 debug_color = Color(0.878431, 0.270588, 0.407843, 0.419608)

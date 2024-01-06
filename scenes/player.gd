@@ -51,13 +51,17 @@ func updateAnimation():
 		collider.position.x = $AnimatedSprite2D.position.x - 10
 	else:
 		animations.play("walk")
-		$AnimatedSprite2D.flip_h = velocity.x < 0
+		if lastAnimDirection == "Left":
+			$AnimatedSprite2D.flip_h = 0
+		else:
+			$AnimatedSprite2D.flip_h = 1
 		
 		var direction = "Left"
 		if velocity.x < 0:
 			direction = "Right"
-			
-		lastAnimDirection = direction
+		
+		if velocity.x != 0:
+			lastAnimDirection = direction
 	
 	collider.position.x = $AnimatedSprite2D.position.x
 
