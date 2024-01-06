@@ -71,13 +71,14 @@ func _on_player_detecter_area_exited(area):
 func _on_hurt_box_area_entered(area):
 	if !area.is_in_group("hitBoxPlayer"): return
 	currentHealth -= 1
-	isTakeDamage = true
-	animations.play("hurt")
-	await animations.animation_finished
-	isTakeDamage = false
 	if currentHealth < 1:
 		isDead = true
 		enemy_death.emit()
-		#animations.play("death")
-		#await animations.animation_finished
+		animations.play("death")
+		await animations.animation_finished
 		queue_free()
+	else:
+		isTakeDamage = true
+		animations.play("hurt")
+		await animations.animation_finished
+		isTakeDamage = false
