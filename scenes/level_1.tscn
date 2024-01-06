@@ -25,13 +25,6 @@ script = ExtResource("1_wl0c1")
 
 [node name="BackForwardBlock" type="StaticBody2D" parent="."]
 
-[node name="BackCollider" type="CollisionShape2D" parent="BackForwardBlock"]
-position = Vector2(7, 318)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_iqqdc")
-one_way_collision = true
-debug_color = Color(0, 0.643137, 0.270588, 0.419608)
-
 [node name="ForwardCollider" type="CollisionShape2D" parent="BackForwardBlock"]
 position = Vector2(1156, 323)
 rotation = 1.5708
