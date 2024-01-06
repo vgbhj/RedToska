@@ -394,7 +394,7 @@ libraries = {
 position = Vector2(-2.66667, 23.1667)
 
 [node name="PlayerDetecterCollider" type="CollisionShape2D" parent="AnimatedSprite2D/PlayerDetecter"]
-position = Vector2(-0.333335, 0)
+position = Vector2(3.45707e-06, -24.3334)
 scale = Vector2(3.70667, 1)
 shape = SubResource("RectangleShape2D_4tgfb")
 debug_color = Color(0.878431, 0.270588, 0.407843, 0.419608)

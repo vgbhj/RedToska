@@ -6,7 +6,6 @@ var d
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	d = screen_size.x
-	print(screen_size)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

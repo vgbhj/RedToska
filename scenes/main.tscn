@@ -1,9 +1,10 @@
-[gd_scene load_steps=15 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=16 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scenes/main.gd" id="1_pfuwv"]
 [ext_resource type="Texture2D" uid="uid://d22ixbgj54q2b" path="res://sprites/backg.png" id="2_0phb4"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
 [ext_resource type="PackedScene" uid="uid://dit8ltpvkaxi6" path="res://scenes/hearts_container.tscn" id="4_r2c2u"]
+[ext_resource type="PackedScene" uid="uid://dx7h1bdy5mw72" path="res://scenes/enemy_punk.tscn" id="5_bl8bt"]
 [ext_resource type="PackedScene" uid="uid://csoi8uxwqg3kf" path="res://scenes/level_1.tscn" id="5_wj6t2"]
 [ext_resource type="Script" path="res://scenes/BackBlockCollider.gd" id="6_ystk8"]
 
@@ -2717,3 +2718,6 @@ rotation = 1.5708
 shape = SubResource("RectangleShape2D_ogstp")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 script = ExtResource("6_ystk8")
+
+[node name="EnemyPunk" parent="." instance=ExtResource("5_bl8bt")]
+position = Vector2(-994, 342)
