@@ -3,4 +3,5 @@
 [ext_resource type="Script" path="res://scripts/Spawner.gd" id="1_ahyr2"]
 
 [node name="Spawner" type="Marker2D"]
+y_sort_enabled = true
 script = ExtResource("1_ahyr2")

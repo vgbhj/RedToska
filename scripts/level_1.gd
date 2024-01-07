@@ -1,6 +1,7 @@
 extends Node2D
 
 @export var spanwers : Spawners
+@export var trigger: Area2D
 var enemy_scene = preload("res://scenes/enemy_punk.tscn") 
 var isWaveStart: bool = false
 

@@ -332,6 +332,8 @@ _data = {
 size = Vector2(93.7049, 5.77084)
 
 [node name="enemy_dalnik" type="CharacterBody2D"]
+collision_layer = 2
+collision_mask = 2
 script = ExtResource("1_qx28b")
 distanceBetweenPlayer = 350
 

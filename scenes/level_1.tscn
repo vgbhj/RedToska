@@ -14,9 +14,10 @@ y_sort_enabled = true
 script = ExtResource("1_vw2ef")
 
 [node name="LevelArea" type="Area2D" parent="."]
+position = Vector2(-87, 0)
 
 [node name="LevelCollision" type="CollisionShape2D" parent="LevelArea"]
-position = Vector2(1602, 324)
+position = Vector2(1242, 324)
 shape = SubResource("RectangleShape2D_vq1ap")
 debug_color = Color(0, 0.607843, 0.662745, 0.419608)
 script = ExtResource("2_56k3w")
@@ -29,5 +30,11 @@ position = Vector2(1156, 323)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_iqqdc")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
+
+[node name="ForwardCollider2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 324)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_iqqdc")
+debug_color = Color(0.905882, 0, 0.737255, 0.419608)
 
 [connection signal="body_entered" from="LevelArea" to="." method="_on_level_area_body_entered"]

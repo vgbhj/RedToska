@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=28 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
@@ -10,7 +10,6 @@
 [ext_resource type="Texture2D" uid="uid://c13sod6a2c2pn" path="res://sprites/background_bokovie.png" id="6_ua4ii"]
 [ext_resource type="PackedScene" uid="uid://4sdangeek45u" path="res://scenes/healka.tscn" id="7_7v0vm"]
 [ext_resource type="Script" path="res://scripts/BackBlockCollider.gd" id="7_qt68d"]
-[ext_resource type="PackedScene" uid="uid://b31jh1btbsmg0" path="res://scenes/ment.tscn" id="7_srgei"]
 [ext_resource type="AudioStream" uid="uid://bsntp0msepu15" path="res://audio/energy_beat.mp3" id="8_gb33o"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0inrm"]
@@ -6743,24 +6742,69 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(2368, 0)
 
-[node name="Level" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+[node name="Level1" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+visible = false
 position = Vector2(-1689, 123)
 spanwers = NodePath("Spawners")
 
-[node name="Spawners" type="Node2D" parent="Ysort/Level"]
+[node name="Spawners" type="Node2D" parent="Ysort/Level1"]
+y_sort_enabled = true
 script = ExtResource("4_i1tf1")
 
-[node name="Spawner" parent="Ysort/Level/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(1299, 370)
+[node name="Spawner" parent="Ysort/Level1/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1246, 404)
+
+[node name="Spawner2" parent="Ysort/Level1/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1314, 398)
+time_berofe_spawn = 5
+
+[node name="Spawner3" parent="Ysort/Level1/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1316, 491)
+time_berofe_spawn = 10
+
+[node name="Spawner4" parent="Ysort/Level1/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(-99, 404)
+time_berofe_spawn = 5
+
+[node name="Level2" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+position = Vector2(-184, 123)
+spanwers = NodePath("Spawners")
+
+[node name="Spawners" type="Node2D" parent="Ysort/Level2"]
+y_sort_enabled = true
+position = Vector2(-207, 0)
+script = ExtResource("4_i1tf1")
+
+[node name="Spawner" parent="Ysort/Level2/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1168, 440)
+
+[node name="Spawner2" parent="Ysort/Level2/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1156, 575)
+name_of_scene = "dalnik"
+
+[node name="Spawner3" parent="Ysort/Level2/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1148, 311)
+time_berofe_spawn = 5
+name_of_scene = "dalnik"
+
+[node name="Level3" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+visible = false
+position = Vector2(796, 123)
+spanwers = NodePath("Spawners")
+
+[node name="Spawners" type="Node2D" parent="Ysort/Level3"]
+y_sort_enabled = true
+position = Vector2(-207, 0)
+script = ExtResource("4_i1tf1")
+
+[node name="Spawner" parent="Ysort/Level3/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1217, 402)
 
 [node name="Healka" parent="Ysort" instance=ExtResource("7_7v0vm")]
-position = Vector2(-1467, 436)
-
-[node name="Ment" parent="Ysort" instance=ExtResource("7_srgei")]
-position = Vector2(-1226, 551)
+position = Vector2(1788, 468)
 
 [node name="Player" parent="Ysort" instance=ExtResource("2_4o0au")]
-position = Vector2(-1654, 655)
+position = Vector2(180, 630)
 
 [node name="Street" type="Node" parent="."]
 
@@ -6848,6 +6892,11 @@ position = Vector2(-1261.75, 748)
 shape = SubResource("RectangleShape2D_keisa")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="TopDownBlock"]
+position = Vector2(-153, 748)
+shape = SubResource("RectangleShape2D_keisa")
+debug_color = Color(0, 0.643137, 0.270588, 0.419608)
+
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
@@ -6861,7 +6910,7 @@ scale = Vector2(0.8, 0.8)
 metadata/_edit_use_anchors_ = true
 
 [node name="BackBlock" type="StaticBody2D" parent="."]
-position = Vector2(2368, 0)
+position = Vector2(2133, 2)
 
 [node name="BackBlockCollider" type="CollisionShape2D" parent="BackBlock"]
 position = Vector2(-2139, 446)

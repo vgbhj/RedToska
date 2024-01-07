@@ -5,7 +5,7 @@ signal enemy_death
 var butilka_scene = preload("res://scenes/butilka_projectile.tscn") 
 @export var speed = 200
 @export var distanceBetweenPlayer = 300
-@export var attack_interval = 2
+@export var attack_interval = 3
 @onready var player = get_tree().root.get_child(0).get_child(0).get_node("Player")
 @onready var animations = $AnimatedSprite2D/AnimationEnemy
 @onready var collider = $Collider
