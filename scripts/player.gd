@@ -5,12 +5,14 @@ class_name Player
 signal healthChanged
 
 @export var speed: int = 350
+@export var attack_interval = 1
+@export var jump_impulse = 20
 @onready var animations = $AnimatedSprite2D/AnimationPlayer
 @onready var collider = $Collider
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
 @onready var camera = $Camera2D
 
-@export var maxHealth = 19
+@export var maxHealth = 190
 @onready var currentHealth: int = maxHealth
 
 var lastAnimDirection: String = "Left"
@@ -18,6 +20,7 @@ var isDead: bool = false
 var isTakeDamage: bool = false
 var inAttackZone: bool = false
 var isAttacking: bool = false
+var isJumping: bool = false
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -30,7 +33,11 @@ func get_input():
 	if Input.is_action_pressed("ui_up"):
 		velocity.y -= 1
 	
+	if Input.is_action_just_pressed("jump"):
+		jump()
+	
 	if Input.is_action_just_pressed("jab_attack"):
+		if isJumping: return
 		if lastAnimDirection == "Right":
 			jabAttackCollider.position.x = $AnimatedSprite2D.position.x - 40
 		else:
@@ -39,13 +46,16 @@ func get_input():
 		animations.play("jab_attack")
 		isAttacking = true
 		await animations.animation_finished
+		#for i in range(attack_interval):
+			#animations.play("idle")
+			#await animations.animation_finished
 		isAttacking = false
 		
 	velocity = velocity.normalized() * speed
 
 func updateAnimation():
-	if isAttacking:
-		return
+	if isAttacking: return
+	if isJumping: return
 	if velocity == Vector2.ZERO:
 		animations.play("idle")
 		collider.position.x = $AnimatedSprite2D.position.x - 10
@@ -79,3 +89,24 @@ func _on_hurt_box_area_entered(area):
 	if !area.is_in_group("hitBox"): return
 	currentHealth -= 1
 	healthChanged.emit(currentHealth)
+	if currentHealth < 1:
+		get_tree().reload_current_scene()
+	else:
+		isTakeDamage = true
+		animations.play("hurt")
+		await animations.animation_finished
+		isTakeDamage = false
+
+
+func _on_jab_attack_area_entered(area):
+	if !area.is_in_group("hurtBox"): return
+	#print("Ударилл")
+
+func jump():
+	isJumping = true
+	animations.play("jump")
+	await animations.animation_finished
+	isJumping = false
+
+func _on_down_bounce_area_body_entered(body):
+	print(position.dot(body.position))
