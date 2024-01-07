@@ -356,7 +356,6 @@ _data = {
 }
 
 [node name="EnemyPunk" type="CharacterBody2D" groups=["player"]]
-y_sort_enabled = true
 position = Vector2(0, -1)
 collision_layer = 2
 collision_mask = 2
