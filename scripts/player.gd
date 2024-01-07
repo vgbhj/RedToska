@@ -16,10 +16,13 @@ signal healthChanged
 @export var maxHealth = 190
 @onready var currentHealth: int = maxHealth
 
-# для трпяски
+# для тряски
 @export var randomStrength: float = 30
 @export var shakeFade: float = 5
 
+var rng = RandomNumberGenerator.new()
+
+var shake_strength: float = 0.0
 
 var lastAnimDirection: String = "Left"
 var isDead: bool = false
@@ -28,6 +31,7 @@ var inAttackZone: bool = false
 var isAttacking: bool = false
 var isJumping: bool = false
 var waitNextJump: bool = false
+var isShaking: bool = false
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -84,6 +88,13 @@ func updateAnimation():
 
 
 func _physics_process(delta):
+	if isShaking:
+		apply_shake()
+		if shake_strength > 0:
+			shake_strength = lerpf(shake_strength,0,shakeFade * delta)
+			
+			camera.offset = randomOffset()
+		return
 	if isTakeDamage: return
 	if isDead: return
 	if isAttacking: return
@@ -97,6 +108,13 @@ func _on_hurt_box_area_entered(area):
 	currentHealth -= 1
 	healthChanged.emit(currentHealth)
 	if currentHealth < 1:
+		isShaking = true
+		isDead = true
+		animations.play("death")
+		await animations.animation_finished
+		isShaking = true
+		await get_tree().create_timer(.4).timeout
+		isShaking = false
 		get_tree().reload_current_scene()
 	else:
 		isTakeDamage = true
@@ -122,7 +140,8 @@ func wait_next_jump():
 	await get_tree().create_timer(waitNextJump).timeout
 	waitNextJump = false
 
-
-func _on_down_bounce_area_body_entered(body):
-	#print(position.dot(body.position))
-	pass
+func apply_shake():
+	shake_strength = randomStrength
+	
+func randomOffset() -> Vector2:
+	return Vector2(rng.randf_range(-shake_strength, shake_strength), rng.randf_range(-shake_strength, shake_strength))

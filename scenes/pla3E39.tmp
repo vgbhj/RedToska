@@ -1,4 +1,4 @@
-[gd_scene load_steps=37 format=3 uid="uid://dxc812fb4om46"]
+[gd_scene load_steps=36 format=3 uid="uid://dxc812fb4om46"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l5r7d"]
 [ext_resource type="Texture2D" uid="uid://bngjmrsmdj0ch" path="res://sprites/shwarz-Sheet.png" id="2_a4vvp"]
@@ -250,17 +250,6 @@ tracks/5/keys = {
 "update": 1,
 "values": [false]
 }
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("AnimatedSprite2D:rotation")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
 
 [sub_resource type="Animation" id="Animation_san73"]
 resource_name = "hurt"
@@ -290,7 +279,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
-tracks/2/enabled = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("AnimatedSprite2D:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -301,7 +290,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
-tracks/3/enabled = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("AnimatedSprite2D:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -339,7 +328,7 @@ tracks/1/keys = {
 }
 tracks/2/type = "bezier"
 tracks/2/imported = false
-tracks/2/enabled = false
+tracks/2/enabled = true
 tracks/2/path = NodePath("AnimatedSprite2D:position:x")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
@@ -350,7 +339,7 @@ tracks/2/keys = {
 }
 tracks/3/type = "bezier"
 tracks/3/imported = false
-tracks/3/enabled = false
+tracks/3/enabled = true
 tracks/3/path = NodePath("AnimatedSprite2D:position:y")
 tracks/3/interp = 1
 tracks/3/loop_wrap = true
@@ -543,48 +532,9 @@ tracks/3/keys = {
 "times": PackedFloat32Array(0)
 }
 
-[sub_resource type="Animation" id="Animation_jr0qe"]
-resource_name = "death"
-length = 0.2
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle"]
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:rotation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-1.5708, -0.25, 0, 0.25, 0, -1.5708, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.2)
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7x7w"]
 _data = {
 "RESET": SubResource("Animation_l6imt"),
-"death": SubResource("Animation_jr0qe"),
 "hurt": SubResource("Animation_san73"),
 "idle": SubResource("Animation_886ci"),
 "jab_attack": SubResource("Animation_usi20"),
@@ -602,9 +552,10 @@ script = ExtResource("1_l5r7d")
 maxHealth = 1
 
 [node name="HurtBox" type="Area2D" parent="." groups=["hurtBoxPlayer"]]
-position = Vector2(3, 0)
+position = Vector2(3, 85)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
+position = Vector2(0, -1)
 shape = SubResource("RectangleShape2D_vsgyx")
 debug_color = Color(0, 0.639216, 0.360784, 0.419608)
 
@@ -613,12 +564,11 @@ position = Vector2(13, -27.5)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3agyg")
 animation = &"idle"
-offset = Vector2(0, -31)
 
 [node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["hitBoxPlayer"]]
 
 [node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack" groups=["hitBox"]]
-position = Vector2(17, -5)
+position = Vector2(17, 24.6667)
 shape = SubResource("RectangleShape2D_rtr88")
 disabled = true
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)
@@ -631,12 +581,12 @@ libraries = {
 
 [node name="Collider" type="CollisionShape2D" parent="." groups=["hitBox", "player"]]
 light_mask = 3
-position = Vector2(1.49996, 0)
+position = Vector2(1.49996, 85)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_bh3dk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-9.5, 0)
+position = Vector2(-9.5, 34.5)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_left_margin = 0.9
@@ -646,7 +596,7 @@ drag_bottom_margin = 1.0
 
 [node name="Shadow" type="Sprite2D" parent="."]
 visible = false
-position = Vector2(7, 0)
+position = Vector2(7, 57)
 scale = Vector2(4, 4)
 texture = ExtResource("3_xirlk")
 
