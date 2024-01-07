@@ -6743,9 +6743,6 @@ z_index = 1
 y_sort_enabled = true
 position = Vector2(2368, 0)
 
-[node name="Player" parent="Ysort" instance=ExtResource("2_4o0au")]
-position = Vector2(-1621, 536)
-
 [node name="Level" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
 position = Vector2(-1689, 123)
 spanwers = NodePath("Spawners")
@@ -6761,6 +6758,9 @@ position = Vector2(-1467, 436)
 
 [node name="Ment" parent="Ysort" instance=ExtResource("7_srgei")]
 position = Vector2(-1226, 551)
+
+[node name="Player" parent="Ysort" instance=ExtResource("2_4o0au")]
+position = Vector2(-1654, 655)
 
 [node name="Street" type="Node" parent="."]
 
