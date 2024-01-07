@@ -4,8 +4,9 @@ class_name Player
 
 signal healthChanged
 
-@export var speed: int = 350
+@export var speed: int = 300
 @export var attack_interval = 1
+@export var wait_after_jump = 3
 @export var jump_impulse = 20
 @onready var animations = $AnimatedSprite2D/AnimationPlayer
 @onready var collider = $Collider
@@ -21,6 +22,7 @@ var isTakeDamage: bool = false
 var inAttackZone: bool = false
 var isAttacking: bool = false
 var isJumping: bool = false
+var waitNextJump: bool = false
 
 func get_input():
 	velocity = Vector2.ZERO
@@ -28,12 +30,12 @@ func get_input():
 		velocity.x += 1
 	if Input.is_action_pressed("ui_left"):
 		velocity.x -= 1
-	if Input.is_action_pressed("ui_down"):
+	if Input.is_action_pressed("ui_down") and !isJumping:
 		velocity.y += 1
-	if Input.is_action_pressed("ui_up"):
+	if Input.is_action_pressed("ui_up") and !isJumping:
 		velocity.y -= 1
 	
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and !waitNextJump:
 		jump()
 	
 	if Input.is_action_just_pressed("jab_attack"):
@@ -107,6 +109,15 @@ func jump():
 	animations.play("jump")
 	await animations.animation_finished
 	isJumping = false
+	wait_next_jump()
+
+
+func wait_next_jump():
+	waitNextJump = true
+	await get_tree().create_timer(waitNextJump).timeout
+	waitNextJump = false
+
 
 func _on_down_bounce_area_body_entered(body):
-	print(position.dot(body.position))
+	#print(position.dot(body.position))
+	pass

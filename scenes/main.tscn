@@ -1,9 +1,13 @@
-[gd_scene load_steps=24 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=28 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
+[ext_resource type="PackedScene" uid="uid://csoi8uxwqg3kf" path="res://scenes/level_1.tscn" id="3_f55af"]
+[ext_resource type="Script" path="res://scripts/Spawners.gd" id="4_i1tf1"]
 [ext_resource type="PackedScene" uid="uid://dit8ltpvkaxi6" path="res://scenes/hearts_container.tscn" id="4_r2c2u"]
+[ext_resource type="PackedScene" uid="uid://b71o41guyycoc" path="res://scenes/spawner.tscn" id="5_5ht7h"]
 [ext_resource type="Texture2D" uid="uid://dchxts7bo46cw" path="res://sprites/tiles_set.png" id="5_fhf2b"]
+[ext_resource type="PackedScene" uid="uid://dx7h1bdy5mw72" path="res://scenes/enemy_punk.tscn" id="6_h6h5v"]
 [ext_resource type="Texture2D" uid="uid://c13sod6a2c2pn" path="res://sprites/background_bokovie.png" id="6_ua4ii"]
 [ext_resource type="Script" path="res://scripts/BackBlockCollider.gd" id="7_qt68d"]
 [ext_resource type="AudioStream" uid="uid://bsntp0msepu15" path="res://audio/energy_beat.mp3" id="8_gb33o"]
@@ -6739,6 +6743,19 @@ y_sort_enabled = true
 
 [node name="Player" parent="Ysort" instance=ExtResource("2_4o0au")]
 position = Vector2(-1532, 473)
+
+[node name="Level" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+position = Vector2(-1689, 123)
+spanwers = NodePath("Spawners")
+
+[node name="Spawners" type="Node2D" parent="Ysort/Level"]
+script = ExtResource("4_i1tf1")
+
+[node name="Spawner" parent="Ysort/Level/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1299, 370)
+
+[node name="EnemyPunk" parent="Ysort" instance=ExtResource("6_h6h5v")]
+position = Vector2(-1162, 586)
 
 [node name="Street" type="Node" parent="."]
 

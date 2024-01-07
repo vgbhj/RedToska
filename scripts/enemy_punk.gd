@@ -2,7 +2,7 @@ extends CharacterBody2D
 
 signal enemy_death
 
-@export var speed = 300
+@export var speed = 200
 @export var distanceBetweenPlayer = 100
 @export var attack_interval = 2
 @onready var player = get_tree().root.get_child(0).get_child(0).get_node("Player")
@@ -51,8 +51,8 @@ func updateAnimation():
 
 func move_to_player():
 	velocity = Vector2.ZERO
-	if global_position.distance_to(player.global_position) > distanceBetweenPlayer:
-		velocity = global_position.direction_to(player.global_position) * speed
+	if global_position.distance_to(player.get_child(0).get_child(0).global_position) > distanceBetweenPlayer:
+		velocity = global_position.direction_to(player.get_child(0).get_child(0).global_position) * speed
 
 
 func _physics_process(delta):

@@ -1,10 +1,10 @@
-[gd_scene load_steps=29 format=3 uid="uid://dx7h1bdy5mw72"]
+[gd_scene load_steps=28 format=3 uid="uid://dx7h1bdy5mw72"]
 
 [ext_resource type="Script" path="res://scripts/enemy_punk.gd" id="1_litpl"]
 [ext_resource type="Texture2D" uid="uid://qk3hn53xeuis" path="res://sprites/gopnik.png" id="2_iyq4e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tm5sv"]
-size = Vector2(70, 34)
+size = Vector2(70, 27)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_172ga"]
 atlas = ExtResource("2_iyq4e")
@@ -135,7 +135,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_4tgfb"]
-size = Vector2(13.759, 10.3334)
+size = Vector2(13.714, 9.00003)
 
 [sub_resource type="Animation" id="Animation_w8pcs"]
 length = 0.001
@@ -355,24 +355,23 @@ _data = {
 "walk": SubResource("Animation_eahwk")
 }
 
-[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_lre5u"]
-points = PackedVector2Array(0, 0)
-
 [node name="EnemyPunk" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
+position = Vector2(0, -1)
 collision_layer = 2
 collision_mask = 2
 script = ExtResource("1_litpl")
 
 [node name="HurtBox" type="Area2D" parent="." groups=["hurtBox"]]
+position = Vector2(-7, -67)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
-position = Vector2(8, 51)
+position = Vector2(8, 54.5)
 shape = SubResource("RectangleShape2D_tm5sv")
 debug_color = Color(0, 0.639216, 0.360784, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(13, -27.5)
+position = Vector2(6, -94.5)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_s30w8")
 animation = &"hurt"
@@ -380,7 +379,7 @@ animation = &"hurt"
 [node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["hitBox"]]
 
 [node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack"]
-position = Vector2(18.3333, 26.1667)
+position = Vector2(18.3333, 27.1667)
 shape = SubResource("RectangleShape2D_4tgfb")
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)
 
@@ -394,15 +393,14 @@ libraries = {
 position = Vector2(-2.66667, 23.1667)
 
 [node name="PlayerDetecterCollider" type="CollisionShape2D" parent="AnimatedSprite2D/PlayerDetecter"]
-position = Vector2(2.66667, 2.99997)
+position = Vector2(2.75002, 4.16665)
 scale = Vector2(3.70667, 1)
 shape = SubResource("RectangleShape2D_4tgfb")
 debug_color = Color(0.878431, 0.270588, 0.407843, 0.419608)
 
-[node name="Collider" type="CollisionShape2D" parent="." groups=["hitBox", "player"]]
-position = Vector2(8, 61)
-rotation = 1.5708
-shape = SubResource("ConvexPolygonShape2D_lre5u")
+[node name="Collider" type="CollisionPolygon2D" parent="."]
+position = Vector2(-6, -62)
+polygon = PackedVector2Array(-27, 61, 45, 61, 45, 36, -28, 36)
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/PlayerDetecter" to="." method="_on_player_detecter_area_entered"]
