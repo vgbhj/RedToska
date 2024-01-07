@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=19 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="Texture2D" uid="uid://d22ixbgj54q2b" path="res://sprites/backg.png" id="2_0phb4"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" path="res://scripts/Spawners.gd" id="4_l5ond"]
 [ext_resource type="PackedScene" uid="uid://dit8ltpvkaxi6" path="res://scenes/hearts_container.tscn" id="4_r2c2u"]
 [ext_resource type="PackedScene" uid="uid://csoi8uxwqg3kf" path="res://scenes/level_1.tscn" id="5_wj6t2"]
+[ext_resource type="PackedScene" uid="uid://dx7h1bdy5mw72" path="res://scenes/enemy_punk.tscn" id="6_dmwa2"]
 [ext_resource type="Script" path="res://scripts/BackBlockCollider.gd" id="7_qt68d"]
 [ext_resource type="AudioStream" uid="uid://bsntp0msepu15" path="res://audio/energy_beat.mp3" id="8_gb33o"]
 
@@ -893,6 +894,7 @@ sources/1 = SubResource("TileSetAtlasSource_nwske")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0rhp1"]
 texture = ExtResource("2_0phb4")
+margins = Vector2i(1, 0)
 28:2/0 = 0
 29:2/0 = 0
 30:2/0 = 0
@@ -2669,10 +2671,10 @@ z_index = 1
 y_sort_enabled = true
 
 [node name="Player" parent="Ysort" instance=ExtResource("2_4o0au")]
-position = Vector2(-729, 406)
+position = Vector2(-728, 406)
 
 [node name="Level" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("5_wj6t2")]
-position = Vector2(-1039, 0)
+position = Vector2(-433, 0)
 spanwers = NodePath("Spawners")
 
 [node name="Spawners" type="Node2D" parent="Ysort/Level"]
@@ -2687,6 +2689,18 @@ time_berofe_spawn = 5
 [node name="Spawner2" parent="Ysort/Level/Spawners" instance=ExtResource("4_21rdn")]
 y_sort_enabled = true
 position = Vector2(1282, 415)
+
+[node name="EnemyPunk" parent="Ysort" instance=ExtResource("6_dmwa2")]
+position = Vector2(-431, 408)
+speed = 200
+
+[node name="EnemyPunk2" parent="Ysort" instance=ExtResource("6_dmwa2")]
+position = Vector2(-318, 336)
+speed = 200
+
+[node name="EnemyPunk3" parent="Ysort" instance=ExtResource("6_dmwa2")]
+position = Vector2(-365, 501)
+speed = 200
 
 [node name="Street" type="Node" parent="."]
 
@@ -2747,4 +2761,4 @@ script = ExtResource("7_qt68d")
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_gb33o")
-volume_db = -5.0
+volume_db = -80.0

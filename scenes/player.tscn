@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://dxc812fb4om46"]
+[gd_scene load_steps=37 format=3 uid="uid://dxc812fb4om46"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l5r7d"]
 [ext_resource type="Texture2D" uid="uid://bngjmrsmdj0ch" path="res://sprites/shwarz-Sheet.png" id="2_a4vvp"]
@@ -43,6 +43,14 @@ region = Rect2(1050, 0, 75, 60)
 [sub_resource type="AtlasTexture" id="AtlasTexture_bbfnj"]
 atlas = ExtResource("2_a4vvp")
 region = Rect2(1125, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_43k3q"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(0, 0, 75, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_62mnf"]
+atlas = ExtResource("2_a4vvp")
+region = Rect2(975, 0, 75, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_161a0"]
 atlas = ExtResource("2_a4vvp")
@@ -126,6 +134,17 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_43k3q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_62mnf")
+}],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_161a0")
 }, {
 "duration": 1.0,
@@ -184,6 +203,79 @@ tracks/1/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(13, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-27.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Collider:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_san73"]
+resource_name = "hurt"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"hurt"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.15)
 }
 
 [sub_resource type="Animation" id="Animation_886ci"]
@@ -252,6 +344,79 @@ tracks/2/keys = {
 "values": [true, false, false, true]
 }
 
+[sub_resource type="Animation" id="Animation_h28f4"]
+resource_name = "jump"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.398938, 0.4)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(13, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.301464, 0.5)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(-27.5, -0.25, 0, 0.25, 0, -102, -0.25, 0, 0.25, 0, -102, -0.25, 0, 0.25, 0, -27.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.2, 0.3, 0.5)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Collider:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+
 [sub_resource type="Animation" id="Animation_eahwk"]
 resource_name = "walk"
 length = 1.08
@@ -279,36 +444,6 @@ tracks/1/keys = {
 "times": PackedFloat32Array(0, 0.12, 0.24, 0.36, 0.48, 0.6, 0.72, 0.84, 0.96)
 }
 
-[sub_resource type="Animation" id="Animation_san73"]
-resource_name = "hurt"
-length = 0.3
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"hurt"]
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.15)
-}
-
-[sub_resource type="Animation" id="Animation_h28f4"]
-resource_name = "jump"
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7x7w"]
 _data = {
 "RESET": SubResource("Animation_l6imt"),
@@ -320,8 +455,12 @@ _data = {
 }
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5hfxp"]
-radius = 15.0
+radius = 5.0
 height = 70.0
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_mmlm4"]
+a = Vector2(0, -41)
+b = Vector2(0, 25)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 3
@@ -357,7 +496,7 @@ libraries = {
 
 [node name="Collider" type="CollisionShape2D" parent="." groups=["hitBox", "player"]]
 light_mask = 3
-position = Vector2(16, 53)
+position = Vector2(14, 58)
 rotation = 1.5708
 shape = SubResource("CapsuleShape2D_5hfxp")
 
@@ -376,5 +515,13 @@ position = Vector2(7, 57)
 scale = Vector2(4, 4)
 texture = ExtResource("3_xirlk")
 
+[node name="DownBounceArea" type="Area2D" parent="."]
+
+[node name="DonwBounceCollider" type="CollisionShape2D" parent="DownBounceArea"]
+position = Vector2(7, 67)
+rotation = 1.5708
+shape = SubResource("SegmentShape2D_mmlm4")
+
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/JabAttack" to="." method="_on_jab_attack_area_entered"]
+[connection signal="body_entered" from="DownBounceArea" to="." method="_on_down_bounce_area_body_entered"]

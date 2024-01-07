@@ -355,9 +355,8 @@ _data = {
 "walk": SubResource("Animation_eahwk")
 }
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_qkor2"]
-radius = 15.0
-height = 70.0
+[sub_resource type="ConvexPolygonShape2D" id="ConvexPolygonShape2D_lre5u"]
+points = PackedVector2Array(0, 0)
 
 [node name="EnemyPunk" type="CharacterBody2D" groups=["player"]]
 y_sort_enabled = true
@@ -401,9 +400,9 @@ shape = SubResource("RectangleShape2D_4tgfb")
 debug_color = Color(0.878431, 0.270588, 0.407843, 0.419608)
 
 [node name="Collider" type="CollisionShape2D" parent="." groups=["hitBox", "player"]]
-position = Vector2(8, 53)
+position = Vector2(8, 61)
 rotation = 1.5708
-shape = SubResource("CapsuleShape2D_qkor2")
+shape = SubResource("ConvexPolygonShape2D_lre5u")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/PlayerDetecter" to="." method="_on_player_detecter_area_entered"]

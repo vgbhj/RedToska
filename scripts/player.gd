@@ -12,7 +12,7 @@ signal healthChanged
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
 @onready var camera = $Camera2D
 
-@export var maxHealth = 19
+@export var maxHealth = 190
 @onready var currentHealth: int = maxHealth
 
 var lastAnimDirection: String = "Left"
@@ -37,6 +37,7 @@ func get_input():
 		jump()
 	
 	if Input.is_action_just_pressed("jab_attack"):
+		if isJumping: return
 		if lastAnimDirection == "Right":
 			jabAttackCollider.position.x = $AnimatedSprite2D.position.x - 40
 		else:
@@ -53,8 +54,8 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 func updateAnimation():
-	if isAttacking:
-		return
+	if isAttacking: return
+	if isJumping: return
 	if velocity == Vector2.ZERO:
 		animations.play("idle")
 		collider.position.x = $AnimatedSprite2D.position.x - 10
@@ -99,7 +100,13 @@ func _on_hurt_box_area_entered(area):
 
 func _on_jab_attack_area_entered(area):
 	if !area.is_in_group("hurtBox"): return
-	print("Ударилл")
+	#print("Ударилл")
 
 func jump():
-	pass
+	isJumping = true
+	animations.play("jump")
+	await animations.animation_finished
+	isJumping = false
+
+func _on_down_bounce_area_body_entered(body):
+	print(position.dot(body.position))
