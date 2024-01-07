@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=29 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://dit8ltpvkaxi6" path="res://scenes/hearts_container.tscn" id="4_r2c2u"]
 [ext_resource type="PackedScene" uid="uid://b71o41guyycoc" path="res://scenes/spawner.tscn" id="5_5ht7h"]
 [ext_resource type="Texture2D" uid="uid://dchxts7bo46cw" path="res://sprites/tiles_set.png" id="5_fhf2b"]
-[ext_resource type="PackedScene" uid="uid://dx7h1bdy5mw72" path="res://scenes/enemy_punk.tscn" id="6_h6h5v"]
 [ext_resource type="Texture2D" uid="uid://c13sod6a2c2pn" path="res://sprites/background_bokovie.png" id="6_ua4ii"]
 [ext_resource type="PackedScene" uid="uid://b1xq2pkdlwbhe" path="res://scenes/enemy_dalnik.tscn" id="6_whrsg"]
 [ext_resource type="Script" path="res://scripts/BackBlockCollider.gd" id="7_qt68d"]
@@ -6758,11 +6757,7 @@ script = ExtResource("4_i1tf1")
 position = Vector2(1299, 370)
 
 [node name="enemy_dalnik" parent="Ysort" instance=ExtResource("6_whrsg")]
-position = Vector2(-1971, 514)
-
-[node name="EnemyPunk" parent="Ysort" instance=ExtResource("6_h6h5v")]
-position = Vector2(-1046, 558)
-speed = 0
+position = Vector2(-1213, 556)
 
 [node name="Street" type="Node" parent="."]
 
@@ -6855,10 +6850,10 @@ scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 
 [node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("4_r2c2u")]
-offset_left = 7.0
-offset_top = 8.33333
-offset_right = 56.9999
-offset_bottom = 21.3333
+offset_left = 796.667
+offset_top = 9.0
+offset_right = 846.667
+offset_bottom = 22.0
 scale = Vector2(0.8, 0.8)
 metadata/_edit_use_anchors_ = true
 
@@ -6878,4 +6873,4 @@ volume_db = -80.0
 
 [node name="ButilkaProjectile" parent="." instance=ExtResource("11_2roic")]
 position = Vector2(979, 462)
-on_ready = false
+on_ready = null

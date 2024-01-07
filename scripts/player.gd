@@ -16,6 +16,11 @@ signal healthChanged
 @export var maxHealth = 190
 @onready var currentHealth: int = maxHealth
 
+# для трпяски
+@export var randomStrength: float = 30
+@export var shakeFade: float = 5
+
+
 var lastAnimDirection: String = "Left"
 var isDead: bool = false
 var isTakeDamage: bool = false
