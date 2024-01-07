@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://4sdangeek45u"]
+
+[ext_resource type="Texture2D" uid="uid://bol7qfir12v4e" path="res://sprites/double_cheeseburger.png" id="1_3xcoo"]
+[ext_resource type="Script" path="res://scripts/healka.gd" id="1_nl1mi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_86hry"]
+size = Vector2(30, 25)
+
+[node name="Healka" type="Node2D"]
+script = ExtResource("1_nl1mi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_3xcoo")
+region_rect = Rect2(829, 423, 6, 21)
+
+[node name="ButilkaHitBox" type="Area2D" parent="." groups=["heal"]]
+
+[node name="ButilkaHitBoxCollider" type="CollisionShape2D" parent="ButilkaHitBox"]
+position = Vector2(4.76837e-07, -0.5)
+shape = SubResource("RectangleShape2D_86hry")
+debug_color = Color(0, 0.917647, 0.964706, 0.419608)
+
+[connection signal="area_entered" from="ButilkaHitBox" to="." method="_on_butilka_hit_box_area_entered"]

@@ -8,10 +8,10 @@
 [ext_resource type="PackedScene" uid="uid://b71o41guyycoc" path="res://scenes/spawner.tscn" id="5_5ht7h"]
 [ext_resource type="Texture2D" uid="uid://dchxts7bo46cw" path="res://sprites/tiles_set.png" id="5_fhf2b"]
 [ext_resource type="Texture2D" uid="uid://c13sod6a2c2pn" path="res://sprites/background_bokovie.png" id="6_ua4ii"]
-[ext_resource type="PackedScene" uid="uid://b1xq2pkdlwbhe" path="res://scenes/enemy_dalnik.tscn" id="6_whrsg"]
+[ext_resource type="PackedScene" uid="uid://4sdangeek45u" path="res://scenes/healka.tscn" id="7_7v0vm"]
 [ext_resource type="Script" path="res://scripts/BackBlockCollider.gd" id="7_qt68d"]
+[ext_resource type="PackedScene" uid="uid://b31jh1btbsmg0" path="res://scenes/ment.tscn" id="7_srgei"]
 [ext_resource type="AudioStream" uid="uid://bsntp0msepu15" path="res://audio/energy_beat.mp3" id="8_gb33o"]
-[ext_resource type="PackedScene" uid="uid://dr2eshjnh585c" path="res://scenes/butilka_projectile.tscn" id="11_2roic"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0inrm"]
 texture = ExtResource("5_fhf2b")
@@ -6756,11 +6756,11 @@ script = ExtResource("4_i1tf1")
 [node name="Spawner" parent="Ysort/Level/Spawners" instance=ExtResource("5_5ht7h")]
 position = Vector2(1299, 370)
 
-[node name="enemy_dalnik" parent="Ysort" instance=ExtResource("6_whrsg")]
-position = Vector2(-921, 449)
+[node name="Healka" parent="Ysort" instance=ExtResource("7_7v0vm")]
+position = Vector2(-1467, 436)
 
-[node name="enemy_dalnik2" parent="Ysort" instance=ExtResource("6_whrsg")]
-position = Vector2(-929, 587)
+[node name="Ment" parent="Ysort" instance=ExtResource("7_srgei")]
+position = Vector2(-1226, 551)
 
 [node name="Street" type="Node" parent="."]
 
@@ -6873,7 +6873,3 @@ script = ExtResource("7_qt68d")
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_gb33o")
 volume_db = -80.0
-
-[node name="ButilkaProjectile" parent="." instance=ExtResource("11_2roic")]
-position = Vector2(979, 462)
-on_ready = false
