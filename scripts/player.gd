@@ -106,7 +106,7 @@ func _physics_process(delta):
 func _on_hurt_box_area_entered(area):
 	if area.is_in_group("heal"):
 		if currentHealth < 19:
-			currentHealth += 1
+			currentHealth = 19
 			healthChanged.emit(currentHealth)
 	if !area.is_in_group("hitBox"): return
 	currentHealth -= 1

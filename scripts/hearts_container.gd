@@ -23,4 +23,5 @@ func updateHearts(currentHealth: int):
 		hearts[i].update(true)
 	
 	for i in range(currentHealth, hearts.size()-1):
+		
 		hearts[i].update(false)
