@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=28 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
@@ -7,9 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://dit8ltpvkaxi6" path="res://scenes/hearts_container.tscn" id="4_r2c2u"]
 [ext_resource type="PackedScene" uid="uid://b71o41guyycoc" path="res://scenes/spawner.tscn" id="5_5ht7h"]
 [ext_resource type="Texture2D" uid="uid://dchxts7bo46cw" path="res://sprites/tiles_set.png" id="5_fhf2b"]
-[ext_resource type="PackedScene" uid="uid://dx7h1bdy5mw72" path="res://scenes/enemy_punk.tscn" id="6_h6h5v"]
 [ext_resource type="Texture2D" uid="uid://c13sod6a2c2pn" path="res://sprites/background_bokovie.png" id="6_ua4ii"]
-[ext_resource type="PackedScene" uid="uid://b1xq2pkdlwbhe" path="res://scenes/enemy_dalnik.tscn" id="6_whrsg"]
 [ext_resource type="PackedScene" uid="uid://4sdangeek45u" path="res://scenes/healka.tscn" id="7_7v0vm"]
 [ext_resource type="Script" path="res://scripts/BackBlockCollider.gd" id="7_qt68d"]
 [ext_resource type="AudioStream" uid="uid://bsntp0msepu15" path="res://audio/energy_beat.mp3" id="8_gb33o"]
@@ -6747,30 +6745,18 @@ position = Vector2(2368, 0)
 [node name="Player" parent="Ysort" instance=ExtResource("2_4o0au")]
 position = Vector2(-1621, 536)
 
-[node name="Level1" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+[node name="Level" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
 position = Vector2(-1689, 123)
 spanwers = NodePath("Spawners")
 
-[node name="Spawners" type="Node2D" parent="Ysort/Level1"]
+[node name="Spawners" type="Node2D" parent="Ysort/Level"]
 script = ExtResource("4_i1tf1")
 
-[node name="Spawner" parent="Ysort/Level1/Spawners" instance=ExtResource("5_5ht7h")]
+[node name="Spawner" parent="Ysort/Level/Spawners" instance=ExtResource("5_5ht7h")]
 position = Vector2(1299, 370)
 
 [node name="Healka" parent="Ysort" instance=ExtResource("7_7v0vm")]
 position = Vector2(-1467, 436)
-
-[node name="enemy_dalnik" parent="Ysort" instance=ExtResource("6_whrsg")]
-position = Vector2(-1120, 494)
-
-[node name="enemy_dalnik2" parent="Ysort" instance=ExtResource("6_whrsg")]
-position = Vector2(-1128, 562)
-
-[node name="enemy_dalnik3" parent="Ysort" instance=ExtResource("6_whrsg")]
-position = Vector2(-1134, 645)
-
-[node name="EnemyPunk" parent="Ysort" instance=ExtResource("6_h6h5v")]
-position = Vector2(-1825, 551)
 
 [node name="Street" type="Node" parent="."]
 
@@ -6854,7 +6840,7 @@ shape = SubResource("RectangleShape2D_keisa")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TopDownBlock"]
-position = Vector2(-1258, 869)
+position = Vector2(-1261.75, 748)
 shape = SubResource("RectangleShape2D_keisa")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
