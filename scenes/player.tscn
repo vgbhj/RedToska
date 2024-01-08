@@ -945,11 +945,9 @@ scale = Vector2(4, 4)
 texture = ExtResource("3_xirlk")
 
 [node name="GoGo" type="Node2D" parent="."]
-visible = false
-position = Vector2(235, -202)
+position = Vector2(-150, -235)
 
 [node name="Go" type="Sprite2D" parent="GoGo"]
-visible = false
 position = Vector2(180, -73)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_tmfft")
@@ -958,7 +956,6 @@ region_enabled = true
 region_rect = Rect2(57, 4, 31, 24)
 
 [node name="Arrow" type="Sprite2D" parent="GoGo"]
-visible = false
 position = Vector2(181, -34)
 scale = Vector2(1.5, 1.5)
 texture = ExtResource("6_tmfft")

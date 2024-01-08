@@ -16647,6 +16647,7 @@ y_sort_enabled = true
 position = Vector2(2368, 0)
 
 [node name="Level1" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+visible = false
 position = Vector2(-1689, 123)
 spanwers = NodePath("Spawners")
 
@@ -16670,6 +16671,7 @@ position = Vector2(-99, 404)
 time_berofe_spawn = 5
 
 [node name="Level2" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+visible = false
 position = Vector2(-184, 123)
 spanwers = NodePath("Spawners")
 
@@ -16682,7 +16684,7 @@ script = ExtResource("4_i1tf1")
 position = Vector2(1168, 440)
 
 [node name="Spawner2" parent="Ysort/Level2/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(1156, 575)
+position = Vector2(1517, 470)
 name_of_scene = "dalnik"
 
 [node name="Spawner3" parent="Ysort/Level2/Spawners" instance=ExtResource("5_5ht7h")]
@@ -16691,6 +16693,7 @@ time_berofe_spawn = 4
 name_of_scene = "dalnik"
 
 [node name="Level3" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+visible = false
 position = Vector2(244, 123)
 spanwers = NodePath("Spawners")
 
@@ -16724,6 +16727,7 @@ time_berofe_spawn = 15
 name_of_scene = "dalnik"
 
 [node name="Level4" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+visible = false
 position = Vector2(2015, 241)
 spanwers = NodePath("Spawners")
 
@@ -16754,7 +16758,7 @@ time_berofe_spawn = 30
 name_of_scene = "dalnik"
 
 [node name="Spawner8" parent="Ysort/Level4/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(1488, 1339)
+position = Vector2(1841, 1178)
 time_berofe_spawn = 30
 
 [node name="Spawner9" parent="Ysort/Level4/Spawners" instance=ExtResource("5_5ht7h")]
@@ -16772,6 +16776,7 @@ time_berofe_spawn = 20
 name_of_scene = "dalnik"
 
 [node name="Level5" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+visible = false
 position = Vector2(3816, 1027)
 spanwers = NodePath("Spawners")
 
@@ -16790,12 +16795,12 @@ time_berofe_spawn = 10
 name_of_scene = "dalnik"
 
 [node name="Spawner4" parent="Ysort/Level5/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(1761, 998)
+position = Vector2(2320, 509)
 time_berofe_spawn = 5
 name_of_scene = "dalnik"
 
 [node name="Spawner2" parent="Ysort/Level5/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(424, 1074)
+position = Vector2(46, 384)
 time_berofe_spawn = 5
 
 [node name="Level6" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
@@ -16808,14 +16813,14 @@ position = Vector2(-207, 0)
 script = ExtResource("4_i1tf1")
 
 [node name="Spawner" parent="Ysort/Level6/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(1452, 450)
+position = Vector2(1543, 516)
 
 [node name="Spawner2" parent="Ysort/Level6/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(73, 450)
+position = Vector2(73, 521)
 name_of_scene = "dalnik"
 
 [node name="Spawner3" parent="Ysort/Level6/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(1502, 892)
+position = Vector2(1578, 973)
 time_berofe_spawn = 10
 name_of_scene = "ment"
 
@@ -16848,10 +16853,10 @@ position = Vector2(1207, 434)
 position = Vector2(1064, 426)
 
 [node name="Spawner5" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(951, 441)
+position = Vector2(1446, 343)
 
 [node name="Spawner6" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(804, 441)
+position = Vector2(1620, 562)
 
 [node name="Spawner7" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
 position = Vector2(1472, 566)
@@ -16863,34 +16868,34 @@ position = Vector2(1502, 706)
 position = Vector2(1498, 921)
 
 [node name="Spawner10" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(1483, 1076)
+position = Vector2(1370, 1028)
 
 [node name="Spawner11" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(645, 515)
+position = Vector2(952, 581)
 
 [node name="Spawner12" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(569, 681)
+position = Vector2(763, 714)
 
 [node name="Spawner13" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(524, 813)
+position = Vector2(642, 853)
 
 [node name="Spawner14" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(494, 926)
+position = Vector2(554, 931)
 
 [node name="Spawner15" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
 position = Vector2(490, 1100)
 
 [node name="Spawner16" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(520, 1617)
+position = Vector2(545, 1464)
 
 [node name="Spawner17" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(970, 1792)
+position = Vector2(503, 1400)
 
 [node name="Spawner18" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(1301, 1682)
+position = Vector2(856, 1454)
 
 [node name="Spawner19" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(1407, 1339)
+position = Vector2(1207, 1109)
 
 [node name="Spawner20" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
 position = Vector2(645, 1298)
