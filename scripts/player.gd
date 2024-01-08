@@ -12,6 +12,7 @@ signal healthChanged
 @onready var collider = $Collider
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
 @onready var camera = $Camera2D
+@export var mainMusic: AudioStreamPlayer
 
 @export var maxHealth = 190
 @onready var currentHealth: int = maxHealth
@@ -104,6 +105,8 @@ func _physics_process(delta):
 	updateAnimation()
 
 func _on_hurt_box_area_entered(area):
+	if area.is_in_group("yaga"):
+		yaga_activate()
 	if area.is_in_group("heal"):
 		currentHealth = 19
 		healthChanged.emit(currentHealth)
@@ -148,3 +151,18 @@ func apply_shake():
 	
 func randomOffset() -> Vector2:
 	return Vector2(rng.randf_range(-shake_strength, shake_strength), rng.randf_range(-shake_strength, shake_strength))
+
+func yaga_activate():
+	animations.speed_scale = 4
+	speed *= 2
+	mainMusic.pitch_scale = 1.5
+	currentHealth = 200
+	healthChanged.emit(currentHealth)
+	# ЭФФЕКТЫ
+	await get_tree().create_timer(40).timeout
+	animations.speed_scale = 1
+	speed /= 2
+	
+	mainMusic.pitch_scale = 1
+	currentHealth = 19
+	healthChanged.emit(currentHealth)

@@ -1,10 +1,17 @@
-[gd_scene load_steps=3 format=3 uid="uid://uox4o38p4egd"]
+[gd_scene load_steps=6 format=3 uid="uid://uox4o38p4egd"]
 
 [ext_resource type="Script" path="res://scripts/heartGui.gd" id="1_an43k"]
 [ext_resource type="Texture2D" uid="uid://dfl4tohmas3n3" path="res://sprites/ui_healthbars.png" id="2_0v80y"]
+[ext_resource type="Shader" path="res://shaders/rgb.gdshader" id="2_aiiy8"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_h8vwj"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_c8kv7"]
+shader = ExtResource("2_aiiy8")
 
 [node name="heartGui" type="Panel"]
 self_modulate = Color(1, 1, 1, 0)
+material = SubResource("ShaderMaterial_h8vwj")
 custom_minimum_size = Vector2(16, 13)
 offset_right = 16.0
 offset_bottom = 13.0
@@ -12,6 +19,7 @@ script = ExtResource("1_an43k")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
+material = SubResource("ShaderMaterial_c8kv7")
 texture = ExtResource("2_0v80y")
 centered = false
 region_enabled = true

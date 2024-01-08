@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=32 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
@@ -10,7 +10,10 @@
 [ext_resource type="Texture2D" uid="uid://c13sod6a2c2pn" path="res://sprites/background_bokovie.png" id="6_ua4ii"]
 [ext_resource type="PackedScene" uid="uid://4sdangeek45u" path="res://scenes/healka.tscn" id="7_7v0vm"]
 [ext_resource type="Script" path="res://scripts/BackBlockCollider.gd" id="7_qt68d"]
+[ext_resource type="PackedScene" uid="uid://cvemnw03b0t1j" path="res://scenes/yaga.tscn" id="7_tdjix"]
 [ext_resource type="AudioStream" uid="uid://bsntp0msepu15" path="res://audio/energy_beat.mp3" id="8_gb33o"]
+[ext_resource type="Shader" path="res://shaders/rgb.gdshader" id="11_c7la3"]
+[ext_resource type="Script" path="res://scripts/MainMusic.gd" id="13_c6l6b"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0inrm"]
 texture = ExtResource("5_fhf2b")
@@ -6731,6 +6734,9 @@ sources/0 = SubResource("TileSetAtlasSource_q6c1m")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_keisa"]
 size = Vector2(5421.75, 56)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1abw"]
+shader = ExtResource("11_c7la3")
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1oul"]
 size = Vector2(672, 42)
 
@@ -6746,6 +6752,8 @@ position = Vector2(2368, 0)
 visible = false
 position = Vector2(-1689, 123)
 spanwers = NodePath("Spawners")
+isEnabled = false
+DisableForwardBlock = true
 
 [node name="Spawners" type="Node2D" parent="Ysort/Level1"]
 y_sort_enabled = true
@@ -6767,8 +6775,11 @@ position = Vector2(-99, 404)
 time_berofe_spawn = 5
 
 [node name="Level2" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+visible = false
 position = Vector2(-184, 123)
 spanwers = NodePath("Spawners")
+isEnabled = false
+DisableForwardBlock = true
 
 [node name="Spawners" type="Node2D" parent="Ysort/Level2"]
 y_sort_enabled = true
@@ -6783,14 +6794,15 @@ position = Vector2(1156, 575)
 name_of_scene = "dalnik"
 
 [node name="Spawner3" parent="Ysort/Level2/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(1148, 311)
-time_berofe_spawn = 5
+position = Vector2(1245, 318)
+time_berofe_spawn = 4
 name_of_scene = "dalnik"
 
 [node name="Level3" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
 visible = false
-position = Vector2(796, 123)
+position = Vector2(244, 123)
 spanwers = NodePath("Spawners")
+DisableForwardBlock = true
 
 [node name="Spawners" type="Node2D" parent="Ysort/Level3"]
 y_sort_enabled = true
@@ -6798,13 +6810,227 @@ position = Vector2(-207, 0)
 script = ExtResource("4_i1tf1")
 
 [node name="Spawner" parent="Ysort/Level3/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(1217, 402)
+position = Vector2(2430, 407)
+time_berofe_spawn = 5
+
+[node name="Spawner4" parent="Ysort/Level3/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(-410, 507)
+
+[node name="Spawner2" parent="Ysort/Level3/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(-658, 348)
+name_of_scene = "dalnik"
+
+[node name="Spawner3" parent="Ysort/Level3/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1862, 455)
+name_of_scene = "dalnik"
+
+[node name="Spawner5" parent="Ysort/Level3/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(2960, 407)
+time_berofe_spawn = 20
+
+[node name="Spawner6" parent="Ysort/Level3/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(345, 480)
+time_berofe_spawn = 15
+name_of_scene = "dalnik"
+
+[node name="Level4" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+visible = false
+position = Vector2(2015, 241)
+spanwers = NodePath("Spawners")
+DisableForwardBlock = true
+
+[node name="Spawners" type="Node2D" parent="Ysort/Level4"]
+y_sort_enabled = true
+position = Vector2(-207, 0)
+script = ExtResource("4_i1tf1")
+
+[node name="Spawner" parent="Ysort/Level4/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1474, 212)
+time_berofe_spawn = 5
+
+[node name="Spawner2" parent="Ysort/Level4/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(745, 357)
+time_berofe_spawn = 5
+
+[node name="Spawner3" parent="Ysort/Level4/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1146, 805)
+time_berofe_spawn = 5
+
+[node name="Spawner4" parent="Ysort/Level4/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1613, 709)
+time_berofe_spawn = 5
+
+[node name="Spawner5" parent="Ysort/Level4/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1269, 215)
+time_berofe_spawn = 30
+name_of_scene = "dalnik"
+
+[node name="Spawner8" parent="Ysort/Level4/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1488, 1339)
+time_berofe_spawn = 30
+
+[node name="Spawner9" parent="Ysort/Level4/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1967, 1300)
+time_berofe_spawn = 30
+
+[node name="Spawner6" parent="Ysort/Level4/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1053, 346)
+time_berofe_spawn = 20
+name_of_scene = "dalnik"
+
+[node name="Spawner7" parent="Ysort/Level4/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1504, 963)
+time_berofe_spawn = 20
+name_of_scene = "dalnik"
+
+[node name="Level5" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+visible = false
+position = Vector2(3816, 1027)
+spanwers = NodePath("Spawners")
+
+[node name="Spawners" type="Node2D" parent="Ysort/Level5"]
+y_sort_enabled = true
+position = Vector2(-207, 0)
+script = ExtResource("4_i1tf1")
+
+[node name="Spawner" parent="Ysort/Level5/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(535, 519)
+time_berofe_spawn = 15
+
+[node name="Spawner3" parent="Ysort/Level5/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1722, 504)
+time_berofe_spawn = 10
+name_of_scene = "dalnik"
+
+[node name="Spawner4" parent="Ysort/Level5/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1761, 998)
+time_berofe_spawn = 5
+name_of_scene = "dalnik"
+
+[node name="Spawner2" parent="Ysort/Level5/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(424, 1074)
+time_berofe_spawn = 5
+
+[node name="Level6" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+position = Vector2(5584, 1023)
+spanwers = NodePath("Spawners")
+isEnabled = false
+
+[node name="Spawners" type="Node2D" parent="Ysort/Level6"]
+y_sort_enabled = true
+position = Vector2(-207, 0)
+script = ExtResource("4_i1tf1")
+
+[node name="Spawner" parent="Ysort/Level6/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1452, 450)
+
+[node name="Spawner2" parent="Ysort/Level6/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(73, 450)
+name_of_scene = "dalnik"
+
+[node name="Spawner3" parent="Ysort/Level6/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1502, 892)
+time_berofe_spawn = 10
+name_of_scene = "ment"
+
+[node name="Spawner4" parent="Ysort/Level6/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(98, 888)
+time_berofe_spawn = 10
+name_of_scene = "ment"
+
+[node name="Level7" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
+position = Vector2(6748, 233)
+spanwers = NodePath("Spawners")
+DisableForwardBlock = true
+DisableButtomBlock = true
+
+[node name="Spawners" type="Node2D" parent="Ysort/Level7"]
+y_sort_enabled = true
+position = Vector2(-207, 0)
+script = ExtResource("4_i1tf1")
+
+[node name="Spawner" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1460, 442)
+
+[node name="Spawner2" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1343, 438)
+
+[node name="Spawner3" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1207, 434)
+
+[node name="Spawner4" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1064, 426)
+
+[node name="Spawner5" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(951, 441)
+
+[node name="Spawner6" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(804, 441)
+
+[node name="Spawner7" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1472, 566)
+
+[node name="Spawner8" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1502, 706)
+
+[node name="Spawner9" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1498, 921)
+
+[node name="Spawner10" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1483, 1076)
+
+[node name="Spawner11" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(645, 515)
+
+[node name="Spawner12" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(569, 681)
+
+[node name="Spawner13" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(524, 813)
+
+[node name="Spawner14" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(494, 926)
+
+[node name="Spawner15" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(490, 1100)
+
+[node name="Spawner16" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(520, 1617)
+
+[node name="Spawner17" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(970, 1792)
+
+[node name="Spawner18" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1301, 1682)
+
+[node name="Spawner19" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(1407, 1339)
+
+[node name="Spawner20" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(645, 1298)
+
+[node name="Spawner21" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(951, 1238)
+
+[node name="Spawner22" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
+position = Vector2(951, 1238)
 
 [node name="Healka" parent="Ysort" instance=ExtResource("7_7v0vm")]
 position = Vector2(1788, 468)
 
-[node name="Player" parent="Ysort" instance=ExtResource("2_4o0au")]
-position = Vector2(180, 630)
+[node name="Healka3" parent="Ysort" instance=ExtResource("7_7v0vm")]
+position = Vector2(4214, 1588)
+
+[node name="Healka2" parent="Ysort" instance=ExtResource("7_7v0vm")]
+position = Vector2(3297, 626)
+
+[node name="Player" parent="Ysort" node_paths=PackedStringArray("mainMusic") instance=ExtResource("2_4o0au")]
+position = Vector2(7447, 1849)
+mainMusic = NodePath("../../MainMusic")
+maxHealth = 200
+
+[node name="YAGA" parent="Ysort" instance=ExtResource("7_tdjix")]
+position = Vector2(7654, 1646)
 
 [node name="Street" type="Node" parent="."]
 
@@ -6902,6 +7128,7 @@ scale = Vector2(3, 3)
 transform = Transform2D(3, 0, 0, 3, 0, 0)
 
 [node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("4_r2c2u")]
+material = SubResource("ShaderMaterial_m1abw")
 offset_left = 7.0
 offset_top = 8.33333
 offset_right = 56.9999
@@ -6921,4 +7148,4 @@ script = ExtResource("7_qt68d")
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_gb33o")
-volume_db = -80.0
+script = ExtResource("13_c6l6b")

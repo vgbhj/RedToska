@@ -1,0 +1,23 @@
+[gd_scene load_steps=4 format=3 uid="uid://cvemnw03b0t1j"]
+
+[ext_resource type="Texture2D" uid="uid://banogpiipj1al" path="res://sprites/jaguar.png" id="1_kot3u"]
+[ext_resource type="Script" path="res://scripts/yaga.gd" id="1_mli3m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_oohlj"]
+size = Vector2(30, 78)
+
+[node name="YAGA" type="Node2D"]
+script = ExtResource("1_mli3m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_kot3u")
+region_rect = Rect2(829, 423, 6, 21)
+
+[node name="ButilkaHitBox" type="Area2D" parent="." groups=["yaga"]]
+
+[node name="ButilkaHitBoxCollider" type="CollisionShape2D" parent="ButilkaHitBox"]
+position = Vector2(4.76837e-07, 0)
+shape = SubResource("RectangleShape2D_oohlj")
+debug_color = Color(0, 0.917647, 0.964706, 0.419608)
+
+[connection signal="area_entered" from="ButilkaHitBox" to="." method="_on_butilka_hit_box_area_entered"]
