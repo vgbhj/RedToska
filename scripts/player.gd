@@ -3,6 +3,7 @@ extends CharacterBody2D
 class_name Player
 
 signal healthChanged
+signal superChanged
 
 @export var speed: int = 300
 @export var attack_interval = 1
@@ -14,8 +15,11 @@ signal healthChanged
 @onready var camera = $Camera2D
 @export var mainMusic: AudioStreamPlayer
 
-@export var maxHealth = 190
+@export var maxHealth = 20
 @onready var currentHealth: int = maxHealth
+
+@export var maxSuper = 100
+@onready var currentSuper: int = maxSuper
 
 # для тряски
 @export var randomStrength: float = 30
@@ -113,6 +117,8 @@ func _on_hurt_box_area_entered(area):
 	if !area.is_in_group("hitBox"): return
 	currentHealth -= 1
 	healthChanged.emit(currentHealth)
+	currentSuper += 10
+	superChanged.emit(currentSuper)
 	if currentHealth < 1:
 		isShaking = true
 		isDead = true
@@ -131,6 +137,8 @@ func _on_hurt_box_area_entered(area):
 
 func _on_jab_attack_area_entered(area):
 	if !area.is_in_group("hurtBox"): return
+	currentSuper += 5
+	superChanged.emit(currentSuper)
 	#print("Ударилл")
 
 func jump():
@@ -165,4 +173,5 @@ func yaga_activate():
 	
 	mainMusic.pitch_scale = 1
 	currentHealth = 19
+	
 	healthChanged.emit(currentHealth)
