@@ -47,6 +47,7 @@ var isShaking: bool = false
 var isBossFightScene: bool = false
 var y_before_jump: float
 var can_jump: bool = true
+var yaga_act:bool = false
 
 func _ready():
 	GoGo.visible = false
@@ -171,6 +172,7 @@ func _physics_process(delta):
 func _on_hurt_box_area_entered(area):
 	if area.is_in_group("bossFight"):
 		can_jump = 0
+		yaga_stop()
 		animations.play("bossFight")
 		isBossFightScene = true
 		#camera.set_zoom(Vector2(0.5,0.5)) 
@@ -269,16 +271,19 @@ func yaga_activate():
 	yaga_shader.set_shader_parameter("quality", 4)
 	yaga_bar.visible = true
 	await get_tree().create_timer(40).timeout
-	yaga_shader.set_shader_parameter("quality", 0)
-	yaga_bar.visible = false
-	animations.speed_scale = 1
-	speed /= 2
+	yaga_stop()
 	
-	mainMusic.pitch_scale = 1
-	currentHealth = 19
-	
-	healthChanged.emit(currentHealth)
-
+func yaga_stop():
+	if yaga_act:
+		yaga_shader.set_shader_parameter("quality", 0)
+		yaga_bar.visible = false
+		animations.speed_scale = 1
+		speed /= 2
+		
+		mainMusic.pitch_scale = 1
+		currentHealth = maxHealth
+		
+		healthChanged.emit(currentHealth)
 
 func _on_level_1_lvl_end():
 	go_fucn()
