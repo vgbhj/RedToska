@@ -18,7 +18,7 @@ signal superChanged
 @onready var camera = $Camera2D
 @export var mainMusic: AudioStreamPlayer
 @onready var GoGo = $GoGo
-
+@onready var allTimer = $allTimer
 @export var maxHealth = 20
 @onready var currentHealth: int = maxHealth
 
@@ -48,6 +48,7 @@ var can_jump: bool = true
 
 func _ready():
 	GoGo.visible = false
+	allTimer.start()
 
 func go_fucn():
 	for i in range(5):
@@ -165,6 +166,7 @@ func _on_hurt_box_area_entered(area):
 		#camera.set_zoom(Vector2(0.5,0.5)) 
 		await animations.animation_finished
 		isBossFightScene = false
+		
 	if area.is_in_group("hitBoxBobik"):
 		currentHealth -= 4
 		healthChanged.emit(currentHealth)

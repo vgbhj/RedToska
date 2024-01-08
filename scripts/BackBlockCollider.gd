@@ -10,6 +10,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	print(global_position)
+	#print(global_position)
 	if abs(player.global_position.x - global_position.x) > d:
 		global_position.x += abs(player.global_position.x - (global_position.x+d))
