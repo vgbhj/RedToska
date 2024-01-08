@@ -1,23 +1,21 @@
-[gd_scene load_steps=40 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=35 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
 [ext_resource type="PackedScene" uid="uid://csoi8uxwqg3kf" path="res://scenes/level_1.tscn" id="3_f55af"]
 [ext_resource type="Script" path="res://scripts/Spawners.gd" id="4_i1tf1"]
+[ext_resource type="PackedScene" uid="uid://dit8ltpvkaxi6" path="res://scenes/hearts_container.tscn" id="4_r2c2u"]
 [ext_resource type="PackedScene" uid="uid://b71o41guyycoc" path="res://scenes/spawner.tscn" id="5_5ht7h"]
 [ext_resource type="Texture2D" uid="uid://dchxts7bo46cw" path="res://sprites/tiles_set.png" id="5_fhf2b"]
 [ext_resource type="Texture2D" uid="uid://c13sod6a2c2pn" path="res://sprites/background_bokovie.png" id="6_ua4ii"]
 [ext_resource type="PackedScene" uid="uid://4sdangeek45u" path="res://scenes/healka.tscn" id="7_7v0vm"]
-[ext_resource type="Material" uid="uid://con6il2ex7ohe" path="res://materials/main.tres" id="7_fdglo"]
 [ext_resource type="Script" path="res://scripts/BackBlockCollider.gd" id="7_qt68d"]
 [ext_resource type="PackedScene" uid="uid://cvemnw03b0t1j" path="res://scenes/yaga.tscn" id="7_tdjix"]
 [ext_resource type="AudioStream" uid="uid://bsntp0msepu15" path="res://audio/energy_beat.mp3" id="8_gb33o"]
 [ext_resource type="Shader" path="res://shaders/rgb.gdshader" id="11_c7la3"]
 [ext_resource type="Texture2D" uid="uid://chhxgy5bi2e5w" path="res://sprites/ui_healthsuperbar.png" id="12_cbk45"]
 [ext_resource type="Script" path="res://scripts/healthBar.gd" id="12_ee7mm"]
-[ext_resource type="Script" path="res://scripts/superBar.gd" id="12_of7k8"]
 [ext_resource type="Script" path="res://scripts/MainMusic.gd" id="13_c6l6b"]
-[ext_resource type="Shader" path="res://shaders/blink.gdshader" id="14_76kjc"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0inrm"]
 texture = ExtResource("5_fhf2b")
@@ -6738,25 +6736,12 @@ sources/0 = SubResource("TileSetAtlasSource_q6c1m")
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_keisa"]
 size = Vector2(5421.75, 56)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ijua4"]
-atlas = ExtResource("12_cbk45")
-region = Rect2(1, 65, 142, 45)
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_m1abw"]
+shader = ExtResource("11_c7la3")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_84o0c"]
 atlas = ExtResource("12_cbk45")
 region = Rect2(167, 74, 115, 9)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_qt3br"]
-atlas = ExtResource("12_cbk45")
-region = Rect2(167, 93, 86, 9)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_70lm1"]
-shader = ExtResource("14_76kjc")
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_foaux"]
-shader = ExtResource("11_c7la3")
-shader_parameter/dir = Vector2(0, 0)
-shader_parameter/quality = 4
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t1oul"]
 size = Vector2(672, 42)
@@ -7044,11 +7029,8 @@ position = Vector2(4214, 1588)
 [node name="Healka2" parent="Ysort" instance=ExtResource("7_7v0vm")]
 position = Vector2(3297, 626)
 
-[node name="Player" parent="Ysort" node_paths=PackedStringArray("yaga_bar", "mainMusic") instance=ExtResource("2_4o0au")]
-material = ExtResource("7_fdglo")
-position = Vector2(7513, 1698)
-yaga_shader = ExtResource("7_fdglo")
-yaga_bar = NodePath("../../CanvasLayer/yagaHpBar")
+[node name="Player" parent="Ysort" node_paths=PackedStringArray("mainMusic") instance=ExtResource("2_4o0au")]
+position = Vector2(-1705, 632)
 jump_impulse = 2
 mainMusic = NodePath("../../MainMusic")
 maxHealth = 20
@@ -7148,46 +7130,25 @@ shape = SubResource("RectangleShape2D_keisa")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-offset = Vector2(5, 5)
-scale = Vector2(2, 2)
-transform = Transform2D(2, 0, 0, 2, 5, 5)
+scale = Vector2(3, 3)
+transform = Transform2D(3, 0, 0, 3, 0, 0)
+
+[node name="heartsContainer" parent="CanvasLayer" instance=ExtResource("4_r2c2u")]
+visible = false
+material = SubResource("ShaderMaterial_m1abw")
+offset_left = 7.0
+offset_top = 8.33333
+offset_right = 56.9999
+offset_bottom = 21.3333
+scale = Vector2(0.8, 0.8)
+metadata/_edit_use_anchors_ = true
 
 [node name="healthBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
 offset_right = 40.0
 offset_bottom = 40.0
-texture_under = SubResource("AtlasTexture_ijua4")
 texture_progress = SubResource("AtlasTexture_84o0c")
-texture_progress_offset = Vector2(6, 9)
 script = ExtResource("12_ee7mm")
 player = NodePath("../../Ysort/Player")
-
-[node name="superBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
-offset_right = 40.0
-offset_bottom = 40.0
-texture_progress = SubResource("AtlasTexture_qt3br")
-texture_progress_offset = Vector2(6, 28)
-script = ExtResource("12_of7k8")
-player = NodePath("../../Ysort/Player")
-
-[node name="yagaHpBar" type="Sprite2D" parent="CanvasLayer"]
-visible = false
-material = SubResource("ShaderMaterial_70lm1")
-scale = Vector2(6, 1)
-texture = ExtResource("12_cbk45")
-centered = false
-offset = Vector2(1, 9)
-region_enabled = true
-region_rect = Rect2(167, 74, 115, 9)
-
-[node name="yagaFull" type="Sprite2D" parent="CanvasLayer/yagaHpBar"]
-material = SubResource("ShaderMaterial_foaux")
-use_parent_material = true
-scale = Vector2(0.166667, 1)
-texture = ExtResource("12_cbk45")
-centered = false
-offset = Vector2(0, -1)
-region_enabled = true
-region_rect = Rect2(1, 1, 142, 45)
 
 [node name="BackBlock" type="StaticBody2D" parent="."]
 position = Vector2(2133, 2)

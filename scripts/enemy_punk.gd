@@ -54,6 +54,8 @@ func move_to_player():
 	if global_position.distance_to(player.get_child(0).get_child(0).global_position) > distanceBetweenPlayer:
 		velocity = global_position.direction_to(player.get_child(0).get_child(0).global_position) * speed
 
+func _ready():
+	pass
 
 func _physics_process(delta):
 	if isTakeDamage: return
