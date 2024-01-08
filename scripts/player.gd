@@ -193,7 +193,7 @@ func _on_hurt_box_area_entered(area):
 	if area.is_in_group("yaga"):
 		yaga_activate()
 	if area.is_in_group("heal"):
-		currentHealth = 19
+		currentHealth = maxHealth
 		healthChanged.emit(currentHealth)
 	if !area.is_in_group("hitBox"): return
 	currentHealth -= 1

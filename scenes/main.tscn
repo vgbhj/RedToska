@@ -16647,7 +16647,6 @@ y_sort_enabled = true
 position = Vector2(2368, 0)
 
 [node name="Level1" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
-visible = false
 position = Vector2(-1689, 123)
 spanwers = NodePath("Spawners")
 
@@ -16671,7 +16670,6 @@ position = Vector2(-99, 404)
 time_berofe_spawn = 5
 
 [node name="Level2" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
-visible = false
 position = Vector2(-184, 123)
 spanwers = NodePath("Spawners")
 
@@ -16693,7 +16691,6 @@ time_berofe_spawn = 4
 name_of_scene = "dalnik"
 
 [node name="Level3" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
-visible = false
 position = Vector2(244, 123)
 spanwers = NodePath("Spawners")
 
@@ -16727,7 +16724,6 @@ time_berofe_spawn = 15
 name_of_scene = "dalnik"
 
 [node name="Level4" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
-visible = false
 position = Vector2(2015, 241)
 spanwers = NodePath("Spawners")
 
@@ -16776,7 +16772,6 @@ time_berofe_spawn = 20
 name_of_scene = "dalnik"
 
 [node name="Level5" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
-visible = false
 position = Vector2(3816, 1027)
 spanwers = NodePath("Spawners")
 
@@ -16924,7 +16919,7 @@ mainMusic = NodePath("../../MainMusic")
 maxHealth = 20
 
 [node name="YAGA" parent="Ysort" instance=ExtResource("7_tdjix")]
-position = Vector2(7492, 1646)
+position = Vector2(7097, 1598)
 
 [node name="BossLevel" parent="Ysort" instance=ExtResource("9_fukoq")]
 position = Vector2(12901, 76)

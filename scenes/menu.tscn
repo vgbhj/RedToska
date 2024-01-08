@@ -51,6 +51,7 @@ scale = Vector2(0.898611, 0.898611)
 texture = ExtResource("3_olh51")
 
 [node name="BackStyle" type="Sprite2D" parent="CanvasLayer"]
+visible = false
 position = Vector2(575.052, 322)
 scale = Vector2(0.765403, 0.765403)
 texture = ExtResource("4_jqydn")
@@ -86,3 +87,4 @@ icon = SubResource("AtlasTexture_kdyju")
 expand_icon = true
 
 [connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="CanvasLayer/Controls" to="." method="_on_controls_pressed"]

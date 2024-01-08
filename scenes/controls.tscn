@@ -1,0 +1,51 @@
+[gd_scene load_steps=12 format=3 uid="uid://dbtuoacmetc5t"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_5n8a1"]
+[ext_resource type="AudioStream" uid="uid://c7djywip3xu5t" path="res://audio/beat'em up.mp3" id="2_ie532"]
+[ext_resource type="Script" path="res://scripts/MainMusic.gd" id="3_te0vc"]
+[ext_resource type="Texture2D" uid="uid://g7530wetcrry" path="res://sprites/controls.png" id="4_qrkvr"]
+[ext_resource type="Texture2D" uid="uid://dn5w51rstmj8y" path="res://sprites/menu.png" id="6_suu82"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd07m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2uw6m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_mgryb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qwm3e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ll2rk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6unop"]
+atlas = ExtResource("6_suu82")
+region = Rect2(2, 7, 60, 18)
+
+[node name="Menu" type="Node"]
+script = ExtResource("1_5n8a1")
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_ie532")
+autoplay = true
+script = ExtResource("3_te0vc")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Back" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(576.585, 323.476)
+scale = Vector2(0.769267, 0.780862)
+texture = ExtResource("4_qrkvr")
+
+[node name="Play" type="Button" parent="CanvasLayer"]
+offset_left = 58.0
+offset_top = 542.0
+offset_right = 358.0
+offset_bottom = 637.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_fd07m")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_2uw6m")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_mgryb")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_qwm3e")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_ll2rk")
+icon = SubResource("AtlasTexture_6unop")
+expand_icon = true
+
+[connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]
