@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://bil2lm3s5w6qb"]
+[gd_scene load_steps=6 format=3 uid="uid://bil2lm3s5w6qb"]
 
 [ext_resource type="Script" path="res://scripts/LevelCollision.gd" id="1_s2fo0"]
 [ext_resource type="Script" path="res://scripts/boss_level.gd" id="1_tyckx"]
@@ -8,6 +8,9 @@ size = Vector2(2286.5, 1790)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_aj7st"]
 size = Vector2(2289, 42)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kenj4"]
+size = Vector2(672, 42)
 
 [node name="BossLevel" type="Node2D"]
 script = ExtResource("1_tyckx")
@@ -35,11 +38,10 @@ position = Vector2(1094, 1224)
 shape = SubResource("RectangleShape2D_aj7st")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
-[node name="ForwardCollider2" type="CollisionShape2D" parent="."]
-position = Vector2(0, 324)
-rotation = 1.5708
+[node name="ButtomCollider2" type="CollisionShape2D" parent="BackForwardBlock"]
+position = Vector2(1156, -148)
 shape = SubResource("RectangleShape2D_aj7st")
-debug_color = Color(0.905882, 0, 0.737255, 0.419608)
+debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
 [node name="Dots" type="Node2D" parent="."]
 
@@ -57,6 +59,17 @@ position = Vector2(-270, 101)
 
 [node name="RightEnd" type="Marker2D" parent="Dots"]
 position = Vector2(2435, 893)
+
+[node name="BackBlock" type="StaticBody2D" parent="."]
+position = Vector2(2133, 2)
+
+[node name="BackBlockCollider" type="CollisionShape2D" parent="BackBlock"]
+position = Vector2(-2139, 446)
+rotation = 1.5708
+scale = Vector2(5, 1)
+shape = SubResource("RectangleShape2D_kenj4")
+one_way_collision = true
+debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
 [connection signal="area_entered" from="LevelArea" to="." method="_on_level_area_area_entered"]
 [connection signal="body_entered" from="LevelArea" to="." method="_on_level_area_body_entered"]
