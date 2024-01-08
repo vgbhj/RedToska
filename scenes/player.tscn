@@ -1,4 +1,4 @@
-[gd_scene load_steps=78 format=3 uid="uid://dxc812fb4om46"]
+[gd_scene load_steps=79 format=3 uid="uid://dxc812fb4om46"]
 
 [ext_resource type="Shader" path="res://shaders/rgb.gdshader" id="1_d0oqp"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l5r7d"]
@@ -288,7 +288,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtr88"]
-size = Vector2(20, 7.00003)
+size = Vector2(33.6667, 7.00003)
 
 [sub_resource type="Animation" id="Animation_helgb"]
 length = 0.001
@@ -1023,6 +1023,10 @@ region = Rect2(0, 3240, 1152, 648)
 atlas = ExtResource("10_y5khi")
 region = Rect2(1152, 3240, 1152, 648)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhqdg"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(2764, 3240, 691, 648)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_h385w"]
 animations = [{
 "frames": [{
@@ -1076,6 +1080,9 @@ animations = [{
 }, {
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_h8c5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhqdg")
 }],
 "loop": true,
 "name": &"appear",
@@ -1123,7 +1130,7 @@ offset = Vector2(0, -31)
 [node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["jabAttack"]]
 
 [node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack"]
-position = Vector2(17, -5)
+position = Vector2(10.1667, -5)
 shape = SubResource("RectangleShape2D_rtr88")
 disabled = true
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)

@@ -33,6 +33,8 @@ var rng = RandomNumberGenerator.new()
 
 var shake_strength: float = 0.0
 
+@onready var banger = $BANGER
+
 var lastAnimDirection: String = "Left"
 var isDead: bool = false
 var isTakeDamage: bool = false
@@ -48,6 +50,7 @@ var can_jump: bool = true
 
 func _ready():
 	GoGo.visible = false
+	banger.visible = false
 	allTimer.start()
 
 func go_fucn():
@@ -58,6 +61,7 @@ func go_fucn():
 
 func get_input():
 	if isBossFightScene:
+		banger.visible = true
 		velocity.x += 1
 		velocity = velocity.normalized() * speed
 		return
