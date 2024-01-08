@@ -13,6 +13,8 @@ size = Vector2(2289, 42)
 size = Vector2(672, 42)
 
 [node name="BossLevel" type="Node2D"]
+light_mask = 7
+visibility_layer = 7
 script = ExtResource("1_tyckx")
 
 [node name="LevelArea" type="Area2D" parent="." groups=["bossFight"]]

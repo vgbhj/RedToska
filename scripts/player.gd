@@ -44,6 +44,7 @@ var waitNextJump: bool = false
 var isShaking: bool = false
 var isBossFightScene: bool = false
 var y_before_jump: float
+var can_jump: bool = true
 
 func _ready():
 	GoGo.visible = false
@@ -69,7 +70,7 @@ func get_input():
 	if Input.is_action_pressed("ui_up") and !isJumping:
 		velocity.y -= 1
 	
-	if Input.is_action_just_pressed("jump") and !waitNextJump:
+	if Input.is_action_just_pressed("jump") and !waitNextJump and can_jump:
 		jump()
 	
 	
@@ -115,6 +116,7 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 func updateAnimation():
+	#print(animations.current_animation)
 	if isBossFightScene: return
 	if isAttacking: return
 	if isJumping: return
@@ -157,6 +159,7 @@ func _physics_process(delta):
 
 func _on_hurt_box_area_entered(area):
 	if area.is_in_group("bossFight"):
+		can_jump = 0
 		animations.play("bossFight")
 		isBossFightScene = true
 		#camera.set_zoom(Vector2(0.5,0.5)) 
@@ -226,6 +229,7 @@ func jump():
 	await animations.animation_finished
 	isJumping = false
 	jumpAttackCollider.disabled = true
+	#animations.stop()
 	wait_next_jump()
 
 

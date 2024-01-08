@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=108 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
@@ -14,7 +14,6 @@
 [ext_resource type="AudioStream" uid="uid://bsntp0msepu15" path="res://audio/energy_beat.mp3" id="8_gb33o"]
 [ext_resource type="PackedScene" uid="uid://bil2lm3s5w6qb" path="res://scenes/boss_level.tscn" id="9_fukoq"]
 [ext_resource type="PackedScene" uid="uid://b5snu0ffkl8t" path="res://scenes/boss_bobik.tscn" id="10_sbtje"]
-[ext_resource type="PackedScene" uid="uid://dx7h1bdy5mw72" path="res://scenes/enemy_punk.tscn" id="11_0dd74"]
 [ext_resource type="Shader" path="res://shaders/rgb.gdshader" id="11_c7la3"]
 [ext_resource type="Texture2D" uid="uid://chhxgy5bi2e5w" path="res://sprites/ui_healthsuperbar.png" id="12_cbk45"]
 [ext_resource type="Script" path="res://scripts/healthBar.gd" id="12_ee7mm"]
@@ -36,9 +35,6 @@
 [ext_resource type="Texture2D" uid="uid://b1xxk4sn17c81" path="res://sprites/produkti.png" id="32_nadli"]
 [ext_resource type="Texture2D" uid="uid://mscq18b0al1a" path="res://sprites/car.png" id="34_rbt6q"]
 [ext_resource type="Texture2D" uid="uid://fd4npmfwjyf2" path="res://sprites/sneg.png" id="35_usv1b"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_keisa"]
-size = Vector2(5421.75, 56)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ijua4"]
 atlas = ExtResource("12_cbk45")
@@ -16674,11 +16670,8 @@ position = Vector2(-99, 404)
 time_berofe_spawn = 5
 
 [node name="Level2" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
-visible = false
 position = Vector2(-184, 123)
 spanwers = NodePath("Spawners")
-isEnabled = false
-DisableForwardBlock = true
 
 [node name="Spawners" type="Node2D" parent="Ysort/Level2"]
 y_sort_enabled = true
@@ -16698,11 +16691,8 @@ time_berofe_spawn = 4
 name_of_scene = "dalnik"
 
 [node name="Level3" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
-visible = false
 position = Vector2(244, 123)
 spanwers = NodePath("Spawners")
-isEnabled = false
-DisableForwardBlock = true
 
 [node name="Spawners" type="Node2D" parent="Ysort/Level3"]
 y_sort_enabled = true
@@ -16734,11 +16724,8 @@ time_berofe_spawn = 15
 name_of_scene = "dalnik"
 
 [node name="Level4" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
-visible = false
 position = Vector2(2015, 241)
 spanwers = NodePath("Spawners")
-isEnabled = false
-DisableForwardBlock = true
 
 [node name="Spawners" type="Node2D" parent="Ysort/Level4"]
 y_sort_enabled = true
@@ -16785,10 +16772,8 @@ time_berofe_spawn = 20
 name_of_scene = "dalnik"
 
 [node name="Level5" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
-visible = false
 position = Vector2(3816, 1027)
 spanwers = NodePath("Spawners")
-isEnabled = false
 
 [node name="Spawners" type="Node2D" parent="Ysort/Level5"]
 y_sort_enabled = true
@@ -16814,11 +16799,8 @@ position = Vector2(424, 1074)
 time_berofe_spawn = 5
 
 [node name="Level6" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
-visible = false
 position = Vector2(5584, 1023)
 spanwers = NodePath("Spawners")
-isEnabled = false
-DisableForwardBlock = true
 
 [node name="Spawners" type="Node2D" parent="Ysort/Level6"]
 y_sort_enabled = true
@@ -16920,20 +16902,17 @@ position = Vector2(951, 1238)
 position = Vector2(951, 1238)
 
 [node name="Healka" parent="Ysort" instance=ExtResource("7_7v0vm")]
-visible = false
 position = Vector2(1788, 468)
 
 [node name="Healka3" parent="Ysort" instance=ExtResource("7_7v0vm")]
-visible = false
 position = Vector2(4214, 1588)
 
 [node name="Healka2" parent="Ysort" instance=ExtResource("7_7v0vm")]
-visible = false
 position = Vector2(3297, 626)
 
 [node name="Player" parent="Ysort" node_paths=PackedStringArray("yaga_bar", "mainMusic") instance=ExtResource("2_4o0au")]
 material = ExtResource("7_fdglo")
-position = Vector2(-1509, 575)
+position = Vector2(5973, 1709)
 yaga_shader = ExtResource("7_fdglo")
 yaga_bar = NodePath("../../CanvasLayer/yagaHpBar")
 mainMusic = NodePath("../../MainMusic")
@@ -16969,28 +16948,6 @@ dot2 = NodePath("../BossLevel/Dots2/LeftEnd")
 dot3 = NodePath("../BossLevel/Dots2/LeftStart")
 dot4 = NodePath("../BossLevel/Dots2/RightEnd")
 dot5 = NodePath("../BossLevel/Dots2/StartPos")
-
-[node name="EnemyPunk" parent="Ysort" instance=ExtResource("11_0dd74")]
-position = Vector2(-988, 249)
-
-[node name="StaticBody2D" type="StaticBody2D" parent="."]
-z_index = 2
-position = Vector2(2368, 0)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(635.125, 382)
-shape = SubResource("RectangleShape2D_keisa")
-debug_color = Color(0, 0.643137, 0.270588, 0.419608)
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-1261.75, 748)
-shape = SubResource("RectangleShape2D_keisa")
-debug_color = Color(0, 0.643137, 0.270588, 0.419608)
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(-153, 748)
-shape = SubResource("RectangleShape2D_keisa")
-debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 offset = Vector2(5, 5)
@@ -17053,7 +17010,7 @@ z_index = 2
 position = Vector2(2133, 2)
 
 [node name="BackBlockCollider" type="CollisionShape2D" parent="BackBlock"]
-position = Vector2(-2139, 446)
+position = Vector2(-8470, 853)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_t1oul")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
@@ -17423,6 +17380,7 @@ shape = SubResource("RectangleShape2D_v2i21")
 position = Vector2(7004, 1876)
 scale = Vector2(1.22356, 2.57584)
 shape = SubResource("RectangleShape2D_v2i21")
+one_way_collision = true
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="TopDownBlock3"]
 position = Vector2(7750, 1593)

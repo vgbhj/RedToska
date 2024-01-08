@@ -485,13 +485,12 @@ _data = {
 }
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k7nfp"]
-size = Vector2(448, 303.5)
+size = Vector2(359.5, 213.688)
 
 [node name="BossBobik" type="CharacterBody2D"]
 script = ExtResource("1_idamj")
 
 [node name="HurtBox" type="Area2D" parent="." groups=["hurtBox"]]
-visible = false
 position = Vector2(-10, -14)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="HurtBox"]
@@ -520,8 +519,7 @@ libraries = {
 }
 
 [node name="Collider" type="CollisionShape2D" parent="."]
-visible = false
-position = Vector2(0, -130)
+position = Vector2(-10, -133)
 shape = SubResource("RectangleShape2D_k7nfp")
 disabled = true
 

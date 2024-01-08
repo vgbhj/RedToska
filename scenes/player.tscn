@@ -485,6 +485,18 @@ tracks/4/keys = {
 "points": PackedFloat32Array(5, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("SuperAttack/SuperAttackCollider:disabled")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
 
 [sub_resource type="Animation" id="Animation_h28f4"]
 resource_name = "jump"
@@ -557,6 +569,18 @@ tracks/5/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.202341, 0.320133, 0.399649, 0.675146, 0.874795, 1.01003, 1.13352)
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("SuperAttack/SuperAttackCollider:disabled")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_nhupy"]
@@ -633,6 +657,18 @@ tracks/3/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(5, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("SuperAttack/SuperAttackCollider:disabled")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_helgb"]
@@ -860,7 +896,7 @@ debug_color = Color(0, 0.639216, 0.360784, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 use_parent_material = true
-position = Vector2(13, 4.94735)
+position = Vector2(17, 5)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3agyg")
 animation = &"jump"

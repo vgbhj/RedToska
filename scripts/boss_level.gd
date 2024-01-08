@@ -11,6 +11,8 @@ signal start_fight
 @onready var ForwardCollider = $BackForwardBlock/ForwardCollider
 @onready var ButtomCollider = $BackForwardBlock/ButtomCollider
 
+var isWaveStart: bool = false
+
 func _ready():
 	ForwardCollider.disabled = DisableForwardBlock
 	ButtomCollider.disabled = DisableButtomBlock
@@ -26,3 +28,4 @@ func _on_level_area_body_entered(body):
 	start_fight.emit()
 	#boss.MentTimer.start()
 	#boss.isStart = true
+	isWaveStart = true
