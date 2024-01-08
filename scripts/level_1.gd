@@ -1,5 +1,7 @@
 extends Node2D
 
+signal lvl_end
+
 @export var spanwers : Spawners
 @export var trigger: Area2D
 @export var isEnabled: bool = true
@@ -7,6 +9,7 @@ extends Node2D
 @export var DisableButtomBlock: bool = false
 @onready var ForwardCollider = $BackForwardBlock/ForwardCollider
 @onready var ButtomCollider = $BackForwardBlock/ButtomCollider
+@onready var animations = $AnimationPlayer
 var enemy_scene = preload("res://scenes/enemy_punk.tscn") 
 var isWaveStart: bool = false
 
@@ -17,6 +20,9 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if spanwers.get_child_count() == 0:
+		#animations.play("go")
+		#await animations.animation_finished
+		lvl_end.emit()
 		queue_free()
 
 func _on_level_area_body_entered(body):

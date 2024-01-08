@@ -17,6 +17,7 @@ signal superChanged
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
 @onready var camera = $Camera2D
 @export var mainMusic: AudioStreamPlayer
+@onready var GoGo = $GoGo
 
 @export var maxHealth = 20
 @onready var currentHealth: int = maxHealth
@@ -41,6 +42,15 @@ var isJumping: bool = false
 var waitNextJump: bool = false
 var isShaking: bool = false
 var isBossFightScene: bool = false
+
+func _ready():
+	GoGo.visible = false
+
+func go_fucn():
+	for i in range(5):
+		GoGo.visible = true
+		await get_tree().create_timer(.2).timeout
+		GoGo.visible = false
 
 func get_input():
 	if isBossFightScene:
@@ -220,3 +230,11 @@ func yaga_activate():
 	currentHealth = 19
 	
 	healthChanged.emit(currentHealth)
+
+
+func _on_level_1_lvl_end():
+	go_fucn()
+
+
+func _on_level_2_lvl_end():
+	go_fucn()

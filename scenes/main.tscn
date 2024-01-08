@@ -16650,7 +16650,6 @@ y_sort_enabled = true
 position = Vector2(2368, 0)
 
 [node name="Level1" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
-visible = false
 position = Vector2(-1689, 123)
 spanwers = NodePath("Spawners")
 
@@ -16659,10 +16658,10 @@ y_sort_enabled = true
 script = ExtResource("4_i1tf1")
 
 [node name="Spawner" parent="Ysort/Level1/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(1246, 404)
+position = Vector2(1446, 321)
 
 [node name="Spawner2" parent="Ysort/Level1/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(1314, 398)
+position = Vector2(1635, 476)
 time_berofe_spawn = 5
 
 [node name="Spawner3" parent="Ysort/Level1/Spawners" instance=ExtResource("5_5ht7h")]
@@ -16933,7 +16932,7 @@ position = Vector2(3297, 626)
 
 [node name="Player" parent="Ysort" node_paths=PackedStringArray("yaga_bar", "mainMusic") instance=ExtResource("2_4o0au")]
 material = ExtResource("7_fdglo")
-position = Vector2(6412, 1688)
+position = Vector2(-1311, 510)
 yaga_shader = ExtResource("7_fdglo")
 yaga_bar = NodePath("../../CanvasLayer/yagaHpBar")
 jump_impulse = 2
@@ -17458,4 +17457,7 @@ rotation = 2.35619
 scale = Vector2(1.22356, 2.57584)
 shape = SubResource("RectangleShape2D_v2i21")
 
+[connection signal="lvl_end" from="Ysort/Level1" to="Ysort/Player" method="_on_level_1_lvl_end"]
+[connection signal="lvl_end" from="Ysort/Level2" to="Ysort/Player" method="_on_level_2_lvl_end"]
 [connection signal="start_fight" from="Ysort/BossLevel" to="Ysort/BossBobik" method="_on_boss_level_start_fight"]
+[connection signal="start_fight" from="Ysort/BossLevel" to="CanvasLayer/helthBarBobik" method="_on_boss_level_start_fight"]
