@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=110 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
@@ -14,6 +14,7 @@
 [ext_resource type="AudioStream" uid="uid://bsntp0msepu15" path="res://audio/energy_beat.mp3" id="8_gb33o"]
 [ext_resource type="PackedScene" uid="uid://bil2lm3s5w6qb" path="res://scenes/boss_level.tscn" id="9_fukoq"]
 [ext_resource type="PackedScene" uid="uid://b5snu0ffkl8t" path="res://scenes/boss_bobik.tscn" id="10_sbtje"]
+[ext_resource type="PackedScene" uid="uid://dx7h1bdy5mw72" path="res://scenes/enemy_punk.tscn" id="11_0dd74"]
 [ext_resource type="Shader" path="res://shaders/rgb.gdshader" id="11_c7la3"]
 [ext_resource type="Texture2D" uid="uid://chhxgy5bi2e5w" path="res://sprites/ui_healthsuperbar.png" id="12_cbk45"]
 [ext_resource type="Script" path="res://scripts/healthBar.gd" id="12_ee7mm"]
@@ -16932,10 +16933,9 @@ position = Vector2(3297, 626)
 
 [node name="Player" parent="Ysort" node_paths=PackedStringArray("yaga_bar", "mainMusic") instance=ExtResource("2_4o0au")]
 material = ExtResource("7_fdglo")
-position = Vector2(12481, 605)
+position = Vector2(-1509, 575)
 yaga_shader = ExtResource("7_fdglo")
 yaga_bar = NodePath("../../CanvasLayer/yagaHpBar")
-jump_impulse = 2
 mainMusic = NodePath("../../MainMusic")
 maxHealth = 20
 
@@ -16970,20 +16970,24 @@ dot3 = NodePath("../BossLevel/Dots2/LeftStart")
 dot4 = NodePath("../BossLevel/Dots2/RightEnd")
 dot5 = NodePath("../BossLevel/Dots2/StartPos")
 
-[node name="TopDownBlock" type="StaticBody2D" parent="."]
+[node name="EnemyPunk" parent="Ysort" instance=ExtResource("11_0dd74")]
+position = Vector2(-988, 249)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+z_index = 2
 position = Vector2(2368, 0)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TopDownBlock"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(635.125, 382)
 shape = SubResource("RectangleShape2D_keisa")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="TopDownBlock"]
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-1261.75, 748)
 shape = SubResource("RectangleShape2D_keisa")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="TopDownBlock"]
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(-153, 748)
 shape = SubResource("RectangleShape2D_keisa")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
@@ -17045,6 +17049,7 @@ region_enabled = true
 region_rect = Rect2(1, 1, 142, 45)
 
 [node name="BackBlock" type="StaticBody2D" parent="."]
+z_index = 2
 position = Vector2(2133, 2)
 
 [node name="BackBlockCollider" type="CollisionShape2D" parent="BackBlock"]
@@ -17368,10 +17373,13 @@ layer_1/tile_data = PackedInt32Array(655374, 1507328, 3, 720910, 1507328, 4, 655
 
 [node name="TopDownBlock2" type="StaticBody2D" parent="."]
 position = Vector2(2368, 0)
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopDownBlock2"]
-position = Vector2(635.125, 382)
+position = Vector2(637, 382)
 shape = SubResource("RectangleShape2D_hbxmy")
+one_way_collision = true
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="TopDownBlock2"]
@@ -17387,6 +17395,8 @@ debug_color = Color(0, 0.643137, 0.270588, 0.419608)
 
 [node name="TopDownBlock3" type="StaticBody2D" parent="."]
 position = Vector2(2368, 0)
+collision_layer = 7
+collision_mask = 7
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="TopDownBlock3"]
 position = Vector2(5541.42, 1395)

@@ -85,8 +85,13 @@ func _physics_process(delta):
 		move_and_slide()
 
 func _on_hurt_box_area_entered(area):
-	if !area.is_in_group("hitBoxPlayer"): return
-	currentHealth -= 2
+	if !area.is_in_group("jabAttack") || !area.is_in_group("jumpAttack"): return
+	var damage = 0
+	if area.is_in_group("jabAttack"):
+		damage = 1
+	if area.is_in_group("jumpAttack"):
+		damage = 3
+	currentHealth -= damage
 	healthChanged.emit(currentHealth)
 	if currentHealth < 1:
 		isDead = true

@@ -10,11 +10,11 @@ signal superChanged
 @export var yaga_bar: Sprite2D
 @export var speed: int = 300
 @export var attack_interval = 1
-@export var wait_after_jump = 3
-@export var jump_impulse = 20
-@onready var animations = $AnimatedSprite2D/AnimationPlayer
+@export var wait_after_jump = 0
+@onready var animations = $AnimationPlayer
 @onready var collider = $Collider
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
+@onready var jumpAttackCollider = $JumpAttack/JumpAttackCollider
 @onready var camera = $Camera2D
 @export var mainMusic: AudioStreamPlayer
 @onready var GoGo = $GoGo
@@ -39,9 +39,11 @@ var isTakeDamage: bool = false
 var inAttackZone: bool = false
 var isAttacking: bool = false
 var isJumping: bool = false
+var isSuper: bool = false
 var waitNextJump: bool = false
 var isShaking: bool = false
 var isBossFightScene: bool = false
+var y_before_jump: float
 
 func _ready():
 	GoGo.visible = false
@@ -70,21 +72,46 @@ func get_input():
 	if Input.is_action_just_pressed("jump") and !waitNextJump:
 		jump()
 	
+	
+	if lastAnimDirection == "Right":
+		jumpAttackCollider.position.x = $AnimatedSprite2D.position.x - 40
+		jabAttackCollider.position.x = $AnimatedSprite2D.position.x - 40
+	else:
+		jumpAttackCollider.position.x = $AnimatedSprite2D.position.x + 10 
+		jabAttackCollider.position.x = $AnimatedSprite2D.position.x + 10 
+	
 	if Input.is_action_just_pressed("jab_attack"):
-		if isJumping: return
+		if isJumping:
+			$AnimatedSprite2D.play("jump_attack")
+			jumpAttackCollider.disabled = false
+		
+		if !isJumping:
+			animations.play("jab_attack")
+			isAttacking = true
+			await animations.animation_finished
+			#for i in range(attack_interval):
+				#animations.play("idle")
+				#await animations.animation_finished
+			isAttacking = false
+	elif Input.is_action_just_pressed("super_attack"):
+		if !(currentSuper < 50):
+			currentSuper -= 50
+			superChanged.emit(currentSuper)
+			animations.play("super")
+			isSuper = true
+			await animations.animation_finished
+			#for i in range(attack_interval):
+				#animations.play("idle")
+				#await animations.animation_finished
+			isSuper = false
+	
+	if isSuper:
+		velocity = Vector2.ZERO
 		if lastAnimDirection == "Right":
-			jabAttackCollider.position.x = $AnimatedSprite2D.position.x - 40
+			velocity.x -= 10
 		else:
-			jabAttackCollider.position.x = $AnimatedSprite2D.position.x + 10 
-		
-		animations.play("jab_attack")
-		isAttacking = true
-		await animations.animation_finished
-		#for i in range(attack_interval):
-			#animations.play("idle")
-			#await animations.animation_finished
-		isAttacking = false
-		
+			velocity.x += 10
+
 	velocity = velocity.normalized() * speed
 
 func updateAnimation():
@@ -125,6 +152,7 @@ func _physics_process(delta):
 	
 	get_input()
 	move_and_slide()
+	if isSuper: return
 	updateAnimation()
 
 func _on_hurt_box_area_entered(area):
@@ -192,10 +220,12 @@ func _on_jab_attack_area_entered(area):
 	#print("Ударилл")
 
 func jump():
+	y_before_jump = $AnimatedSprite2D.position.y
 	isJumping = true
 	animations.play("jump")
 	await animations.animation_finished
 	isJumping = false
+	jumpAttackCollider.disabled = true
 	wait_next_jump()
 
 
@@ -238,3 +268,9 @@ func _on_level_1_lvl_end():
 
 func _on_level_2_lvl_end():
 	go_fucn()
+
+
+func _on_jump_attack_area_entered(area):
+	if !area.is_in_group("hurtBox"): return
+	currentSuper += 5
+	superChanged.emit(currentSuper)

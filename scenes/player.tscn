@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://dxc812fb4om46"]
+[gd_scene load_steps=59 format=3 uid="uid://dxc812fb4om46"]
 
 [ext_resource type="Shader" path="res://shaders/rgb.gdshader" id="1_d0oqp"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l5r7d"]
@@ -6,12 +6,20 @@
 [ext_resource type="Texture2D" uid="uid://dod2wc7nas6pq" path="res://sprites/hurt-animation.png" id="2_qrccj"]
 [ext_resource type="Texture2D" uid="uid://bum5at2uvc0pl" path="res://sprites/shadow.png" id="3_xirlk"]
 [ext_resource type="Animation" uid="uid://cyuk1oxf55ibf" path="res://anims/bossFight.res" id="5_3gaoh"]
+[ext_resource type="Texture2D" uid="uid://ds5t0inkjf62j" path="res://sprites/jump (6) + jump kick (3) .png" id="5_t45le"]
+[ext_resource type="Texture2D" uid="uid://vf665eswlm4p" path="res://sprites/super.png" id="6_r7yev"]
 [ext_resource type="Texture2D" uid="uid://2jcer1o5cji2" path="res://sprites/ui_go.png" id="6_tmfft"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_obgvy"]
 shader = ExtResource("1_d0oqp")
 shader_parameter/dir = Vector2(0.002, 0.02)
 shader_parameter/quality = 0
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0xqt1"]
+size = Vector2(203, 189)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2eikb"]
+size = Vector2(20, 48.6667)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsgyx"]
 size = Vector2(64, 26)
@@ -52,13 +60,61 @@ region = Rect2(1050, 0, 75, 60)
 atlas = ExtResource("2_a4vvp")
 region = Rect2(1125, 0, 75, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_43k3q"]
-atlas = ExtResource("2_a4vvp")
-region = Rect2(0, 0, 75, 60)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e0w8m"]
+atlas = ExtResource("5_t45le")
+region = Rect2(0, 0, 73, 60)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_62mnf"]
-atlas = ExtResource("2_a4vvp")
-region = Rect2(975, 0, 75, 60)
+[sub_resource type="AtlasTexture" id="AtlasTexture_3mv0i"]
+atlas = ExtResource("5_t45le")
+region = Rect2(73, 0, 73, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qgq44"]
+atlas = ExtResource("5_t45le")
+region = Rect2(146, 0, 73, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ubdjc"]
+atlas = ExtResource("5_t45le")
+region = Rect2(219, 0, 73, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vq4rl"]
+atlas = ExtResource("5_t45le")
+region = Rect2(292, 0, 73, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7ornf"]
+atlas = ExtResource("5_t45le")
+region = Rect2(365, 0, 73, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fti7g"]
+atlas = ExtResource("5_t45le")
+region = Rect2(438, 0, 73, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gflci"]
+atlas = ExtResource("5_t45le")
+region = Rect2(511, 0, 73, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v7qpk"]
+atlas = ExtResource("5_t45le")
+region = Rect2(584, 0, 73, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rkmj4"]
+atlas = ExtResource("6_r7yev")
+region = Rect2(0, 0, 73, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e6nq7"]
+atlas = ExtResource("6_r7yev")
+region = Rect2(73, 0, 73, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pxqsd"]
+atlas = ExtResource("6_r7yev")
+region = Rect2(146, 0, 73, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ty8jt"]
+atlas = ExtResource("6_r7yev")
+region = Rect2(219, 0, 73, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wep1x"]
+atlas = ExtResource("6_r7yev")
+region = Rect2(292, 0, 73, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_161a0"]
 atlas = ExtResource("2_a4vvp")
@@ -142,13 +198,59 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_43k3q")
+"texture": SubResource("AtlasTexture_e0w8m")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_62mnf")
+"texture": SubResource("AtlasTexture_3mv0i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qgq44")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ubdjc")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vq4rl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7ornf")
 }],
 "loop": true,
 "name": &"jump",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fti7g")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gflci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v7qpk")
+}],
+"loop": true,
+"name": &"jump_attack",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rkmj4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e6nq7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pxqsd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ty8jt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wep1x")
+}],
+"loop": true,
+"name": &"super",
 "speed": 5.0
 }, {
 "frames": [{
@@ -386,75 +488,75 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_h28f4"]
 resource_name = "jump"
-length = 0.6
-tracks/0/type = "value"
+length = 1.2
+tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/path = NodePath("AnimatedSprite2D:position:x")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(13, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1.12848)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0, -102, -0.25, 0, 0.25, 0, -102, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0.090597, 0.352673, 0.710379, 1.09493)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Collider:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [false, true, true, false]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("AnimatedSprite2D:animation")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [&"jump"]
 }
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:frame")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.15, 0.45)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:position:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(13, -0.25, 0, 0.25, 0, 13, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimatedSprite2D:position:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0, -102, -0.25, 0, 0.25, 0, -102, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6)
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Collider:disabled")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, false]
-}
-tracks/5/type = "value"
+tracks/5/type = "bezier"
 tracks/5/imported = false
 tracks/5/enabled = true
-tracks/5/path = NodePath("HurtBox/CollisionShape2D:disabled")
+tracks/5/path = NodePath("AnimatedSprite2D:frame")
 tracks/5/interp = 1
 tracks/5/loop_wrap = true
 tracks/5/keys = {
-"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
-"transitions": PackedFloat32Array(1, 1, 1, 1),
-"update": 1,
-"values": [false, true, true, false]
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.202341, 0.320133, 0.399649, 0.675146, 0.874795, 1.01003, 1.13352)
 }
 
 [sub_resource type="Animation" id="Animation_nhupy"]
@@ -634,6 +736,80 @@ tracks/8/keys = {
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("AnimatedSprite2D:animation")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"jump"]
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("AnimatedSprite2D:frame")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("SuperAttack/SuperAttackCollider:disabled")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_welfc"]
+resource_name = "super"
+length = 0.8
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"super"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("SuperAttack/SuperAttackCollider:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.0108815, 0.759526, 0.798043),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7x7w"]
 _data = {
@@ -645,6 +821,7 @@ _data = {
 "jab_attack": SubResource("Animation_usi20"),
 "jump": SubResource("Animation_h28f4"),
 "stay": SubResource("Animation_nhupy"),
+"super": SubResource("Animation_welfc"),
 "walk": SubResource("Animation_eahwk")
 }
 
@@ -658,6 +835,22 @@ collision_mask = 3
 script = ExtResource("1_l5r7d")
 maxHealth = 19
 
+[node name="SuperAttack" type="Area2D" parent="." groups=["superAttack"]]
+
+[node name="SuperAttackCollider" type="CollisionShape2D" parent="SuperAttack"]
+position = Vector2(11, -84)
+shape = SubResource("RectangleShape2D_0xqt1")
+disabled = true
+
+[node name="JumpAttack" type="Area2D" parent="." groups=["jumpAttack"]]
+position = Vector2(13, 5)
+scale = Vector2(3, 3)
+
+[node name="JumpAttackCollider" type="CollisionShape2D" parent="JumpAttack"]
+position = Vector2(17, -25.6667)
+shape = SubResource("RectangleShape2D_2eikb")
+disabled = true
+
 [node name="HurtBox" type="Area2D" parent="." groups=["hurtBoxPlayer"]]
 position = Vector2(3, 0)
 
@@ -667,23 +860,21 @@ debug_color = Color(0, 0.639216, 0.360784, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 use_parent_material = true
-position = Vector2(17, 5)
+position = Vector2(13, 4.94735)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3agyg")
-animation = &"walk"
-frame = 4
+animation = &"jump"
 offset = Vector2(0, -31)
 
-[node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["hitBoxPlayer"]]
+[node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["jabAttack"]]
 
-[node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack" groups=["hitBox"]]
+[node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack"]
 position = Vector2(17, -5)
 shape = SubResource("RectangleShape2D_rtr88")
 disabled = true
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="AnimatedSprite2D"]
-root_node = NodePath("../..")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_s7x7w")
 }
@@ -703,7 +894,6 @@ shape = SubResource("RectangleShape2D_bh3dk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-9.5, 0)
-zoom = Vector2(0.819328, 0.819328)
 drag_horizontal_enabled = true
 drag_vertical_enabled = true
 drag_vertical_offset = -0.8
@@ -740,5 +930,6 @@ centered = false
 region_enabled = true
 region_rect = Rect2(8, 2, 33, 28)
 
+[connection signal="area_entered" from="JumpAttack" to="." method="_on_jump_attack_area_entered"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/JabAttack" to="." method="_on_jab_attack_area_entered"]

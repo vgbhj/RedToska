@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=3 uid="uid://b1xq2pkdlwbhe"]
+[gd_scene load_steps=29 format=3 uid="uid://b1xq2pkdlwbhe"]
 
 [ext_resource type="Script" path="res://scripts/enemy_dalnik.gd" id="1_qx28b"]
 [ext_resource type="Texture2D" uid="uid://bvmc884kch0py" path="res://sprites/red_gopnik.png" id="2_6snt1"]
@@ -331,6 +331,9 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1i1tk"]
 size = Vector2(93.7049, 5.77084)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f770b"]
+size = Vector2(75, 27)
+
 [node name="enemy_dalnik" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 2
@@ -366,9 +369,9 @@ scale = Vector2(3.70667, 1)
 shape = SubResource("RectangleShape2D_1i1tk")
 debug_color = Color(0.878431, 0.270588, 0.407843, 0.419608)
 
-[node name="Collider" type="CollisionPolygon2D" parent="."]
-position = Vector2(-7, -65)
-polygon = PackedVector2Array(-27, 61, 43, 61, 43, 44, -27, 44)
+[node name="Collider" type="CollisionShape2D" parent="."]
+position = Vector2(2.5, -12.5)
+shape = SubResource("RectangleShape2D_f770b")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/PlayerDetecter" to="." method="_on_player_detecter_area_entered"]

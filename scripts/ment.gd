@@ -73,8 +73,14 @@ func _on_player_detecter_area_exited(area):
 		inAttackZone = false
 
 func _on_hurt_box_area_entered(area):
-	if !area.is_in_group("hitBoxPlayer"): return
-	currentHealth -= 1
+	print(area.name)
+	if !area.is_in_group("jabAttack") && !area.is_in_group("jumpAttack"): return
+	var damage = 0
+	if area.is_in_group("jabAttack"):
+		damage = 1
+	if area.is_in_group("jumpAttack"):
+		damage = 3
+	currentHealth -= damage
 	if currentHealth < 1:
 		isDead = true
 		enemy_death.emit()
