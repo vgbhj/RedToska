@@ -52,6 +52,12 @@ func _ready():
 	GoGo.visible = false
 	banger.visible = false
 	allTimer.start()
+	camera.drag_horizontal_offset = 0
+	camera.drag_vertical_offset = -0.8
+	camera.drag_left_margin = 0.9
+	camera.drag_top_margin = .5
+	camera.drag_right_margin = .85
+	camera.drag_bottom_margin = 1
 
 func go_fucn():
 	for i in range(5):
@@ -63,7 +69,7 @@ func get_input():
 	if isBossFightScene:
 		banger.visible = true
 		velocity.x += 1
-		velocity = velocity.normalized() * speed
+		velocity = velocity.normalized() * speed * .5
 		return
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
@@ -170,6 +176,8 @@ func _on_hurt_box_area_entered(area):
 		#camera.set_zoom(Vector2(0.5,0.5)) 
 		await animations.animation_finished
 		isBossFightScene = false
+		
+		banger.visible = false
 		
 	if area.is_in_group("hitBoxBobik"):
 		currentHealth -= 4

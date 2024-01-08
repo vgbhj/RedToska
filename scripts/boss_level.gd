@@ -22,10 +22,18 @@ func _process(delta):
 	pass
 
 func _on_level_area_body_entered(body):
+	#if !isEnabled: return
+	#if !body.is_in_group("player"): return 
+	#await get_tree().create_timer(3).timeout
+	#start_fight.emit()
+	#isWaveStart = true
+	pass
+
+
+func _on_level_area_area_entered(area):
 	if !isEnabled: return
-	if !body.is_in_group("player"): return 
-	await get_tree().create_timer(3).timeout
+	if !area.is_in_group("player"): return 
+	await get_tree().create_timer(6).timeout
 	start_fight.emit()
-	#boss.MentTimer.start()
-	#boss.isStart = true
 	isWaveStart = true
+	pass

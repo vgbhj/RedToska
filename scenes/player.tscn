@@ -290,6 +290,140 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rtr88"]
 size = Vector2(33.6667, 7.00003)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_u7aus"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(0, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_q8hrm"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(1152, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mkpwp"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(2304, 0, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h7kxy"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(0, 648, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lmtcu"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(1152, 648, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1cigl"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(2304, 648, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jgci"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(0, 1296, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0o2r"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(1152, 1296, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_7m28c"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(2304, 1296, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2ov0"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(0, 1944, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gx55"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(1152, 1944, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4o0vk"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(2304, 1944, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_npa0w"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(0, 2592, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sjhx8"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(1152, 2592, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f807l"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(2304, 2592, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fnxfi"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(0, 3240, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_h8c5s"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(1152, 3240, 1152, 648)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_rhqdg"]
+atlas = ExtResource("10_y5khi")
+region = Rect2(2764, 3240, 691, 648)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_h385w"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u7aus")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_q8hrm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mkpwp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h7kxy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lmtcu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1cigl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jgci")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0o2r")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7m28c")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2ov0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gx55")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4o0vk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_npa0w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sjhx8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f807l")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fnxfi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_h8c5s")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_rhqdg")
+}],
+"loop": true,
+"name": &"appear",
+"speed": 5.0
+}]
+
 [sub_resource type="Animation" id="Animation_helgb"]
 length = 0.001
 tracks/0/type = "bezier"
@@ -429,89 +563,56 @@ tracks/11/keys = {
 tracks/12/type = "value"
 tracks/12/imported = false
 tracks/12/enabled = true
-tracks/12/path = NodePath("BANGER:animation")
+tracks/12/path = NodePath("BANGER:sprite_frames")
 tracks/12/interp = 1
 tracks/12/loop_wrap = true
 tracks/12/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
-"values": [&"appear"]
+"values": [SubResource("SpriteFrames_h385w")]
 }
-tracks/13/type = "bezier"
+tracks/13/type = "value"
 tracks/13/imported = false
 tracks/13/enabled = true
-tracks/13/path = NodePath("BANGER:frame")
+tracks/13/path = NodePath("BANGER:visible")
 tracks/13/interp = 1
 tracks/13/loop_wrap = true
 tracks/13/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/14/type = "value"
-tracks/14/imported = false
-tracks/14/enabled = true
-tracks/14/path = NodePath("BANGER:visible")
-tracks/14/interp = 1
-tracks/14/loop_wrap = true
-tracks/14/keys = {
 "times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [true]
 }
+tracks/14/type = "bezier"
+tracks/14/imported = false
+tracks/14/enabled = true
+tracks/14/path = NodePath("BANGER:position:x")
+tracks/14/interp = 1
+tracks/14/loop_wrap = true
+tracks/14/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(257, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 tracks/15/type = "bezier"
 tracks/15/imported = false
 tracks/15/enabled = true
-tracks/15/path = NodePath("BANGER:position:x")
+tracks/15/path = NodePath("BANGER:position:y")
 tracks/15/interp = 1
 tracks/15/loop_wrap = true
 tracks/15/keys = {
 "handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(240, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-253, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
 }
 tracks/16/type = "bezier"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("BANGER:position:y")
+tracks/16/path = NodePath("BANGER:frame")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-264, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/17/type = "bezier"
-tracks/17/imported = false
-tracks/17/enabled = true
-tracks/17/path = NodePath("BANGER:scale:x")
-tracks/17/interp = 1
-tracks/17/loop_wrap = true
-tracks/17/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(2.01854, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/18/type = "bezier"
-tracks/18/imported = false
-tracks/18/enabled = true
-tracks/18/path = NodePath("BANGER:scale:y")
-tracks/18/interp = 1
-tracks/18/loop_wrap = true
-tracks/18/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(1.90414, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/19/type = "bezier"
-tracks/19/imported = false
-tracks/19/enabled = true
-tracks/19/path = NodePath("BANGER:rotation")
-tracks/19/interp = 1
-tracks/19/loop_wrap = true
-tracks/19/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
@@ -955,140 +1056,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_bh3dk"]
 size = Vector2(21.0001, 46)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_u7aus"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(0, 0, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q8hrm"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(1152, 0, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_mkpwp"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(2304, 0, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h7kxy"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(0, 648, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_lmtcu"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(1152, 648, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1cigl"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(2304, 648, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_8jgci"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(0, 1296, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_b0o2r"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(1152, 1296, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_7m28c"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(2304, 1296, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_y2ov0"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(0, 1944, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_1gx55"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(1152, 1944, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_4o0vk"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(2304, 1944, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_npa0w"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(0, 2592, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_sjhx8"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(1152, 2592, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_f807l"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(2304, 2592, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_fnxfi"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(0, 3240, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_h8c5s"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(1152, 3240, 1152, 648)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_rhqdg"]
-atlas = ExtResource("10_y5khi")
-region = Rect2(2764, 3240, 691, 648)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_h385w"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u7aus")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_q8hrm")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_mkpwp")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h7kxy")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_lmtcu")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1cigl")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_8jgci")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_b0o2r")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_7m28c")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_y2ov0")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_1gx55")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_4o0vk")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_npa0w")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_sjhx8")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_f807l")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_fnxfi")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_h8c5s")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_rhqdg")
-}],
-"loop": true,
-"name": &"appear",
-"speed": 5.0
-}]
-
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 material = SubResource("ShaderMaterial_obgvy")
 collision_layer = 3
@@ -1183,8 +1150,8 @@ region_rect = Rect2(8, 2, 33, 28)
 
 [node name="BANGER" type="AnimatedSprite2D" parent="."]
 z_index = 30
-position = Vector2(240, -264)
-scale = Vector2(2.01854, 1.90414)
+position = Vector2(257, -253)
+scale = Vector2(2.00664, 2.00664)
 sprite_frames = SubResource("SpriteFrames_h385w")
 animation = &"appear"
 
