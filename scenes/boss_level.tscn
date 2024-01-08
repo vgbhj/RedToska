@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://bil2lm3s5w6qb"]
+
+[ext_resource type="Script" path="res://scripts/LevelCollision.gd" id="1_s2fo0"]
+[ext_resource type="Script" path="res://scripts/boss_level.gd" id="1_tyckx"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w55t"]
+size = Vector2(2286.5, 1790)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_aj7st"]
+size = Vector2(2289, 42)
+
+[node name="BossLevel" type="Node2D"]
+script = ExtResource("1_tyckx")
+
+[node name="LevelArea" type="Area2D" parent="." groups=["bossFight"]]
+position = Vector2(-87, 0)
+
+[node name="LevelCollision" type="CollisionShape2D" parent="LevelArea"]
+position = Vector2(1242.75, 343)
+shape = SubResource("RectangleShape2D_8w55t")
+debug_color = Color(0, 0.607843, 0.662745, 0.419608)
+script = ExtResource("1_s2fo0")
+
+[node name="BackForwardBlock" type="StaticBody2D" parent="."]
+y_sort_enabled = true
+
+[node name="ForwardCollider" type="CollisionShape2D" parent="BackForwardBlock"]
+position = Vector2(2249, 279)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_aj7st")
+debug_color = Color(0, 0.643137, 0.270588, 0.419608)
+
+[node name="ButtomCollider" type="CollisionShape2D" parent="BackForwardBlock"]
+position = Vector2(1094, 1224)
+shape = SubResource("RectangleShape2D_aj7st")
+debug_color = Color(0, 0.643137, 0.270588, 0.419608)
+
+[node name="ForwardCollider2" type="CollisionShape2D" parent="."]
+position = Vector2(0, 324)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_aj7st")
+debug_color = Color(0.905882, 0, 0.737255, 0.419608)
+
+[node name="Dots" type="Node2D" parent="."]
+
+[node name="StartPos" type="Marker2D" parent="Dots"]
+position = Vector2(1168, 520)
+
+[node name="RightStart" type="Marker2D" parent="Dots"]
+position = Vector2(2435, 101)
+
+[node name="LeftEnd" type="Marker2D" parent="Dots"]
+position = Vector2(-270, 893)
+
+[node name="LeftStart" type="Marker2D" parent="Dots"]
+position = Vector2(-270, 101)
+
+[node name="RightEnd" type="Marker2D" parent="Dots"]
+position = Vector2(2435, 893)
+
+[connection signal="area_entered" from="LevelArea" to="." method="_on_level_area_area_entered"]
+[connection signal="body_entered" from="LevelArea" to="." method="_on_level_area_body_entered"]
