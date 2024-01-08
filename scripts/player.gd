@@ -56,8 +56,8 @@ func _ready():
 	camera.drag_horizontal_offset = 0
 	camera.drag_vertical_offset = -0.8
 	camera.drag_left_margin = 0.9
-	camera.drag_top_margin = .5
-	camera.drag_right_margin = .85
+	camera.drag_top_margin = 0
+	camera.drag_right_margin = .3
 	camera.drag_bottom_margin = 1
 
 func go_fucn():
@@ -261,6 +261,8 @@ func randomOffset() -> Vector2:
 	return Vector2(rng.randf_range(-shake_strength, shake_strength), rng.randf_range(-shake_strength, shake_strength))
 
 func yaga_activate():
+	
+	yaga_act = true
 	animations.speed_scale = 4
 	speed *= 2
 	mainMusic.pitch_scale = 1.5
@@ -284,6 +286,8 @@ func yaga_stop():
 		currentHealth = maxHealth
 		
 		healthChanged.emit(currentHealth)
+		
+		yaga_act = false
 
 func _on_level_1_lvl_end():
 	go_fucn()

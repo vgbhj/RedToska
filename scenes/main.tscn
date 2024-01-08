@@ -16801,6 +16801,7 @@ time_berofe_spawn = 5
 [node name="Level6" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
 position = Vector2(5584, 1023)
 spanwers = NodePath("Spawners")
+DisableButtomBlock = true
 
 [node name="Spawners" type="Node2D" parent="Ysort/Level6"]
 y_sort_enabled = true
@@ -16912,7 +16913,7 @@ position = Vector2(3297, 626)
 
 [node name="Player" parent="Ysort" node_paths=PackedStringArray("yaga_bar", "mainMusic") instance=ExtResource("2_4o0au")]
 material = ExtResource("7_fdglo")
-position = Vector2(-1469, 610)
+position = Vector2(6015, 1698)
 yaga_shader = ExtResource("7_fdglo")
 yaga_bar = NodePath("../../CanvasLayer/yagaHpBar")
 mainMusic = NodePath("../../MainMusic")
