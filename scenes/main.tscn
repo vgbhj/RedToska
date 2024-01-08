@@ -16912,7 +16912,7 @@ position = Vector2(3297, 626)
 
 [node name="Player" parent="Ysort" node_paths=PackedStringArray("yaga_bar", "mainMusic") instance=ExtResource("2_4o0au")]
 material = ExtResource("7_fdglo")
-position = Vector2(-1455, 584)
+position = Vector2(12221, 530)
 yaga_shader = ExtResource("7_fdglo")
 yaga_bar = NodePath("../../CanvasLayer/yagaHpBar")
 mainMusic = NodePath("../../MainMusic")
@@ -17436,3 +17436,4 @@ shape = SubResource("RectangleShape2D_v2i21")
 [connection signal="lvl_end" from="Ysort/Level7" to="Ysort/Player" method="_on_level_7_lvl_end"]
 [connection signal="start_fight" from="Ysort/BossLevel" to="Ysort/BossBobik" method="_on_boss_level_start_fight"]
 [connection signal="start_fight" from="Ysort/BossLevel" to="CanvasLayer/helthBarBobik" method="_on_boss_level_start_fight"]
+[connection signal="start_fight" from="Ysort/BossLevel" to="BackBlock/BackBlockCollider" method="_on_boss_level_start_fight"]

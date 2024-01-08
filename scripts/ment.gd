@@ -10,6 +10,10 @@ signal enemy_death
 @onready var collider = $Collider
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
 
+var healk = preload("res://scenes/healka.tscn")
+
+var rng = RandomNumberGenerator.new()
+
 @export var maxHealth = 2
 @onready var currentHealth: int = maxHealth
 
@@ -92,6 +96,12 @@ func _on_hurt_box_area_entered(area):
 		enemy_death.emit()
 		animations.play("death")
 		await animations.animation_finished
+		var healka_ins = healk.instantiate()
+		var my_random_number = rng.randf_range(0.0, 10.0)
+		if my_random_number < 2.5:
+			get_parent().add_child(healka_ins)
+			get_parent().move_child(healka_ins, 0)
+			get_parent().get_child(0).global_position = global_position
 		queue_free()
 	else:
 		isTakeDamage = true

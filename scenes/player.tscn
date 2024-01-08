@@ -1146,13 +1146,6 @@ position = Vector2(1.49996, 0)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_bh3dk")
 
-[node name="Collider2" type="CollisionShape2D" parent="." groups=["hitBox", "player"]]
-light_mask = 4
-visibility_layer = 4
-position = Vector2(1.49996, 0)
-rotation = 1.5708
-shape = SubResource("RectangleShape2D_bh3dk")
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(-9.5, 0)
 drag_horizontal_enabled = true
@@ -1196,6 +1189,15 @@ sprite_frames = SubResource("SpriteFrames_h385w")
 animation = &"appear"
 
 [node name="allTimer" type="Timer" parent="."]
+
+[node name="Always" type="Area2D" parent="." groups=["player"]]
+
+[node name="Collider2" type="CollisionShape2D" parent="Always" groups=["hitBox", "player"]]
+light_mask = 4
+visibility_layer = 4
+position = Vector2(1.49996, 0)
+rotation = 1.5708
+shape = SubResource("RectangleShape2D_bh3dk")
 
 [connection signal="area_entered" from="JumpAttack" to="." method="_on_jump_attack_area_entered"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

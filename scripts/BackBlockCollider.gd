@@ -13,3 +13,7 @@ func _process(delta):
 	#print(global_position)
 	if abs(player.global_position.x - global_position.x) > d:
 		global_position.x += abs(player.global_position.x - (global_position.x+d))
+
+
+func _on_boss_level_start_fight():
+	disabled = true

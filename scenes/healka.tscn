@@ -10,7 +10,9 @@ size = Vector2(30, 25)
 script = ExtResource("1_nl1mi")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(2, 2)
 texture = ExtResource("1_3xcoo")
+centered = false
 region_rect = Rect2(829, 423, 6, 21)
 
 [node name="ButilkaHitBox" type="Area2D" parent="." groups=["heal"]]
