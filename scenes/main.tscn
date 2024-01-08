@@ -16912,7 +16912,7 @@ position = Vector2(3297, 626)
 
 [node name="Player" parent="Ysort" node_paths=PackedStringArray("yaga_bar", "mainMusic") instance=ExtResource("2_4o0au")]
 material = ExtResource("7_fdglo")
-position = Vector2(5973, 1709)
+position = Vector2(-1559, 594)
 yaga_shader = ExtResource("7_fdglo")
 yaga_bar = NodePath("../../CanvasLayer/yagaHpBar")
 mainMusic = NodePath("../../MainMusic")
@@ -17007,10 +17007,10 @@ region_rect = Rect2(1, 1, 142, 45)
 
 [node name="BackBlock" type="StaticBody2D" parent="."]
 z_index = 2
-position = Vector2(2133, 2)
+position = Vector2(310, 446)
 
 [node name="BackBlockCollider" type="CollisionShape2D" parent="BackBlock"]
-position = Vector2(-8470, 853)
+z_index = 3
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_t1oul")
 debug_color = Color(0, 0.643137, 0.270588, 0.419608)
@@ -17018,7 +17018,6 @@ script = ExtResource("7_qt68d")
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_gb33o")
-volume_db = -80.0
 script = ExtResource("13_c6l6b")
 
 [node name="Street" type="Node" parent="."]
@@ -17427,5 +17426,10 @@ shape = SubResource("RectangleShape2D_v2i21")
 
 [connection signal="lvl_end" from="Ysort/Level1" to="Ysort/Player" method="_on_level_1_lvl_end"]
 [connection signal="lvl_end" from="Ysort/Level2" to="Ysort/Player" method="_on_level_2_lvl_end"]
+[connection signal="lvl_end" from="Ysort/Level3" to="Ysort/Player" method="_on_level_3_lvl_end"]
+[connection signal="lvl_end" from="Ysort/Level4" to="Ysort/Player" method="_on_level_4_lvl_end"]
+[connection signal="lvl_end" from="Ysort/Level5" to="Ysort/Player" method="_on_level_5_lvl_end"]
+[connection signal="lvl_end" from="Ysort/Level6" to="Ysort/Player" method="_on_level_6_lvl_end"]
+[connection signal="lvl_end" from="Ysort/Level7" to="Ysort/Player" method="_on_level_7_lvl_end"]
 [connection signal="start_fight" from="Ysort/BossLevel" to="Ysort/BossBobik" method="_on_boss_level_start_fight"]
 [connection signal="start_fight" from="Ysort/BossLevel" to="CanvasLayer/helthBarBobik" method="_on_boss_level_start_fight"]

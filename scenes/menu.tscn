@@ -1,3 +1,88 @@
-[gd_scene format=3 uid="uid://cvcmbeqalb2mo"]
+[gd_scene load_steps=19 format=3 uid="uid://cvcmbeqalb2mo"]
+
+[ext_resource type="Script" path="res://scripts/menu.gd" id="1_do871"]
+[ext_resource type="AudioStream" uid="uid://c7djywip3xu5t" path="res://audio/beat'em up.mp3" id="1_hme2w"]
+[ext_resource type="Script" path="res://scripts/MainMusic.gd" id="2_aq1pj"]
+[ext_resource type="Texture2D" uid="uid://yp1netj54bh8" path="res://sprites/photo_2024-01-08_21-39-40.jpg" id="3_olh51"]
+[ext_resource type="Texture2D" uid="uid://dn5w51rstmj8y" path="res://sprites/menu.png" id="3_rbuei"]
+[ext_resource type="Texture2D" uid="uid://csmfm4mlkxrlg" path="res://sprites/pxArt (4).png" id="4_jqydn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6vff"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t56kn"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lpir2"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_8mojv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v70yk"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vmhbw"]
+atlas = ExtResource("3_rbuei")
+region = Rect2(2, 7, 60, 18)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_3bgdg"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_b0txi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_f1f6a"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6kvmu"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_k0hgw"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdyju"]
+atlas = ExtResource("3_rbuei")
+region = Rect2(2, 39, 60, 18)
 
 [node name="Menu" type="Node"]
+script = ExtResource("1_do871")
+
+[node name="MainMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("1_hme2w")
+autoplay = true
+script = ExtResource("2_aq1pj")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="Back" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(575.111, 322.5)
+scale = Vector2(0.898611, 0.898611)
+texture = ExtResource("3_olh51")
+
+[node name="BackStyle" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(575.052, 322)
+scale = Vector2(0.765403, 0.765403)
+texture = ExtResource("4_jqydn")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer"]
+offset_right = 371.0
+offset_bottom = 256.0
+
+[node name="Play" type="Button" parent="CanvasLayer"]
+offset_left = 68.0
+offset_top = 370.0
+offset_right = 368.0
+offset_bottom = 465.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_o6vff")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_t56kn")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lpir2")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_8mojv")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_v70yk")
+icon = SubResource("AtlasTexture_vmhbw")
+expand_icon = true
+
+[node name="Controls" type="Button" parent="CanvasLayer"]
+offset_left = 68.0
+offset_top = 492.0
+offset_right = 368.0
+offset_bottom = 592.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_3bgdg")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_b0txi")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_f1f6a")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_6kvmu")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_k0hgw")
+icon = SubResource("AtlasTexture_kdyju")
+expand_icon = true
+
+[connection signal="pressed" from="CanvasLayer/Play" to="." method="_on_play_pressed"]

@@ -278,3 +278,19 @@ func _on_jump_attack_area_entered(area):
 	if !area.is_in_group("hurtBox"): return
 	currentSuper += 5
 	superChanged.emit(currentSuper)
+
+
+func _on_level_3_lvl_end():
+	go_fucn()
+	
+func _on_level_4_lvl_end():
+	go_fucn()
+	
+func _on_level_5_lvl_end():
+	go_fucn()
+	
+func _on_level_6_lvl_end():
+	go_fucn()
+	
+func _on_level_7_lvl_end():
+	go_fucn()
