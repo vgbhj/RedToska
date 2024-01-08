@@ -7,5 +7,5 @@ func _ready():
 	update(player.currentSuper)
 
 func update(cur):
-	print(player.currentSuper)
+	#print(player.currentSuper)
 	value = player.currentSuper * 100 / player.maxSuper

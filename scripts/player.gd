@@ -5,6 +5,9 @@ class_name Player
 signal healthChanged
 signal superChanged
 
+#var yaga_shader = preload("res://shaders/rgb.gdshader")
+@export var yaga_shader: ShaderMaterial
+@export var yaga_bar: Sprite2D
 @export var speed: int = 300
 @export var attack_interval = 1
 @export var wait_after_jump = 3
@@ -166,8 +169,13 @@ func yaga_activate():
 	mainMusic.pitch_scale = 1.5
 	currentHealth = 200
 	healthChanged.emit(currentHealth)
+	
 	# ЭФФЕКТЫ
+	yaga_shader.set_shader_parameter("quality", 4)
+	yaga_bar.visible = true
 	await get_tree().create_timer(40).timeout
+	yaga_shader.set_shader_parameter("quality", 0)
+	yaga_bar.visible = false
 	animations.speed_scale = 1
 	speed /= 2
 	

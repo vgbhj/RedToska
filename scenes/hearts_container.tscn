@@ -6,6 +6,8 @@
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_82vrv"]
 shader = ExtResource("1_l1x6l")
+shader_parameter/dir = Vector2(0, 0)
+shader_parameter/quality = 4
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_dgblt"]
 
