@@ -113,6 +113,7 @@ func _on_ment_timer_timeout():
 	get_parent().add_child(ment_ins)
 	get_parent().move_child(ment_ins, 0)
 	get_parent().get_child(0).global_position = global_position
+	get_parent().get_child(0).isBropHilka = true
 
 
 func _on_boss_level_start_fight():

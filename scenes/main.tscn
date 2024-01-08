@@ -16900,7 +16900,7 @@ position = Vector2(645, 1298)
 position = Vector2(951, 1238)
 
 [node name="Spawner22" parent="Ysort/Level7/Spawners" instance=ExtResource("5_5ht7h")]
-position = Vector2(951, 1238)
+position = Vector2(604, 1537)
 
 [node name="Healka" parent="Ysort" instance=ExtResource("7_7v0vm")]
 position = Vector2(1788, 468)
@@ -16913,7 +16913,7 @@ position = Vector2(3297, 626)
 
 [node name="Player" parent="Ysort" node_paths=PackedStringArray("yaga_bar", "mainMusic") instance=ExtResource("2_4o0au")]
 material = ExtResource("7_fdglo")
-position = Vector2(6015, 1698)
+position = Vector2(-1467, 599)
 yaga_shader = ExtResource("7_fdglo")
 yaga_bar = NodePath("../../CanvasLayer/yagaHpBar")
 mainMusic = NodePath("../../MainMusic")
