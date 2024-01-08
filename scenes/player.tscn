@@ -378,6 +378,143 @@ tracks/16/keys = {
 "times": PackedFloat32Array(0)
 }
 
+[sub_resource type="Animation" id="Animation_k6wy0"]
+resource_name = "bossFight"
+length = 3.0
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Camera2D:zoom:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Camera2D:zoom:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D:animation")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"walk"]
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("AnimatedSprite2D:frame")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Camera2D:drag_vertical_offset")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -0.8, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.98413, 2.9856, 3)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Camera2D:drag_left_margin")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0.9, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.98413, 2.98565, 3)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Camera2D:drag_top_margin")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.2, -0.25, 0, 0.25, 0, 0.2, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.98413, 2.98565, 3)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("Camera2D:drag_right_margin")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.2, -0.25, 0, 0.25, 0, 0.85, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.98413, 3)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Camera2D:drag_bottom_margin")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 2.98413, 3)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Camera2D:drag_horizontal_offset")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Camera2D:position:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-9.5, -0.25, 0, 0.25, 0, 250, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Camera2D:position:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 3)
+}
+
 [sub_resource type="Animation" id="Animation_jr0qe"]
 resource_name = "death"
 length = 0.2
@@ -648,6 +785,33 @@ tracks/5/keys = {
 "values": [false, true, true, false]
 }
 
+[sub_resource type="Animation" id="Animation_nhupy"]
+resource_name = "stay"
+length = 0.02
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"idle"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:rotation")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
 [sub_resource type="Animation" id="Animation_eahwk"]
 resource_name = "walk"
 length = 1.08
@@ -695,170 +859,6 @@ tracks/3/keys = {
 "handle_modes": PackedInt32Array(0),
 "points": PackedFloat32Array(5, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_nhupy"]
-resource_name = "stay"
-length = 0.02
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("AnimatedSprite2D:animation")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"idle"]
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("AnimatedSprite2D:rotation")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
-[sub_resource type="Animation" id="Animation_k6wy0"]
-resource_name = "bossFight"
-length = 3.0
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("Camera2D:zoom:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 3)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("Camera2D:zoom:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 3)
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("AnimatedSprite2D:animation")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [&"walk"]
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("AnimatedSprite2D:frame")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 6, -0.25, 0, 0.25, 0, 7, -0.25, 0, 0.25, 0, 8, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0, 3, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.1, 1.2, 1.3, 1.4, 1.5, 1.6, 1.7, 1.8, 1.9, 2, 2.1, 2.2, 2.3, 2.4, 2.5, 2.6, 2.7, 2.8, 2.9, 3)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("Camera2D:drag_vertical_offset")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -0.8, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2.98413, 2.9856, 3)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("Camera2D:drag_left_margin")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.2, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 0.9, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2.98413, 2.98565, 3)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("Camera2D:drag_top_margin")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0, 0),
-"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.2, -0.25, 0, 0.25, 0, 0.2, -0.25, 0, 0.25, 0, 0.5, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2.98413, 2.98565, 3)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("Camera2D:drag_right_margin")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.2, -0.25, 0, 0.25, 0, 0.85, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2.98413, 3)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Camera2D:drag_bottom_margin")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(0.2, -0.25, 0, 0.25, 0, 0.2, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 2.98413, 3)
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Camera2D:drag_horizontal_offset")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/10/type = "bezier"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Camera2D:position:x")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-9.5, -0.25, 0, 0.25, 0, 250, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 3)
-}
-tracks/11/type = "bezier"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Camera2D:position:y")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 3)
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7x7w"]
