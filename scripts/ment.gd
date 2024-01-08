@@ -10,7 +10,7 @@ signal enemy_death
 @onready var collider = $Collider
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
 
-@export var maxHealth = 5
+@export var maxHealth = 2
 @onready var currentHealth: int = maxHealth
 
 var lastAnimDirection: String = "Left"

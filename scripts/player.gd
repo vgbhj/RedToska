@@ -26,7 +26,7 @@ signal superChanged
 
 # для тряски
 @export var randomStrength: float = 30
-@export var shakeFade: float = 5
+@export var shakeFade: float = 4
 
 var rng = RandomNumberGenerator.new()
 
@@ -40,8 +40,13 @@ var isAttacking: bool = false
 var isJumping: bool = false
 var waitNextJump: bool = false
 var isShaking: bool = false
+var isBossFightScene: bool = false
 
 func get_input():
+	if isBossFightScene:
+		velocity.x += 1
+		velocity = velocity.normalized() * speed
+		return
 	velocity = Vector2.ZERO
 	if Input.is_action_pressed("ui_right"):
 		velocity.x += 1
@@ -73,6 +78,7 @@ func get_input():
 	velocity = velocity.normalized() * speed
 
 func updateAnimation():
+	if isBossFightScene: return
 	if isAttacking: return
 	if isJumping: return
 	if velocity == Vector2.ZERO:
@@ -112,6 +118,37 @@ func _physics_process(delta):
 	updateAnimation()
 
 func _on_hurt_box_area_entered(area):
+	if area.is_in_group("bossFight"):
+		animations.play("bossFight")
+		isBossFightScene = true
+		#camera.set_zoom(Vector2(0.5,0.5)) 
+		await animations.animation_finished
+		isBossFightScene = false
+	if area.is_in_group("hitBoxBobik"):
+		currentHealth -= 4
+		healthChanged.emit(currentHealth)
+		currentSuper += 10
+		superChanged.emit(currentSuper)
+		if currentHealth < 1:
+			isShaking = true
+			isDead = true
+			animations.play("death")
+			await animations.animation_finished
+			isShaking = true
+			isShaking = false
+			await get_tree().create_timer(.4).timeout
+			get_tree().reload_current_scene()
+		else:
+			isShaking = true
+			isDead = true
+			animations.play("death")
+			await animations.animation_finished
+			isShaking = true
+			isShaking = false
+			await get_tree().create_timer(.4).timeout
+			animations.play("stay")
+			await animations.animation_finished
+			isDead = false
 	if area.is_in_group("yaga"):
 		yaga_activate()
 	if area.is_in_group("heal"):
@@ -128,8 +165,8 @@ func _on_hurt_box_area_entered(area):
 		animations.play("death")
 		await animations.animation_finished
 		isShaking = true
-		await get_tree().create_timer(.4).timeout
 		isShaking = false
+		await get_tree().create_timer(.4).timeout
 		get_tree().reload_current_scene()
 	else:
 		isTakeDamage = true
