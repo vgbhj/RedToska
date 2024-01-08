@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://cvemnw03b0t1j"]
+[gd_scene load_steps=5 format=3 uid="uid://cvemnw03b0t1j"]
 
 [ext_resource type="Texture2D" uid="uid://banogpiipj1al" path="res://sprites/jaguar.png" id="1_kot3u"]
 [ext_resource type="Script" path="res://scripts/yaga.gd" id="1_mli3m"]
+[ext_resource type="AudioStream" uid="uid://b80om5uesm4l5" path="res://audio/YAGA.wav" id="3_vlucj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_oohlj"]
 size = Vector2(30, 78)
@@ -19,5 +20,8 @@ region_rect = Rect2(829, 423, 6, 21)
 position = Vector2(4.76837e-07, 0)
 shape = SubResource("RectangleShape2D_oohlj")
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_vlucj")
 
 [connection signal="area_entered" from="ButilkaHitBox" to="." method="_on_butilka_hit_box_area_entered"]

@@ -1,9 +1,10 @@
-[gd_scene load_steps=12 format=3 uid="uid://dbtuoacmetc5t"]
+[gd_scene load_steps=13 format=3 uid="uid://dbtuoacmetc5t"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_5n8a1"]
 [ext_resource type="AudioStream" uid="uid://c7djywip3xu5t" path="res://audio/beat'em up.mp3" id="2_ie532"]
 [ext_resource type="Script" path="res://scripts/MainMusic.gd" id="3_te0vc"]
 [ext_resource type="Texture2D" uid="uid://g7530wetcrry" path="res://sprites/controls.png" id="4_qrkvr"]
+[ext_resource type="Texture2D" uid="uid://d2u0rmbpirntw" path="res://sprites/logol.png" id="5_sqcer"]
 [ext_resource type="Texture2D" uid="uid://dn5w51rstmj8y" path="res://sprites/menu.png" id="6_suu82"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fd07m"]
@@ -34,6 +35,11 @@ script = ExtResource("3_te0vc")
 position = Vector2(576.585, 323.476)
 scale = Vector2(0.769267, 0.780862)
 texture = ExtResource("4_qrkvr")
+
+[node name="logo" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(1018, 69)
+scale = Vector2(7, 7)
+texture = ExtResource("5_sqcer")
 
 [node name="Play" type="Button" parent="CanvasLayer"]
 offset_left = 58.0

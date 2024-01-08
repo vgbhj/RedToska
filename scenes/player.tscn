@@ -1,4 +1,4 @@
-[gd_scene load_steps=79 format=3 uid="uid://dxc812fb4om46"]
+[gd_scene load_steps=80 format=3 uid="uid://dxc812fb4om46"]
 
 [ext_resource type="Shader" path="res://shaders/rgb.gdshader" id="1_d0oqp"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l5r7d"]
@@ -10,6 +10,7 @@
 [ext_resource type="Texture2D" uid="uid://vf665eswlm4p" path="res://sprites/super.png" id="6_r7yev"]
 [ext_resource type="Texture2D" uid="uid://2jcer1o5cji2" path="res://sprites/ui_go.png" id="6_tmfft"]
 [ext_resource type="Texture2D" uid="uid://b3yfew1mid5w0" path="res://sprites/bobik_appear-Sheet.png" id="10_y5khi"]
+[ext_resource type="AudioStream" uid="uid://duf5hg4pthsph" path="res://audio/arni_jab.wav" id="11_hjoha"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_obgvy"]
 shader = ExtResource("1_d0oqp")
@@ -1165,6 +1166,9 @@ visibility_layer = 4
 position = Vector2(1.49996, 0)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_bh3dk")
+
+[node name="AttackSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_hjoha")
 
 [connection signal="area_entered" from="JumpAttack" to="." method="_on_jump_attack_area_entered"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

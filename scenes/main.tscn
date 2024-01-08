@@ -1,4 +1,4 @@
-[gd_scene load_steps=108 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=107 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://4sdangeek45u" path="res://scenes/healka.tscn" id="7_7v0vm"]
 [ext_resource type="Material" uid="uid://con6il2ex7ohe" path="res://materials/main.tres" id="7_fdglo"]
 [ext_resource type="Script" path="res://scripts/BackBlockCollider.gd" id="7_qt68d"]
-[ext_resource type="PackedScene" uid="uid://cvemnw03b0t1j" path="res://scenes/yaga.tscn" id="7_tdjix"]
 [ext_resource type="AudioStream" uid="uid://bsntp0msepu15" path="res://audio/energy_beat.mp3" id="8_gb33o"]
 [ext_resource type="PackedScene" uid="uid://bil2lm3s5w6qb" path="res://scenes/boss_level.tscn" id="9_fukoq"]
 [ext_resource type="PackedScene" uid="uid://b5snu0ffkl8t" path="res://scenes/boss_bobik.tscn" id="10_sbtje"]
@@ -16918,9 +16917,6 @@ yaga_shader = ExtResource("7_fdglo")
 yaga_bar = NodePath("../../CanvasLayer/yagaHpBar")
 mainMusic = NodePath("../../MainMusic")
 maxHealth = 20
-
-[node name="YAGA" parent="Ysort" instance=ExtResource("7_tdjix")]
-position = Vector2(7097, 1598)
 
 [node name="BossLevel" parent="Ysort" instance=ExtResource("9_fukoq")]
 position = Vector2(12901, 76)

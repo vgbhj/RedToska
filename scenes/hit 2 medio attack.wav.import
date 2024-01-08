@@ -1,0 +1,24 @@
+[remap]
+
+importer="wav"
+type="AudioStreamWAV"
+uid="uid://pblr8luj0hts"
+path="res://.godot/imported/hit 2 medio attack.wav-c1ca494e6a1a557290a1e419353b7101.sample"
+
+[deps]
+
+source_file="res://scenes/hit 2 medio attack.wav"
+dest_files=["res://.godot/imported/hit 2 medio attack.wav-c1ca494e6a1a557290a1e419353b7101.sample"]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop_mode=0
+edit/loop_begin=0
+edit/loop_end=-1
+compress/mode=0

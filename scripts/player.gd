@@ -21,7 +21,7 @@ signal superChanged
 @onready var allTimer = $allTimer
 @export var maxHealth = 20
 @onready var currentHealth: int = maxHealth
-
+@onready var audio = $AttackSFX
 @export var maxSuper = 100
 @onready var currentSuper: int = maxSuper
 
@@ -236,6 +236,7 @@ func _on_jab_attack_area_entered(area):
 	if !area.is_in_group("hurtBox"): return
 	currentSuper += 5
 	superChanged.emit(currentSuper)
+	audio.play()
 	#print("Ударилл")
 
 func jump():

@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://cvcmbeqalb2mo"]
+[gd_scene load_steps=20 format=3 uid="uid://cvcmbeqalb2mo"]
 
 [ext_resource type="Script" path="res://scripts/menu.gd" id="1_do871"]
 [ext_resource type="AudioStream" uid="uid://c7djywip3xu5t" path="res://audio/beat'em up.mp3" id="1_hme2w"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://yp1netj54bh8" path="res://sprites/photo_2024-01-08_21-39-40.jpg" id="3_olh51"]
 [ext_resource type="Texture2D" uid="uid://dn5w51rstmj8y" path="res://sprites/menu.png" id="3_rbuei"]
 [ext_resource type="Texture2D" uid="uid://csmfm4mlkxrlg" path="res://sprites/pxArt (4).png" id="4_jqydn"]
+[ext_resource type="Texture2D" uid="uid://d2u0rmbpirntw" path="res://sprites/logol.png" id="5_hcre3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_o6vff"]
 
@@ -49,6 +50,11 @@ script = ExtResource("2_aq1pj")
 position = Vector2(575.111, 322.5)
 scale = Vector2(0.898611, 0.898611)
 texture = ExtResource("3_olh51")
+
+[node name="logo" type="Sprite2D" parent="CanvasLayer"]
+position = Vector2(238, 180)
+scale = Vector2(10, 10)
+texture = ExtResource("5_hcre3")
 
 [node name="BackStyle" type="Sprite2D" parent="CanvasLayer"]
 visible = false
