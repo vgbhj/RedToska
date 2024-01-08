@@ -1,15 +1,9 @@
-[gd_scene load_steps=39 format=3 uid="uid://dxc812fb4om46"]
+[gd_scene load_steps=37 format=3 uid="uid://dxc812fb4om46"]
 
-[ext_resource type="Shader" path="res://shaders/rgb.gdshader" id="1_d0oqp"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l5r7d"]
 [ext_resource type="Texture2D" uid="uid://bngjmrsmdj0ch" path="res://sprites/shwarz-Sheet.png" id="2_a4vvp"]
 [ext_resource type="Texture2D" uid="uid://dod2wc7nas6pq" path="res://sprites/hurt-animation.png" id="2_qrccj"]
 [ext_resource type="Texture2D" uid="uid://bum5at2uvc0pl" path="res://sprites/shadow.png" id="3_xirlk"]
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_obgvy"]
-shader = ExtResource("1_d0oqp")
-shader_parameter/dir = Vector2(0.002, 0.02)
-shader_parameter/quality = 0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vsgyx"]
 size = Vector2(64, 26)
@@ -602,7 +596,6 @@ _data = {
 size = Vector2(21.0001, 46)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
-material = SubResource("ShaderMaterial_obgvy")
 collision_layer = 3
 collision_mask = 3
 script = ExtResource("1_l5r7d")
@@ -616,7 +609,6 @@ shape = SubResource("RectangleShape2D_vsgyx")
 debug_color = Color(0, 0.639216, 0.360784, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-use_parent_material = true
 position = Vector2(13, -27.5)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3agyg")

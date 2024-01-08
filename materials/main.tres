@@ -1,0 +1,8 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://con6il2ex7ohe"]
+
+[ext_resource type="Shader" path="res://shaders/rgb.gdshader" id="1_q1geo"]
+
+[resource]
+shader = ExtResource("1_q1geo")
+shader_parameter/dir = Vector2(0.002, 0.02)
+shader_parameter/quality = 0

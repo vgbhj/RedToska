@@ -3,7 +3,11 @@ extends CharacterBody2D
 class_name Player
 
 signal healthChanged
+signal superChanged
 
+#var yaga_shader = preload("res://shaders/rgb.gdshader")
+@export var yaga_shader: ShaderMaterial
+@export var yaga_bar: Sprite2D
 @export var speed: int = 300
 @export var attack_interval = 1
 @export var wait_after_jump = 3
@@ -12,9 +16,13 @@ signal healthChanged
 @onready var collider = $Collider
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
 @onready var camera = $Camera2D
+@export var mainMusic: AudioStreamPlayer
 
-@export var maxHealth = 190
+@export var maxHealth = 20
 @onready var currentHealth: int = maxHealth
+
+@export var maxSuper = 100
+@onready var currentSuper: int = maxSuper
 
 # для тряски
 @export var randomStrength: float = 30
@@ -104,12 +112,16 @@ func _physics_process(delta):
 	updateAnimation()
 
 func _on_hurt_box_area_entered(area):
+	if area.is_in_group("yaga"):
+		yaga_activate()
 	if area.is_in_group("heal"):
 		currentHealth = 19
 		healthChanged.emit(currentHealth)
 	if !area.is_in_group("hitBox"): return
 	currentHealth -= 1
 	healthChanged.emit(currentHealth)
+	currentSuper += 10
+	superChanged.emit(currentSuper)
 	if currentHealth < 1:
 		isShaking = true
 		isDead = true
@@ -128,6 +140,8 @@ func _on_hurt_box_area_entered(area):
 
 func _on_jab_attack_area_entered(area):
 	if !area.is_in_group("hurtBox"): return
+	currentSuper += 5
+	superChanged.emit(currentSuper)
 	#print("Ударилл")
 
 func jump():
@@ -148,3 +162,24 @@ func apply_shake():
 	
 func randomOffset() -> Vector2:
 	return Vector2(rng.randf_range(-shake_strength, shake_strength), rng.randf_range(-shake_strength, shake_strength))
+
+func yaga_activate():
+	animations.speed_scale = 4
+	speed *= 2
+	mainMusic.pitch_scale = 1.5
+	currentHealth = 200
+	healthChanged.emit(currentHealth)
+	
+	# ЭФФЕКТЫ
+	yaga_shader.set_shader_parameter("quality", 4)
+	yaga_bar.visible = true
+	await get_tree().create_timer(40).timeout
+	yaga_shader.set_shader_parameter("quality", 0)
+	yaga_bar.visible = false
+	animations.speed_scale = 1
+	speed /= 2
+	
+	mainMusic.pitch_scale = 1
+	currentHealth = 19
+	
+	healthChanged.emit(currentHealth)
