@@ -11,8 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://2jcer1o5cji2" path="res://sprites/ui_go.png" id="6_tmfft"]
 [ext_resource type="Texture2D" uid="uid://c2dh58fgelqj" path="res://sprites/jab.png" id="7_ps2rq"]
 [ext_resource type="Texture2D" uid="uid://b3yfew1mid5w0" path="res://sprites/bobik_appear-Sheet.png" id="10_y5khi"]
-[ext_resource type="AudioStream" uid="uid://2c5n4v3j4hhl" path="res://audio/hitArni.wav" id="11_7o1q0"]
 [ext_resource type="Texture2D" uid="uid://c37sm3rikkwja" path="res://sprites/nebo_bez_oblakov.png" id="12_7avr5"]
+[ext_resource type="AudioStream" uid="uid://bw6xke8lp3tnr" path="res://audio/arni_attack.wav" id="12_rqup4"]
 [ext_resource type="Texture2D" uid="uid://fje1faf3d7jq" path="res://sprites/backg-export.png" id="13_o0mgf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_obgvy"]
@@ -1297,7 +1297,7 @@ animation = &"appear"
 [node name="allTimer" type="Timer" parent="."]
 
 [node name="AttackSFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_7o1q0")
+stream = ExtResource("12_rqup4")
 
 [node name="always collider" type="CollisionShape2D" parent="."]
 light_mask = 4
