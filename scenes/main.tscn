@@ -17575,8 +17575,6 @@ shape = SubResource("RectangleShape2D_v2i21")
 [node name="YAGA" parent="." instance=ExtResource("7_tdjix")]
 position = Vector2(9354, 1596)
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-
 [connection signal="lvl_end" from="Ysort/Level1" to="Ysort/Player" method="_on_level_1_lvl_end"]
 [connection signal="lvl_end" from="Ysort/Level2" to="Ysort/Player" method="_on_level_2_lvl_end"]
 [connection signal="lvl_end" from="Ysort/Level3" to="Ysort/Player" method="_on_level_3_lvl_end"]
