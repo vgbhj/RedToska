@@ -1,8 +1,9 @@
-[gd_scene load_steps=25 format=3 uid="uid://b5snu0ffkl8t"]
+[gd_scene load_steps=26 format=3 uid="uid://b5snu0ffkl8t"]
 
 [ext_resource type="Texture2D" uid="uid://b3hjchddc7pvm" path="res://sprites/bobik.png" id="1_cmrys"]
 [ext_resource type="Script" path="res://scripts/boss_bobik.gd" id="1_idamj"]
 [ext_resource type="AudioStream" uid="uid://duf5hg4pthsph" path="res://audio/arni_jab.wav" id="3_5w7tg"]
+[ext_resource type="AudioStream" uid="uid://bkys8atg6uehl" path="res://audio/car sound.wav" id="4_fxjuf"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tly80"]
 size = Vector2(448, 301.5)
@@ -529,6 +530,10 @@ wait_time = 3.0
 
 [node name="hitSFX" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_5w7tg")
+
+[node name="driveSound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_fxjuf")
+volume_db = -20.0
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="timeout" from="MentTimer" to="." method="_on_ment_timer_timeout"]

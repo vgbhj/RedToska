@@ -20,6 +20,7 @@ signal enemy_death
 @onready var collider = $Collider
 @onready var MentTimer = $MentTimer
 @onready var audio = $hitSFX
+@onready var drive_sound = $driveSound
 
 var ment = preload("res://scenes/ment.tscn")
 

@@ -85,17 +85,16 @@ func get_input():
 	
 	if Input.is_action_just_pressed("jump") and !waitNextJump and can_jump:
 		jump()
-	
-	
-	if lastAnimDirection == "Right":
-		jumpAttackCollider.position.x = $AnimatedSprite2D.position.x - 40
-		jabAttackCollider.position.x = $AnimatedSprite2D.position.x - 40
-		$AnimatedSprite2D/TrueJabAttack/TrueJabAttackCollider.position.x = $AnimatedSprite2D.position.x - 40
 	else:
-		jumpAttackCollider.position.x = $AnimatedSprite2D.position.x + 10 
-		jabAttackCollider.position.x = $AnimatedSprite2D.position.x + 10
-		$AnimatedSprite2D/TrueJabAttack/TrueJabAttackCollider.position.x = $AnimatedSprite2D.position.x + 10
-	
+		if lastAnimDirection == "Right":
+			#jumpAttackCollider.position.x = $AnimatedSprite2D.position.x - 10
+			jabAttackCollider.position.x = $AnimatedSprite2D.position.x - 10
+			$AnimatedSprite2D/TrueJabAttack/TrueJabAttackCollider.position.x = $AnimatedSprite2D.position.x - 10
+		else:
+			#jumpAttackCollider.position.x = $AnimatedSprite2D.position.x + 30
+			jabAttackCollider.position.x = $AnimatedSprite2D.position.x + 30
+			$AnimatedSprite2D/TrueJabAttack/TrueJabAttackCollider.position.x = $AnimatedSprite2D.position.x + 30
+		
 	if Input.is_action_just_pressed("true_jab_attack"):
 		if !isJumping:
 			animations.play("true_jab_attack")
@@ -152,8 +151,11 @@ func updateAnimation():
 		animations.play("walk")
 		if lastAnimDirection == "Left":
 			$AnimatedSprite2D.flip_h = 0
+			jumpAttackCollider.position.x = $AnimatedSprite2D.position.x + 20
 		else:
 			$AnimatedSprite2D.flip_h = 1
+			#$AnimatedSprite2D.offset.x = -10
+			jumpAttackCollider.position.x = $AnimatedSprite2D.position.x - 20
 		
 		var direction = "Left"
 		if velocity.x < 0:
@@ -279,7 +281,6 @@ func randomOffset() -> Vector2:
 	return Vector2(rng.randf_range(-shake_strength, shake_strength), rng.randf_range(-shake_strength, shake_strength))
 
 func yaga_activate():
-	
 	yaga_act = true
 	animations.speed_scale = 4
 	speed *= 2
