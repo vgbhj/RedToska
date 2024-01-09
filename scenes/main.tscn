@@ -1,4 +1,4 @@
-[gd_scene load_steps=109 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=110 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
@@ -16793,6 +16793,10 @@ size = Vector2(5365.09, 89.5183)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2i21"]
 size = Vector2(1926.48, 59)
 
+[sub_resource type="Environment" id="Environment_72ypr"]
+background_mode = 3
+adjustment_enabled = true
+
 [node name="Main" type="Node"]
 script = ExtResource("1_pfuwv")
 
@@ -17563,6 +17567,9 @@ shape = SubResource("RectangleShape2D_v2i21")
 
 [node name="YAGA" parent="." instance=ExtResource("7_tdjix")]
 position = Vector2(9354, 1596)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_72ypr")
 
 [connection signal="lvl_end" from="Ysort/Level1" to="Ysort/Player" method="_on_level_1_lvl_end"]
 [connection signal="lvl_end" from="Ysort/Level2" to="Ysort/Player" method="_on_level_2_lvl_end"]
