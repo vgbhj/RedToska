@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://wms4r5gkxvw3"]
+
+[ext_resource type="Script" path="res://scripts/intro.gd" id="1_biqr1"]
+[ext_resource type="VideoStream" path="res://video/nachalo.ogv" id="2_o301n"]
+[ext_resource type="Texture2D" uid="uid://ed0jupdwrqd5" path="res://sprites/skip1.png" id="3_ss6ve"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lcmlh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vua17"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lgp2d"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nde0c"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_c2042"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iorpi"]
+atlas = ExtResource("3_ss6ve")
+region = Rect2(5, 5, 24, 9)
+
+[node name="Intro" type="Node"]
+script = ExtResource("1_biqr1")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -575.0
+offset_top = -324.0
+offset_right = 1345.0
+offset_bottom = 764.0
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("2_o301n")
+autoplay = true
+
+[node name="Play" type="Button" parent="."]
+offset_left = 418.0
+offset_top = 265.0
+offset_right = 604.0
+offset_bottom = 324.0
+theme_override_styles/normal = SubResource("StyleBoxEmpty_lcmlh")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_vua17")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_lgp2d")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_nde0c")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_c2042")
+icon = SubResource("AtlasTexture_iorpi")
+expand_icon = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]
+[connection signal="pressed" from="Play" to="." method="_on_play_pressed"]
