@@ -90,9 +90,21 @@ func get_input():
 	if lastAnimDirection == "Right":
 		jumpAttackCollider.position.x = $AnimatedSprite2D.position.x - 40
 		jabAttackCollider.position.x = $AnimatedSprite2D.position.x - 40
+		$AnimatedSprite2D/TrueJabAttack/TrueJabAttackCollider.position.x = $AnimatedSprite2D.position.x - 40
 	else:
 		jumpAttackCollider.position.x = $AnimatedSprite2D.position.x + 10 
-		jabAttackCollider.position.x = $AnimatedSprite2D.position.x + 10 
+		jabAttackCollider.position.x = $AnimatedSprite2D.position.x + 10
+		$AnimatedSprite2D/TrueJabAttack/TrueJabAttackCollider.position.x = $AnimatedSprite2D.position.x + 10
+	
+	if Input.is_action_just_pressed("true_jab_attack"):
+		if !isJumping:
+			animations.play("true_jab_attack")
+			isAttacking = true
+			await animations.animation_finished
+			#for i in range(attack_interval):
+				#animations.play("idle")
+				#await animations.animation_finished
+			isAttacking = false
 	
 	if Input.is_action_just_pressed("jab_attack"):
 		if isJumping:

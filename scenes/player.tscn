@@ -1,4 +1,4 @@
-[gd_scene load_steps=82 format=3 uid="uid://dxc812fb4om46"]
+[gd_scene load_steps=87 format=3 uid="uid://dxc812fb4om46"]
 
 [ext_resource type="Shader" path="res://shaders/rgb.gdshader" id="1_d0oqp"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l5r7d"]
@@ -9,6 +9,7 @@
 [ext_resource type="Texture2D" uid="uid://ds5t0inkjf62j" path="res://sprites/jump (6) + jump kick (3) .png" id="5_t45le"]
 [ext_resource type="Texture2D" uid="uid://vf665eswlm4p" path="res://sprites/super.png" id="6_r7yev"]
 [ext_resource type="Texture2D" uid="uid://2jcer1o5cji2" path="res://sprites/ui_go.png" id="6_tmfft"]
+[ext_resource type="Texture2D" uid="uid://c2dh58fgelqj" path="res://sprites/jab.png" id="7_ps2rq"]
 [ext_resource type="Texture2D" uid="uid://b3yfew1mid5w0" path="res://sprites/bobik_appear-Sheet.png" id="10_y5khi"]
 [ext_resource type="AudioStream" uid="uid://2c5n4v3j4hhl" path="res://audio/hitArni.wav" id="11_7o1q0"]
 [ext_resource type="Texture2D" uid="uid://c37sm3rikkwja" path="res://sprites/nebo_bez_oblakov.png" id="12_7avr5"]
@@ -119,6 +120,18 @@ region = Rect2(219, 0, 73, 60)
 [sub_resource type="AtlasTexture" id="AtlasTexture_wep1x"]
 atlas = ExtResource("6_r7yev")
 region = Rect2(292, 0, 73, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0pj8"]
+atlas = ExtResource("7_ps2rq")
+region = Rect2(0, 0, 72, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c2drf"]
+atlas = ExtResource("7_ps2rq")
+region = Rect2(72, 0, 72, 60)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_m78et"]
+atlas = ExtResource("7_ps2rq")
+region = Rect2(144, 0, 72, 60)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_161a0"]
 atlas = ExtResource("2_a4vvp")
@@ -255,6 +268,20 @@ animations = [{
 }],
 "loop": true,
 "name": &"super",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0pj8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c2drf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_m78et")
+}],
+"loop": true,
+"name": &"true_jab",
 "speed": 5.0
 }, {
 "frames": [{
@@ -643,6 +670,18 @@ tracks/18/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 1,
 "values": [7]
+}
+tracks/19/type = "value"
+tracks/19/imported = false
+tracks/19/enabled = true
+tracks/19/path = NodePath("AnimatedSprite2D/TrueJabAttack/TrueJabAttackCollider:disabled")
+tracks/19/interp = 1
+tracks/19/loop_wrap = true
+tracks/19/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
 }
 
 [sub_resource type="Animation" id="Animation_jr0qe"]
@@ -1090,6 +1129,45 @@ tracks/4/keys = {
 "values": [true]
 }
 
+[sub_resource type="Animation" id="Animation_xh81n"]
+resource_name = "true_jab_attack"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimatedSprite2D:animation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [&"true_jab"]
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimatedSprite2D:frame")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 1, -0.25, 0, 0.25, 0, 2, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.1, 0.2)
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimatedSprite2D/TrueJabAttack/TrueJabAttackCollider:disabled")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.02, 0.191476, 0.2),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [true, false, false, true]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_s7x7w"]
 _data = {
 "RESET": SubResource("Animation_helgb"),
@@ -1101,6 +1179,7 @@ _data = {
 "jump": SubResource("Animation_h28f4"),
 "stay": SubResource("Animation_nhupy"),
 "super": SubResource("Animation_welfc"),
+"true_jab_attack": SubResource("Animation_xh81n"),
 "walk": SubResource("Animation_eahwk")
 }
 
@@ -1139,7 +1218,7 @@ debug_color = Color(0, 0.639216, 0.360784, 0.419608)
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 use_parent_material = true
-position = Vector2(13, 5)
+position = Vector2(17, 5)
 scale = Vector2(3, 3)
 sprite_frames = SubResource("SpriteFrames_3agyg")
 animation = &"jump"
@@ -1148,6 +1227,14 @@ offset = Vector2(0, -31)
 [node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["jabAttack"]]
 
 [node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack"]
+position = Vector2(10.1667, -5)
+shape = SubResource("RectangleShape2D_rtr88")
+disabled = true
+debug_color = Color(0, 0.917647, 0.964706, 0.419608)
+
+[node name="TrueJabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["true_jabAttack"]]
+
+[node name="TrueJabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/TrueJabAttack"]
 position = Vector2(10.1667, -5)
 shape = SubResource("RectangleShape2D_rtr88")
 disabled = true
@@ -1244,6 +1331,17 @@ position = Vector2(740, 189)
 scale = Vector2(0.5, 0.5)
 texture = ExtResource("13_o0mgf")
 
+[node name="JumpAttack2" type="Area2D" parent="." groups=["jumpAttack"]]
+position = Vector2(13, 5)
+scale = Vector2(3, 3)
+
+[node name="JumpAttackCollider" type="CollisionShape2D" parent="JumpAttack2"]
+position = Vector2(17, -25.6667)
+shape = SubResource("RectangleShape2D_2eikb")
+disabled = true
+
 [connection signal="area_entered" from="JumpAttack" to="." method="_on_jump_attack_area_entered"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/JabAttack" to="." method="_on_jab_attack_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D/TrueJabAttack" to="." method="_on_jab_attack_area_entered"]
+[connection signal="area_entered" from="JumpAttack2" to="." method="_on_jump_attack_area_entered"]
