@@ -109,11 +109,12 @@ func get_input():
 	if Input.is_action_just_pressed("jab_attack"):
 		if isJumping:
 			animations.pause()
+			jumpAttackCollider.disabled = false
 			$AnimatedSprite2D.play("jump_attack")
 			isAttacking = true
 			await get_tree().create_timer(.3).timeout
 			animations.play()
-			jumpAttackCollider.disabled = false
+			#jumpAttackCollider.disabled = true
 		
 		if !isJumping:
 			animations.play("jab_attack")
