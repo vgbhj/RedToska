@@ -57,7 +57,7 @@ func _ready():
 	camera.drag_vertical_offset = -0.8
 	camera.drag_left_margin = 0.9
 	camera.drag_top_margin = 0
-	camera.drag_right_margin = .3
+	camera.drag_right_margin = 0.8
 	camera.drag_bottom_margin = 1
 
 func go_fucn():
