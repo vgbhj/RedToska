@@ -146,7 +146,7 @@ func updateAnimation():
 	if isJumping: return
 	if velocity == Vector2.ZERO:
 		animations.play("idle")
-		collider.position.x = $AnimatedSprite2D.position.x - 10
+		#collider.position.x = $AnimatedSprite2D.position.x - 10
 	else:
 		animations.play("walk")
 		if lastAnimDirection == "Left":
@@ -154,7 +154,7 @@ func updateAnimation():
 			jumpAttackCollider.position.x = $AnimatedSprite2D.position.x + 20
 		else:
 			$AnimatedSprite2D.flip_h = 1
-			#$AnimatedSprite2D.offset.x = -10
+			#$AnimatedSprite2D.offset.x = +10
 			jumpAttackCollider.position.x = $AnimatedSprite2D.position.x - 20
 		
 		var direction = "Left"
@@ -259,12 +259,21 @@ func _on_jab_attack_area_entered(area):
 	#print("Ударилл")
 
 func jump():
-	y_before_jump = $AnimatedSprite2D.position.y
+	if lastAnimDirection == "Right":
+		$AnimatedSprite2D.offset.x = -5
+	if lastAnimDirection == "Left":
+		$AnimatedSprite2D.offset.x = 5
+	
+	$AnimatedSprite2D.offset.y = -25.1
+		#$AnimatedSprite2D.position.x += 100
+		#print($AnimatedSprite2D.position)
 	isJumping = true
 	animations.play("jump")
 	await animations.animation_finished
 	isJumping = false
 	jumpAttackCollider.disabled = true
+	$AnimatedSprite2D.offset.x = 0
+	$AnimatedSprite2D.offset.y = -31
 	#animations.stop()
 	wait_next_jump()
 
