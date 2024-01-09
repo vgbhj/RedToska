@@ -1,4 +1,4 @@
-[gd_scene load_steps=111 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=109 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
@@ -29,8 +29,6 @@
 [ext_resource type="Texture2D" uid="uid://brgat3bqyfgdf" path="res://sprites/bok_road.png" id="22_ia1c0"]
 [ext_resource type="Texture2D" uid="uid://beciyccc6vem2" path="res://sprites/nok_okna.png" id="23_46dy6"]
 [ext_resource type="Texture2D" uid="uid://55omjomxydqc" path="res://sprites/bordurs.png" id="24_5khfu"]
-[ext_resource type="Texture2D" uid="uid://vn5uc3yxjoqt" path="res://sprites/nebo.png" id="25_rgife"]
-[ext_resource type="Texture2D" uid="uid://fje1faf3d7jq" path="res://sprites/backg-export.png" id="26_whiwa"]
 [ext_resource type="Texture2D" uid="uid://du2sxfvlipexh" path="res://sprites/car2.png" id="27_d28ic"]
 [ext_resource type="Texture2D" uid="uid://ctc7tuwr0ch60" path="res://sprites/derevo.png" id="31_m8ljb"]
 [ext_resource type="Texture2D" uid="uid://b1xxk4sn17c81" path="res://sprites/produkti.png" id="32_nadli"]
@@ -17072,7 +17070,7 @@ position = Vector2(3297, 626)
 
 [node name="Player" parent="Ysort" node_paths=PackedStringArray("yaga_bar", "mainMusic") instance=ExtResource("2_4o0au")]
 material = ExtResource("7_fdglo")
-position = Vector2(-1399, 615)
+position = Vector2(-1446, 631)
 yaga_shader = ExtResource("7_fdglo")
 yaga_bar = NodePath("../../CanvasLayer/yagaHpBar")
 mainMusic = NodePath("../../MainMusic")
@@ -17184,39 +17182,6 @@ stream = ExtResource("8_gb33o")
 script = ExtResource("13_c6l6b")
 
 [node name="Street" type="Node" parent="."]
-
-[node name="ParallaxBackground" type="ParallaxBackground" parent="Street"]
-
-[node name="ParallaxLayer" type="ParallaxLayer" parent="Street/ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Street/ParallaxBackground/ParallaxLayer"]
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="Street/ParallaxBackground"]
-
-[node name="Sprite2D" type="Sprite2D" parent="Street/ParallaxBackground/ParallaxLayer2"]
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="Street/ParallaxBackground"]
-position = Vector2(307, -8)
-scale = Vector2(0.850656, 0.850656)
-motion_scale = Vector2(0.1, 1)
-motion_mirroring = Vector2(1400, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Street/ParallaxBackground/ParallaxLayer4"]
-position = Vector2(992, -85)
-scale = Vector2(0.809967, 0.740012)
-texture = ExtResource("25_rgife")
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="Street/ParallaxBackground"]
-modulate = Color(1, 1, 1, 0.701961)
-position = Vector2(-29, -7)
-motion_scale = Vector2(0.5, 1)
-motion_mirroring = Vector2(1000, 0)
-
-[node name="Sprite2D" type="Sprite2D" parent="Street/ParallaxBackground/ParallaxLayer3"]
-modulate = Color(1, 1, 1, 0.933333)
-position = Vector2(740, 189)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("26_whiwa")
 
 [node name="TileMap2" type="TileMap" parent="Street"]
 position = Vector2(-141, -380)

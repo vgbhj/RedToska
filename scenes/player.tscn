@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://dxc812fb4om46"]
+[gd_scene load_steps=82 format=3 uid="uid://dxc812fb4om46"]
 
 [ext_resource type="Shader" path="res://shaders/rgb.gdshader" id="1_d0oqp"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_l5r7d"]
@@ -11,6 +11,8 @@
 [ext_resource type="Texture2D" uid="uid://2jcer1o5cji2" path="res://sprites/ui_go.png" id="6_tmfft"]
 [ext_resource type="Texture2D" uid="uid://b3yfew1mid5w0" path="res://sprites/bobik_appear-Sheet.png" id="10_y5khi"]
 [ext_resource type="AudioStream" uid="uid://2c5n4v3j4hhl" path="res://audio/hitArni.wav" id="11_7o1q0"]
+[ext_resource type="Texture2D" uid="uid://c37sm3rikkwja" path="res://sprites/nebo_bez_oblakov.png" id="12_7avr5"]
+[ext_resource type="Texture2D" uid="uid://fje1faf3d7jq" path="res://sprites/backg-export.png" id="13_o0mgf"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_obgvy"]
 shader = ExtResource("1_d0oqp")
@@ -1216,6 +1218,31 @@ visibility_layer = 4
 position = Vector2(1.49996, 0)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_bh3dk")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(307, -8)
+scale = Vector2(0.850656, 0.850656)
+motion_scale = Vector2(0.1, 1)
+motion_mirroring = Vector2(1400, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(992, -85)
+scale = Vector2(0.809967, 0.740012)
+texture = ExtResource("12_7avr5")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+modulate = Color(1, 1, 1, 0.701961)
+position = Vector2(-29, -7)
+motion_scale = Vector2(0.5, 1)
+motion_mirroring = Vector2(1000, 0)
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+modulate = Color(1, 1, 1, 0.933333)
+position = Vector2(740, 189)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("13_o0mgf")
 
 [connection signal="area_entered" from="JumpAttack" to="." method="_on_jump_attack_area_entered"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]

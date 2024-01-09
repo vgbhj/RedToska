@@ -24,6 +24,7 @@ signal superChanged
 @onready var audio = $AttackSFX
 @export var maxSuper = 100
 @onready var currentSuper: int = maxSuper
+@onready var background = $ParallaxBackground
 
 # для тряски
 @export var randomStrength: float = 30
@@ -171,6 +172,7 @@ func _physics_process(delta):
 
 func _on_hurt_box_area_entered(area):
 	if area.is_in_group("bossFight"):
+		background.scale = Vector2(2,2)
 		can_jump = 0
 		yaga_stop()
 		animations.play("bossFight")
