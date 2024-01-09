@@ -17169,6 +17169,8 @@ region_rect = Rect2(1, 1, 142, 45)
 [node name="BackBlock" type="StaticBody2D" parent="."]
 z_index = 2
 position = Vector2(310, 446)
+collision_layer = 5
+collision_mask = 5
 
 [node name="BackBlockCollider" type="CollisionShape2D" parent="BackBlock"]
 z_index = 3

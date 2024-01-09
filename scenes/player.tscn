@@ -1059,8 +1059,8 @@ size = Vector2(21.0001, 46)
 
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 material = SubResource("ShaderMaterial_obgvy")
-collision_layer = 3
-collision_mask = 3
+collision_layer = 7
+collision_mask = 7
 script = ExtResource("1_l5r7d")
 maxHealth = 19
 
@@ -1110,6 +1110,7 @@ libraries = {
 
 [node name="Collider" type="CollisionShape2D" parent="." groups=["hitBox", "player"]]
 light_mask = 3
+visibility_layer = 3
 position = Vector2(1.49996, 0)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_bh3dk")
@@ -1158,17 +1159,15 @@ animation = &"appear"
 
 [node name="allTimer" type="Timer" parent="."]
 
-[node name="Always" type="Area2D" parent="." groups=["player"]]
+[node name="AttackSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_7o1q0")
 
-[node name="Collider2" type="CollisionShape2D" parent="Always" groups=["hitBox", "player"]]
+[node name="always collider" type="CollisionShape2D" parent="."]
 light_mask = 4
 visibility_layer = 4
 position = Vector2(1.49996, 0)
 rotation = 1.5708
 shape = SubResource("RectangleShape2D_bh3dk")
-
-[node name="AttackSFX" type="AudioStreamPlayer2D" parent="."]
-stream = ExtResource("11_7o1q0")
 
 [connection signal="area_entered" from="JumpAttack" to="." method="_on_jump_attack_area_entered"]
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
