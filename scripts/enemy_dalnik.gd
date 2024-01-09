@@ -9,7 +9,7 @@ var butilka_scene = preload("res://scenes/butilka_projectile.tscn")
 @onready var player = get_tree().root.get_child(0).get_child(0).get_node("Player")
 @onready var animations = $AnimatedSprite2D/AnimationEnemy
 @onready var collider = $Collider
-
+@onready var audio = $hitSFX
 @export var maxHealth = 5
 @onready var currentHealth: int = maxHealth
 
@@ -129,11 +129,13 @@ func _on_hurt_box_area_entered(area):
 	if currentHealth < 1:
 		isDead = true
 		enemy_death.emit()
+		audio.play()
 		animations.play("death")
 		await animations.animation_finished
 		queue_free()
 	else:
 		isTakeDamage = true
+		audio.play()
 		animations.play("hurt")
 		await animations.animation_finished
 		isTakeDamage = false

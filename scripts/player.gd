@@ -183,6 +183,7 @@ func _on_hurt_box_area_entered(area):
 		
 	if area.is_in_group("hitBoxBobik"):
 		currentHealth -= 4
+		audio.play()
 		healthChanged.emit(currentHealth)
 		currentSuper += 10
 		superChanged.emit(currentSuper)
@@ -212,6 +213,8 @@ func _on_hurt_box_area_entered(area):
 		currentHealth = maxHealth
 		healthChanged.emit(currentHealth)
 	if !area.is_in_group("hitBox"): return
+	
+	audio.play()
 	currentHealth -= 1
 	healthChanged.emit(currentHealth)
 	currentSuper += 10
@@ -236,7 +239,7 @@ func _on_jab_attack_area_entered(area):
 	if !area.is_in_group("hurtBox"): return
 	currentSuper += 5
 	superChanged.emit(currentSuper)
-	audio.play()
+	#audio.play()
 	#print("Ударилл")
 
 func jump():

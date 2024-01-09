@@ -10,6 +10,7 @@ signal enemy_death
 @onready var collider = $Collider
 @onready var jabAttackCollider = $AnimatedSprite2D/JabAttack/JabAttackCollider
 
+@onready var audio = $hitSFX
 @export var maxHealth = 5
 @onready var currentHealth: int = maxHealth
 
@@ -92,11 +93,13 @@ func _on_hurt_box_area_entered(area):
 	if currentHealth < 1:
 		isDead = true
 		enemy_death.emit()
+		audio.play()
 		animations.play("death")
 		await animations.animation_finished
 		queue_free()
 	else:
 		isTakeDamage = true
+		audio.play()
 		animations.play("hurt")
 		await animations.animation_finished
 		isTakeDamage = false

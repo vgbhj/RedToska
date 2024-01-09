@@ -1,7 +1,8 @@
-[gd_scene load_steps=29 format=3 uid="uid://b1xq2pkdlwbhe"]
+[gd_scene load_steps=30 format=3 uid="uid://b1xq2pkdlwbhe"]
 
 [ext_resource type="Script" path="res://scripts/enemy_dalnik.gd" id="1_qx28b"]
 [ext_resource type="Texture2D" uid="uid://bvmc884kch0py" path="res://sprites/red_gopnik.png" id="2_6snt1"]
+[ext_resource type="AudioStream" uid="uid://duf5hg4pthsph" path="res://audio/arni_jab.wav" id="3_tstdn"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jrh2n"]
 size = Vector2(70, 27)
@@ -372,6 +373,9 @@ debug_color = Color(0.878431, 0.270588, 0.407843, 0.419608)
 [node name="Collider" type="CollisionShape2D" parent="."]
 position = Vector2(2.5, -12.5)
 shape = SubResource("RectangleShape2D_f770b")
+
+[node name="hitSFX" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_tstdn")
 
 [connection signal="area_entered" from="HurtBox" to="." method="_on_hurt_box_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/PlayerDetecter" to="." method="_on_player_detecter_area_entered"]

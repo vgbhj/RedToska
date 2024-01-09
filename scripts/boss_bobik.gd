@@ -19,6 +19,7 @@ signal enemy_death
 @onready var animations = $AnimatedSprite2D/AnimationEnemy
 @onready var collider = $Collider
 @onready var MentTimer = $MentTimer
+@onready var audio = $hitSFX
 
 var ment = preload("res://scenes/ment.tscn")
 
@@ -99,12 +100,15 @@ func _on_hurt_box_area_entered(area):
 	if area.is_in_group("superAttack"):
 		damage = 4
 	currentHealth -= damage
+	audio.play()
 	healthChanged.emit(currentHealth)
 	if currentHealth < 1:
 		isDead = true
 		enemy_death.emit()
 		animations.play("death")
 		await animations.animation_finished
+		await get_tree().create_timer(10).timeout
+		get_tree().change_scene_to_file("res://scenes/menu.tscn")
 		queue_free()
 
 

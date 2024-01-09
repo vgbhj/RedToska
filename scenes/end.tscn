@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://dt2cyjpl3t31b"]
+
+[node name="End" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
+offset_left = -575.0
+offset_top = -324.0
+offset_right = -535.0
+offset_bottom = -284.0
+autoplay = true
