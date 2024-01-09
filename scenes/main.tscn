@@ -23,6 +23,7 @@
 [ext_resource type="Script" path="res://scripts/MainMusic.gd" id="13_c6l6b"]
 [ext_resource type="Shader" path="res://shaders/blink.gdshader" id="14_76kjc"]
 [ext_resource type="Script" path="res://scripts/helthBarBobik.gd" id="15_202o8"]
+[ext_resource type="Texture2D" uid="uid://clclicpgwtg35" path="res://sprites/5338051-white-background-images.jpg" id="18_a8eto"]
 [ext_resource type="Texture2D" uid="uid://dcxf4cmh5yxj3" path="res://sprites/bok-roads-zabors.png" id="18_nhqq8"]
 [ext_resource type="Texture2D" uid="uid://2swv2mcnsve2" path="res://sprites/bok_okna.png" id="19_bp6qf"]
 [ext_resource type="Texture2D" uid="uid://c3pu2avxg3a65" path="res://sprites/asphalt8.png" id="20_owix0"]
@@ -16793,10 +16794,6 @@ size = Vector2(5365.09, 89.5183)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_v2i21"]
 size = Vector2(1926.48, 59)
 
-[sub_resource type="Environment" id="Environment_72ypr"]
-background_mode = 3
-adjustment_enabled = true
-
 [node name="Main" type="Node"]
 script = ExtResource("1_pfuwv")
 
@@ -17125,6 +17122,7 @@ texture_progress = SubResource("AtlasTexture_84o0c")
 texture_progress_offset = Vector2(6, 9)
 script = ExtResource("12_ee7mm")
 player = NodePath("../../Ysort/Player")
+metadata/_edit_use_anchors_ = true
 
 [node name="superBar" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("player")]
 offset_right = 40.0
@@ -17133,6 +17131,7 @@ texture_progress = SubResource("AtlasTexture_qt3br")
 texture_progress_offset = Vector2(6, 28)
 script = ExtResource("12_of7k8")
 player = NodePath("../../Ysort/Player")
+metadata/_edit_use_anchors_ = true
 
 [node name="helthBarBobik" type="TextureProgressBar" parent="CanvasLayer" node_paths=PackedStringArray("bobik")]
 anchors_preset = 4
@@ -17147,6 +17146,7 @@ texture_under = SubResource("AtlasTexture_fr7g7")
 texture_progress = SubResource("AtlasTexture_dmueg")
 script = ExtResource("15_202o8")
 bobik = NodePath("../../Ysort/BossBobik")
+metadata/_edit_use_anchors_ = true
 
 [node name="yagaHpBar" type="Sprite2D" parent="CanvasLayer"]
 visible = false
@@ -17167,6 +17167,13 @@ centered = false
 offset = Vector2(0, -1)
 region_enabled = true
 region_rect = Rect2(1, 1, 142, 45)
+
+[node name="Black" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(0.286275, 0.294118, 0.411765, 0.211765)
+z_index = 100
+position = Vector2(935.75, 363.75)
+scale = Vector2(1872.5, 728.5)
+texture = ExtResource("18_a8eto")
 
 [node name="BackBlock" type="StaticBody2D" parent="."]
 z_index = 2
@@ -17568,8 +17575,7 @@ shape = SubResource("RectangleShape2D_v2i21")
 [node name="YAGA" parent="." instance=ExtResource("7_tdjix")]
 position = Vector2(9354, 1596)
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_72ypr")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 
 [connection signal="lvl_end" from="Ysort/Level1" to="Ysort/Player" method="_on_level_1_lvl_end"]
 [connection signal="lvl_end" from="Ysort/Level2" to="Ysort/Player" method="_on_level_2_lvl_end"]
