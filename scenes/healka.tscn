@@ -5,7 +5,7 @@
 [ext_resource type="AudioStream" uid="uid://cc8gc6laaxdmn" path="res://audio/heal.wav" id="3_og81d"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_86hry"]
-size = Vector2(30, 25)
+size = Vector2(53, 46.5)
 
 [node name="Healka" type="Node2D"]
 script = ExtResource("1_nl1mi")
@@ -19,7 +19,7 @@ region_rect = Rect2(829, 423, 6, 21)
 [node name="ButilkaHitBox" type="Area2D" parent="." groups=["heal"]]
 
 [node name="ButilkaHitBoxCollider" type="CollisionShape2D" parent="ButilkaHitBox"]
-position = Vector2(4.76837e-07, -0.5)
+position = Vector2(33, 30)
 shape = SubResource("RectangleShape2D_86hry")
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)
 
