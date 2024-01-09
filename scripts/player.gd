@@ -41,6 +41,7 @@ var isDead: bool = false
 var isTakeDamage: bool = false
 var inAttackZone: bool = false
 var isAttacking: bool = false
+var isAttackingJump: bool = false
 var isJumping: bool = false
 var isSuper: bool = false
 var waitNextJump: bool = false
@@ -109,6 +110,7 @@ func get_input():
 		if isJumping:
 			animations.pause()
 			$AnimatedSprite2D.play("jump_attack")
+			isAttacking = true
 			await get_tree().create_timer(.3).timeout
 			animations.play()
 			jumpAttackCollider.disabled = false
@@ -180,7 +182,16 @@ func _physics_process(delta):
 		return
 	if isTakeDamage: return
 	if isDead: return
-	if isAttacking: return
+	if isAttacking:
+		if isJumping:
+			if lastAnimDirection == "Left":
+				velocity.x += 1
+			else:
+				velocity.x -= 1
+			
+			velocity = velocity.normalized() * speed
+			move_and_slide()
+		return
 	
 	get_input()
 	move_and_slide()
@@ -274,6 +285,7 @@ func jump():
 	animations.play("jump")
 	await animations.animation_finished
 	isJumping = false
+	isAttacking = false
 	jumpAttackCollider.disabled = true
 	$AnimatedSprite2D.offset.x = 0
 	$AnimatedSprite2D.offset.y = -31
