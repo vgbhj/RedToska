@@ -83,9 +83,9 @@ func move_to_player():
 	if x_can and y_can:
 		velocity = global_position.direction_to(player.get_child(0).get_child(0).global_position) * speed
 	elif x_can: 
-		velocity.x = mysign(global_position.direction_to(player_pos_tmp).x) * speed
+		velocity.x = (global_position.direction_to(player_pos_tmp).x) * speed
 	elif y_can:
-		velocity.y = mysign(global_position.direction_to(player_pos_tmp).y) * speed
+		velocity.y = (global_position.direction_to(player_pos_tmp).y) * speed
 		
 	#print((player_pos_tmp - global_position).y)
 	#print(global_position.direction_to(player_pos_tmp).y)
