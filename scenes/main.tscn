@@ -1,4 +1,4 @@
-[gd_scene load_steps=110 format=3 uid="uid://cemgh0flv4h3k"]
+[gd_scene load_steps=111 format=3 uid="uid://cemgh0flv4h3k"]
 
 [ext_resource type="Script" path="res://scripts/main.gd" id="1_pfuwv"]
 [ext_resource type="PackedScene" uid="uid://dxc812fb4om46" path="res://scenes/player.tscn" id="2_4o0au"]
@@ -13,6 +13,7 @@
 [ext_resource type="PackedScene" uid="uid://cvemnw03b0t1j" path="res://scenes/yaga.tscn" id="7_tdjix"]
 [ext_resource type="AudioStream" uid="uid://bsntp0msepu15" path="res://audio/energy_beat.mp3" id="8_gb33o"]
 [ext_resource type="PackedScene" uid="uid://bil2lm3s5w6qb" path="res://scenes/boss_level.tscn" id="9_fukoq"]
+[ext_resource type="PackedScene" uid="uid://dose1tii2y4hj" path="res://scenes/cat.tscn" id="10_0x8vy"]
 [ext_resource type="PackedScene" uid="uid://b5snu0ffkl8t" path="res://scenes/boss_bobik.tscn" id="10_sbtje"]
 [ext_resource type="Shader" path="res://shaders/rgb.gdshader" id="11_c7la3"]
 [ext_resource type="Texture2D" uid="uid://chhxgy5bi2e5w" path="res://sprites/ui_healthsuperbar.png" id="12_cbk45"]
@@ -16880,8 +16881,9 @@ time_berofe_spawn = 15
 name_of_scene = "dalnik"
 
 [node name="Level4" parent="Ysort" node_paths=PackedStringArray("spanwers") instance=ExtResource("3_f55af")]
-position = Vector2(2015, 241)
+position = Vector2(2083, 258)
 spanwers = NodePath("Spawners")
+DisableForwardBlock = true
 
 [node name="Spawners" type="Node2D" parent="Ysort/Level4"]
 y_sort_enabled = true
@@ -17070,7 +17072,7 @@ position = Vector2(3297, 626)
 
 [node name="Player" parent="Ysort" node_paths=PackedStringArray("yaga_bar", "mainMusic") instance=ExtResource("2_4o0au")]
 material = ExtResource("7_fdglo")
-position = Vector2(-1416, 615)
+position = Vector2(-1449, 590)
 yaga_shader = ExtResource("7_fdglo")
 yaga_bar = NodePath("../../CanvasLayer/yagaHpBar")
 mainMusic = NodePath("../../MainMusic")
@@ -17103,6 +17105,10 @@ dot2 = NodePath("../BossLevel/Dots2/LeftEnd")
 dot3 = NodePath("../BossLevel/Dots2/LeftStart")
 dot4 = NodePath("../BossLevel/Dots2/RightEnd")
 dot5 = NodePath("../BossLevel/Dots2/StartPos")
+
+[node name="Cat" parent="Ysort" instance=ExtResource("10_0x8vy")]
+position = Vector2(-1219, 404)
+scale = Vector2(2, 2)
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 offset = Vector2(5, 5)

@@ -276,7 +276,7 @@ func yaga_activate():
 	# ЭФФЕКТЫ
 	yaga_shader.set_shader_parameter("quality", 4)
 	yaga_bar.visible = true
-	await get_tree().create_timer(40).timeout
+	await get_tree().create_timer(35).timeout
 	yaga_stop()
 	
 func yaga_stop():

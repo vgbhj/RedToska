@@ -1,12 +1,25 @@
-[gd_scene format=3 uid="uid://dt2cyjpl3t31b"]
+[gd_scene load_steps=4 format=3 uid="uid://dt2cyjpl3t31b"]
+
+[ext_resource type="Script" path="res://scripts/end.gd" id="1_gfquo"]
+[ext_resource type="VideoStream" path="res://video/konec.ogv" id="1_xch4g"]
+[ext_resource type="AudioStream" uid="uid://c7djywip3xu5t" path="res://audio/beat'em up.mp3" id="2_odklw"]
 
 [node name="End" type="Node"]
+script = ExtResource("1_gfquo")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="VideoStreamPlayer" type="VideoStreamPlayer" parent="."]
 offset_left = -575.0
 offset_top = -324.0
-offset_right = -535.0
-offset_bottom = -284.0
+offset_right = 1345.0
+offset_bottom = 764.0
+scale = Vector2(0.6, 0.6)
+stream = ExtResource("1_xch4g")
 autoplay = true
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_odklw")
+autoplay = true
+
+[connection signal="finished" from="VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

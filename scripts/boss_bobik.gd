@@ -107,8 +107,8 @@ func _on_hurt_box_area_entered(area):
 		enemy_death.emit()
 		animations.play("death")
 		await animations.animation_finished
-		await get_tree().create_timer(10).timeout
-		get_tree().change_scene_to_file("res://scenes/menu.tscn")
+		await get_tree().create_timer(5).timeout
+		get_tree().change_scene_to_file("res://scenes/end.tscn")
 		queue_free()
 
 
