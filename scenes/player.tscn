@@ -1501,6 +1501,7 @@ animation = &"jump"
 offset = Vector2(0, -31)
 
 [node name="JabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["jabAttack"]]
+position = Vector2(0.666667, -5.33333)
 
 [node name="JabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/JabAttack"]
 position = Vector2(10.1667, -5.24999)
@@ -1509,6 +1510,7 @@ disabled = true
 debug_color = Color(0, 0.917647, 0.964706, 0.419608)
 
 [node name="TrueJabAttack" type="Area2D" parent="AnimatedSprite2D" groups=["true_jabAttack"]]
+position = Vector2(0.666667, -5.33333)
 
 [node name="TrueJabAttackCollider" type="CollisionShape2D" parent="AnimatedSprite2D/TrueJabAttack"]
 position = Vector2(3.58333, -5.41667)
