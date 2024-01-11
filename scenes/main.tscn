@@ -17190,7 +17190,6 @@ script = ExtResource("7_qt68d")
 
 [node name="MainMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_gb33o")
-volume_db = -10.0
 script = ExtResource("13_c6l6b")
 
 [node name="Street" type="Node" parent="."]
